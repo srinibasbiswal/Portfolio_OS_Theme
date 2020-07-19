@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import BG_Container from './containers/BG_Container';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <BG_Container></BG_Container>
     </div>
   );
 }
