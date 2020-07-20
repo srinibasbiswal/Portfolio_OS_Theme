@@ -3,7 +3,7 @@
     width: 100vw;    
 }
 
-.TaskBarContainer{
+.TaskBar{
     bottom: 0;
     position: absolute;
     height: 43px;
@@ -30,6 +30,30 @@
     color: white;
 }
 
+.TaskBarContainer .TaskBarIcon{
+    float: left;
+}
+
 .TaskBarIcon:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.CortanaIcon{
+    height: 43px;
+    width: 48px;
+    position: relative;
+    display: inline-block;
+    background-image: url('../assets/images/cortana.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.FileExplorerIcon{
+    height: 43px;
+    width: 48px;
+    position: relative;
+    display: inline-block;
+    background-image: url('../assets/images/file_explorer.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }

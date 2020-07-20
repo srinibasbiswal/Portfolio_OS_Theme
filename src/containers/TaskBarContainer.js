@@ -1,11 +1,11 @@
 import React from 'react';
-import StartButtonComponent from '../components/StartButtonComponent';
 import classes from '../stylesheets/style.module.css';
+import TaskbarStaticContainer from './TaskBarStaticContainer';
 
 function TaskBarContainer() {
     return (
-        <div className={classes.TaskBarContainer}>
-            <StartButtonComponent></StartButtonComponent>
+        <div className={classes.TaskBar}>
+            <TaskbarStaticContainer></TaskbarStaticContainer>
         </div>
     );
 }
