@@ -57,3 +57,13 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.ChromeIcon{
+    height: 43px;
+    width: 48px;
+    position: relative;
+    display: inline-block;
+    background-image: url('../assets/images/chrome.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
