@@ -13,7 +13,7 @@ function TaskBarDynamicContainer() {
     return (
         <div className={classes.TaskBarContainer}>
             {dynamicApps.apps.map((app) =>
-                <TaskBarDynamicIcon iconName={app.iconName}></TaskBarDynamicIcon>
+                <TaskBarDynamicIcon iconName={app.iconName} key={app.id}></TaskBarDynamicIcon>
             )}
         </div >
     );

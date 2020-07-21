@@ -67,3 +67,62 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.ToolBarContainer .ToolBarIconBox {
+    float: right;
+}
+
+.ToolBarIconBox{
+    height: 43px;
+    width: 30px;
+}
+
+.ToolBarIconBox:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ToolBarIcon{
+    font-size: 15px;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    left: 25%;
+    top: 25%;
+}
+
+.ClockComponent{
+    float: right;
+}
+
+.ClockComponent:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ClockInnerComponents{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 11.3px;
+    color: white;
+}
+
+.NotificationIconBox{
+    float: right;
+    height: 43px;
+    width: 48px;
+}
+
+.NotificationIconBox:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.NotificationIcon{
+    position: relative;
+    display: inline-block;
+    left: 25%;
+    top: 25%;
+    font-size: 21px;
+    color: white;
+}
