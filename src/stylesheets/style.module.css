@@ -1,6 +1,7 @@
 .DesktopContainer{
-    height: 100vh;
-    width: 100vw;    
+    margin-top: 0;
+    height: 98vh;
+    width: 100vw;  
 }
 
 .TaskBar{
@@ -125,4 +126,33 @@
     top: 25%;
     font-size: 21px;
     color: white;
+}
+
+.DesktopIconBox{
+    text-align: center;
+    color: #ffffff;
+    width: 100px;
+    margin: 10px;
+    font-size: small;
+}
+
+.DesktopIconBox:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.DesktopIcon{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.ThisPersonIcon{
+    background-image: url('../assets/images/thisPerson.png');
+}
+
+.DocumentsFolderIcon{
+    background-image: url('../assets/images/documentsFolder.png');
 }
