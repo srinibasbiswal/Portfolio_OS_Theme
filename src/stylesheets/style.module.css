@@ -2,6 +2,10 @@
     margin-top: 0;
     height: 98vh;
     width: 100vw;  
+    background-image: url('../assets/images/Wallpapers/wallpaper1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .TaskBar{
@@ -10,7 +14,7 @@
     height: 43px;
     width: 100%;
     position: fixed;
-    background: #004172;
+    background: rgba(0, 0, 0, .7);
 }
 
 .StartButton{
