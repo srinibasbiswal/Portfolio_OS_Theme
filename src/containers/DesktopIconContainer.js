@@ -6,7 +6,7 @@ function DesktopIconContainer() {
     const [desktopIcons, setDesktopIcons] = useState({
         icons: [
             { name: 'This Person', iconName: 'ThisPersonIcon', id: 1 },
-            { name: 'Documents', iconName: 'DocumentsFolderIcon', id: 1 }
+            { name: 'Documents', iconName: 'DocumentsFolderIcon', id: 2 }
         ]
     });
 
