@@ -161,18 +161,7 @@
     background-image: url('../assets/images/documentsFolder.png');
 }
 
-.ModalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1040;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: .5;
-}
-
-.ModalWrapper {
+.AppExplorerContainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -184,19 +173,42 @@
   outline: 0;
 }
 
-.Modal {
+.AppExplorer {
   z-index: 100;
   background: white;
   position: relative;
   margin: 1.75rem auto;
-  border-radius: 3px;
-  max-width: 500px;
-  padding: 2rem;
+  width: 75%;
+  display: grid;
+  height: 75%;
+  overflow: hidden;
+  border-radius: 10px;
+  grid-template-areas:
+    'SidePanel TopPanel TopPanel TopPanel'
+    'SidePanel DataPanel DataPanel DataPanel'
+    'SidePanel DataPanel DataPanel DataPanel'
+    'SidePanel DataPanel DataPanel DataPanel'
+    'SidePanel DataPanel DataPanel DataPanel'
+    'SidePanel DataPanel DataPanel DataPanel'
+    'SidePanel DataPanel DataPanel DataPanel';
+    border-radius: 25px;
 }
 
-.ModalHeader {
+.TopPanel {
   display: flex;
   justify-content: flex-end;
+  grid-area: TopPanel;
+  background-color: blue;
+}
+
+.SidePanel {
+  grid-area: SidePanel;
+  background-color: blueviolet;
+}
+
+.DataPanel{
+  grid-area: DataPanel;
+  background-color: chartreuse;
 }
 
 .ModalCloseButton {
