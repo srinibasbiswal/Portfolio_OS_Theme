@@ -2,7 +2,7 @@
     margin-top: 0;
     height: 98vh;
     width: 100vw;  
-    background-image: url('../assets/images/Wallpapers/wallpaper1.jpg');
+    background-image: url('../assets/images/Wallpapers/wallpaper2.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -175,7 +175,6 @@
 
 .AppExplorer {
   z-index: 100;
-  background: white;
   position: relative;
   margin: 1.75rem auto;
   width: 75%;
@@ -198,17 +197,16 @@
   display: flex;
   justify-content: flex-end;
   grid-area: TopPanel;
-  background-color: blue;
 }
 
 .SidePanel {
   grid-area: SidePanel;
-  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
 }
 
 .DataPanel{
-  grid-area: DataPanel;
-  background-color: chartreuse;
+  grid-area: DataPanel;  
 }
 
 .ModalCloseButton {
@@ -220,3 +218,65 @@
   cursor: pointer;
   border: none;
 }
+
+.BlurEffect{
+  backdrop-filter: blur(30px)
+}
+
+.SidePanelIcon{
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.SidePanelRow {
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.SidePanelRow:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.SidePanelRow>div{
+    float: left;
+    margin-left: 10px;
+}
+
+.FileExplorerIconRow{
+    background-image: url('../assets/images/file_explorer.png');
+}
+
+.ThisPersonIconRow{
+    background-image: url('../assets/images/thisPerson_30.png');
+}
+.DesktopIconRow{
+    background-image: url('../assets/images/desktopIcon_30.png');
+}
+.DocumentsIconRow{
+  background-image: url('../assets/images/documentsFolder.png');
+}
+.PicturesIconRow{
+  background-image: url('../assets/images/pictures_30.png');
+}
+.QuickAccessIconRow{
+  background-image: url('../assets/images/quickAccess_30.png');
+}
+
+.SidePanelRowText{
+  margin-top: 5px;
+}
+.hierarchy1{
+  font-weight: bold;
+}
+.hierarchy2{
+  margin-left: 12px;
+}
+
+.MarginMediumTop{
+  margin-top: 10px;
+}
+
+
