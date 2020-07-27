@@ -222,7 +222,7 @@
 
 
 .BlurEffect{
-  backdrop-filter: blur(5p1x);
+  /* backdrop-filter: blur(5p1x); */
   background-color: rgba(233, 238, 249, .90);
 } 
 
