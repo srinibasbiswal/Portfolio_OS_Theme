@@ -1,14 +1,20 @@
 import React from 'react';
-import classes from '*.module.css';
 import classes from '../stylesheets/style.module.css';
 
 function TopPanelComponent(props) {
     return (
-        <div className={classes.AppHeader}>
+        <div>
+            <div className={classes.AppHeader}>
+                <div className={classes.AppNameHeader}> {props.AppName} </div>
+                <div className={AppExplorerControlButtons}>
+                    <div className={className.MinimizeButton}></div>
+                    <div className={className.MaximizeButton}></div>
+                    <div className={className.CloseButton}></div>
+                </div>
+            </div>
+            <div className={classes.TopPanelStatic}>
 
-        </div>
-        <div className={classes.TopPanelStatic}>
-
+            </div>
         </div>
     );
 }

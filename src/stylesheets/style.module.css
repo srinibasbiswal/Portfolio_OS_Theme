@@ -282,4 +282,46 @@
   margin-top: 10px;
 }
 
+.MinimizeButton .MaximizeButton .CloseButton{
+   	width: 40px;
+    height: 30px;
 
+    float: right;
+    position: relative;
+}
+
+.MinimizeButton:after {
+ 	content: '__';
+ 	display: block;
+ 	width: 30px;
+ 	height: 30px;
+ 	position: absolute;
+ 	top: 5px;
+ 	left: 15px;
+ 	color: #444;
+ }
+
+ .MaximizeButton:after {
+ 	content: '';
+ 	display: block;
+ 	width: 10px;
+ 	height: 10px;
+ 	border: 1px solid #444;
+ 	border-radius: 2px;
+ 	position: absolute;
+ 	top: 10px;
+ 	left: 15px;
+ 	color: #444;
+ }
+
+  .CloseButton:after {
+ 	content: 'X';
+ 	display: block;
+ 	width: 30px;
+ 	height: 30px;
+
+ 	position: absolute;
+ 	top: 5px;
+ 	left: 15px;
+ 	color: #444;
+ }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import classes from '../stylesheets/style.module.css';
 import SidePanelRowComponent from '../components/SidePanelRowComponent';
+import TopPanelComponent from '../components/TopPanelComponent';
 
 function AppExplorerContainer(props) {
 
