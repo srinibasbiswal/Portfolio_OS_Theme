@@ -1,14 +1,30 @@
 import React from 'react';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Nav, Image } from 'react-bootstrap';
+import styles from '../stylesheets/style.module.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
+import CortanaIcon from '../assets/images/cortana.svg';
+import FileExplorerIcon from '../assets/images/file_explorer.png';
 
 function TaskbarContainer(){
     return(
         <div>
-        <Container>
-  <Navbar expand="lg" variant="light" bg="light">
-    <Navbar.Brand href="#">Navbar</Navbar.Brand>
-  </Navbar>
-</Container>
+        <Navbar bg="dark" variant="dark" fixed="bottom" className={styles.TaskBar}>
+            <div className={`${styles.TaskBarIcon}`}> 
+                <FontAwesomeIcon icon={faWindows} className={styles.StartButtonIcon}></FontAwesomeIcon> 
+            </div> 
+            <Nav className="mr-auto">
+                <div className={`${styles.TaskBarIcon}`}> 
+                    <Image src={CortanaIcon} className= {styles.CortanaIcon}></Image>
+                </div>
+                <div className={`${styles.TaskBarIcon}`}> 
+                    <Image src={FileExplorerIcon} className= {styles.FileExplorerIcon}></Image>
+                </div>
+            </Nav>
+            <Nav>
+                
+            </Nav>
+        </Navbar>
 
         </div>
     );
