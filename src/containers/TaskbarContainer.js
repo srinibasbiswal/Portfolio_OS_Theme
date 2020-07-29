@@ -6,25 +6,30 @@ import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import CortanaIcon from '../assets/images/cortana.svg';
 import FileExplorerIcon from '../assets/images/file_explorer.png';
 import ToolBarContainer from './ToolBarContainer';
+import TaskBarDynamicContainer from './TaskBarDynamicContainer';
 
 function TaskbarContainer(){
     return(
         <div>
         <Navbar bg="dark" variant="dark" fixed="bottom" className={styles.TaskBar}>
             <div className={`${styles.TaskBarIcon}`}> 
-                <FontAwesomeIcon icon={faWindows} className={styles.StartButtonIcon}></FontAwesomeIcon> 
+                <FontAwesomeIcon icon={faWindows} className={styles.TaskBarIconComponent}></FontAwesomeIcon> 
             </div> 
+            
             <Nav className="mr-auto">
                 <div className={`${styles.TaskBarIcon}`}> 
-                    <Image src={CortanaIcon} className= {styles.CortanaIcon}></Image>
+                    <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
                 </div>
                 <div className={`${styles.TaskBarIcon}`}> 
-                    <Image src={FileExplorerIcon} className= {styles.FileExplorerIcon}></Image>
+                    <Image src={FileExplorerIcon} className= {styles.TaskBarIconComponent}></Image>
                 </div>
+                <TaskBarDynamicContainer></TaskBarDynamicContainer>
             </Nav>
-                <ToolBarContainer></ToolBarContainer>
+
             <Nav>
+                <ToolBarContainer></ToolBarContainer>
             </Nav>
+
         </Navbar>
 
         </div>

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function ToolBarComponent(props) {
     return (
         <FontAwesomeIcon icon={props.iconName} className={styles.ToolBarSymbols}></FontAwesomeIcon>
-
     );
 }
 

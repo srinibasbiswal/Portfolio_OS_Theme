@@ -15,14 +15,14 @@
 .TaskBarIcon{
   height: 43px; 
   width: 48px; 
-  color: white; 
+  color: #ffffff; 
 }
 
 .TaskBarIcon:hover , .ClockComponent:hover , .ToolBarIcon:hover { 
   background-color: rgba(255, 255, 255, 0.1) !important; 
 }
 
-.StartButtonIcon , .CortanaIcon, .FileExplorerIcon{
+.TaskBarIconComponent{
   margin-top: 25%;
   margin-left: 30%;
   font-size: 21px;
