@@ -11,11 +11,10 @@ import TaskBarDynamicContainer from './TaskBarDynamicContainer';
 function TaskbarContainer(){
     return(
         <div>
-        <Navbar bg="dark" variant="dark" fixed="bottom" className={styles.TaskBar}>
+        <Navbar fixed="bottom" className={`${styles.TaskBar} ${styles.BackgroundBlur} shadow`}>
             <div className={`${styles.TaskBarIcon}`}> 
                 <FontAwesomeIcon icon={faWindows} className={styles.TaskBarIconComponent}></FontAwesomeIcon> 
             </div> 
-            
             <Nav className="mr-auto">
                 <div className={`${styles.TaskBarIcon}`}> 
                     <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
@@ -29,7 +28,7 @@ function TaskbarContainer(){
             <Nav>
                 <ToolBarContainer></ToolBarContainer>
             </Nav>
-
+            
         </Navbar>
 
         </div>

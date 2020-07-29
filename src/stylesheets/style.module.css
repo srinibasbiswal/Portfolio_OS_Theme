@@ -6,6 +6,9 @@
   left:0;
   min-width: 100%;
   min-height: 100%;
+  background-image: url('../assets/images/Wallpapers/wallpaper1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .TaskBar{
@@ -48,4 +51,10 @@
 
 .ToolBarSymbols{
   margin: 50% 30%;
+}
+
+.BackgroundBlur{
+  background-color: rgba(0, 0, 0, .80);	
+	backdrop-filter: blur(15px);
+
 }
