@@ -18,7 +18,7 @@
   color: white; 
 }
 
-.TaskBarIcon:hover { 
+.TaskBarIcon:hover , .ClockComponent:hover  { 
   background-color: rgba(255, 255, 255, 0.1) !important; 
 }
 
@@ -27,3 +27,12 @@
   margin-left: 30%;
   font-size: 21px;
 }
+.ClockComponent{
+  padding: 5px;
+}
+.ClockInnerComponents{ 
+  display: block; 
+  text-align: center; 
+  font-size: 11px; 
+  color: white; 
+} 

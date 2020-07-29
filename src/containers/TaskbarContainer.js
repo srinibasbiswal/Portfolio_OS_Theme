@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import CortanaIcon from '../assets/images/cortana.svg';
 import FileExplorerIcon from '../assets/images/file_explorer.png';
+import ClockComponent from '../components/ClockComponent';
 
 function TaskbarContainer(){
     return(
@@ -22,7 +23,9 @@ function TaskbarContainer(){
                 </div>
             </Nav>
             <Nav>
-                
+                <div> 
+                    <ClockComponent></ClockComponent>
+                </div>
             </Nav>
         </Navbar>
 
