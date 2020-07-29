@@ -1,17 +1,22 @@
 import React from 'react'; 
 import styles from '../stylesheets/style.module.css'; 
+import Clock from 'react-live-clock';
  
 function ClockComponent() { 
-    var dateObj = new Date().toLocaleString('en-IN', { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }); 
-    var date = dateObj.split(',')[0].replace(new RegExp('/', 'g'), '-'); 
-    var time = dateObj.split(',')[1]; 
+    var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     return ( 
         <div className={styles.ClockComponent}> 
             <span className={styles.ClockInnerComponents}> 
-                {time} 
+                <Clock
+                    format={'h:mm A'}
+                    timezone={timeZone} 
+                /> 
             </span> 
             <span className={styles.ClockInnerComponents}> 
-                {date} 
+                <Clock
+                    format={'DD-MM-YYYY'}
+                    timezone={timeZone} 
+                /> 
             </span> 
         </div> 
     ); 
