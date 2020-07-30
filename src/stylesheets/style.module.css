@@ -28,7 +28,7 @@
 .TaskBarIconComponent{
   margin-top: 25%;
   margin-left: 30%;
-  font-size: 21px;
+  height: 21px;
 }
 
 .ClockComponent{
@@ -56,5 +56,18 @@
 .BackgroundBlur{
   background-color: rgba(0, 0, 0, .80);	
 	backdrop-filter: blur(15px);
+}
 
+.DesktopIcon{
+  text-align: center;
+  padding: 5px;  
+}
+
+.DesktopIconName{
+  color: #ffffff !important;
+}
+
+.DesktopIcon:hover{
+  background-color: rgba(255, 255, 255, 0.1) !important; 
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }

@@ -4,7 +4,7 @@ import styles from '../stylesheets/style.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import CortanaIcon from '../assets/images/cortana.svg';
-import FileExplorerIcon from '../assets/images/file_explorer.png';
+import DocumentsIcon from '../assets/images/DocumentsIcon.png';
 import ToolBarContainer from './ToolBarContainer';
 import TaskBarDynamicContainer from './TaskBarDynamicContainer';
 
@@ -20,7 +20,7 @@ function TaskbarContainer(){
                     <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
                 </div>
                 <div className={`${styles.TaskBarIcon}`}> 
-                    <Image src={FileExplorerIcon} className= {styles.TaskBarIconComponent}></Image>
+                    <Image src={DocumentsIcon} className= {styles.TaskBarIconComponent}></Image>
                 </div>
                 <TaskBarDynamicContainer></TaskBarDynamicContainer>
             </Nav>
