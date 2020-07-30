@@ -4,11 +4,11 @@ import styles from '../stylesheets/style.module.css';
 
 function DesktopIconComponent( props ){
     return(
-        <Figure className={`${styles.DesktopIcon} rounded`}>
+        <Figure className={`${styles.DesktopIcon} rounded`} onClick={props.onClickEvent}>
             <Figure.Image
                 width={35}
                 alt={props.name}
-                src={props.iconName}
+                src={props.iconName}                
             />
             <Figure.Caption className={styles.DesktopIconName}>
                 {props.name}
