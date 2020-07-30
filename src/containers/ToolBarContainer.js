@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import classes from '../stylesheets/style.module.css';
-import ToolBarIcon from '../components/ToolBarIcon';
 import ClockComponent from '../components/ClockComponent';
-import NotificationIcon from '../components/NotificationIcon'
+import styles from '../stylesheets/style.module.css'; 
 import { faChevronUp, faWifi, faVolumeUp, faBatteryThreeQuarters } from "@fortawesome/free-solid-svg-icons";
+import ToolBarComponent from '../components/ToolBarComponent';
 
+function ToolBarContainer(){
 
-function ToolBarContainer() {
     const [toolBarIcons, setToolBarIcons] = useState({
         icons: [
             { name: 'Show More', iconName: faChevronUp, id: 1 },
@@ -16,17 +15,18 @@ function ToolBarContainer() {
         ]
     });
 
-    return (
-        <div className={classes.ToolBarContainer}>
-            <NotificationIcon></NotificationIcon>
-            <ClockComponent></ClockComponent>
-            {toolBarIcons.icons.reverse().map((icon) =>
-                <ToolBarIcon iconName={icon.iconName} key={icon.id}></ToolBarIcon>
+    return(
+        <React.Fragment>
+            {toolBarIcons.icons.map((icon) =>
+                <div className={styles.ToolBarIcon}>
+                    <ToolBarComponent iconName={icon.iconName} key={icon.id}></ToolBarComponent>
+                </div>
             )}
-
-        </div >
-    );
-
+            <div> 
+                <ClockComponent></ClockComponent>
+            </div>
+        </React.Fragment>
+        );
 }
 
 export default ToolBarContainer;

@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
-import classes from '../stylesheets/style.module.css';
-import TaskBarDynamicIcon from '../components/TaskBarDynamicIcon';
+import { Image } from 'react-bootstrap';
+import styles from '../stylesheets/style.module.css'; 
+import ChromeIcon from '../assets/images/chrome.svg';
 
-function TaskBarDynamicContainer() {
+function TaskBarDynamicContainer(){
 
-    const [dynamicApps, setDynamicApps] = useState({
-        apps: [
-            { name: 'Chrome', iconName: 'ChromeIcon', id: 1 }
-        ]
-    });
+    const [taskBarDynamicApps, settaskBarDynamicApps] = useState({ 
+        apps: [ 
+            { name: 'Chrome', iconName: ChromeIcon, id: 1 } 
+        ] 
+    }); 
 
-    return (
-        <div className={classes.TaskBarContainer}>
-            {dynamicApps.apps.map((app) =>
-                <TaskBarDynamicIcon iconName={app.iconName} key={app.id}></TaskBarDynamicIcon>
+    return(
+        <React.Fragment>
+            {taskBarDynamicApps.apps.map((app) => 
+                <div className={`${styles.TaskBarIcon}`}> 
+                    <Image src={app.iconName} className= {styles.TaskBarIconComponent}></Image>
+                </div> 
             )}
-        </div >
+        </React.Fragment>
     );
 }
 

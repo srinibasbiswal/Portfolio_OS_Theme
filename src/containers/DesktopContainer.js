@@ -1,15 +1,18 @@
 import React from 'react';
-import classes from '../stylesheets/style.module.css';
-import TaskBar from './TaskBar';
+import { Container } from 'react-bootstrap';
+import styles from '../stylesheets/style.module.css';
+import TaskbarContainer from './TaskbarContainer';
 import DesktopIconContainer from './DesktopIconContainer';
 
-function DesktopContainer() {
-    return (
-        <div className={classes.DesktopContainer}>
-            <DesktopIconContainer></DesktopIconContainer>
-            <TaskBar></TaskBar>
-        </div>
-    );
-}
+ function DesktopContainer(){
+     return (
+         <div>
+             <Container className ={styles.DesktopContainer}>
+                 <DesktopIconContainer></DesktopIconContainer>
+                 <TaskbarContainer></TaskbarContainer>
+             </Container>
+         </div>
+     );
+ }
 
-export default DesktopContainer;
+ export default DesktopContainer;
