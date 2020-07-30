@@ -3,7 +3,6 @@ import BatmanEmojiIcon from '../assets/images/BatmanEmojiIcon.png';
 import DocumentsIcon from '../assets/images/DocumentsIcon.png';
 import DesktopIconComponent from '../components/DesktopIconComponent';
 import AppModal from '../components/AppModal';
-import { Button } from 'react-bootstrap';
 
 function DesktopIconContainer(){
 
@@ -36,22 +35,19 @@ function DesktopIconContainer(){
 
     return(
         <div className={`d-flex align-items-start flex-column bd-highlight mt-1`}>
-            {console.log(desktopIcons + "1")}
-             {desktopIcons.icons.map((icon, key) =>{
+             {desktopIcons.icons.map((icon, index) =>{
                  return(
-                    <React.Fragment>
-                        <DesktopIconComponent
-                            onClickEvent={() => setModalShowValue(key,true)}
+                    <React.Fragment key={index}>
+                        <DesktopIconComponent                            
+                            onClickEvent={() => setModalShowValue(index,true)}
                             name={icon.name}
                             iconName={icon.iconName}
-                            {... console.log(icon.name)}
                         />
 
                         <AppModal
                             data={icon.name}
-                            {... console.log(icon.modalShow)}
                             show={icon.modalShow}
-                            onHide={() => setModalShowValue(key,false)}
+                            onHide={() => setModalShowValue(index,false)}
                         />
                     </React.Fragment>
                  )}

@@ -17,9 +17,9 @@ function ToolBarContainer(){
 
     return(
         <React.Fragment>
-            {toolBarIcons.icons.map((icon) =>
-                <div className={styles.ToolBarIcon}>
-                    <ToolBarComponent iconName={icon.iconName} key={icon.id}></ToolBarComponent>
+            {toolBarIcons.icons.map((icon, index) =>
+                <div className={styles.ToolBarIcon} key={index}>
+                    <ToolBarComponent iconName={icon.iconName}></ToolBarComponent>
                 </div>
             )}
             <div> 

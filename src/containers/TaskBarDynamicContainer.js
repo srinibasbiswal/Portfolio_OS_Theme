@@ -13,8 +13,8 @@ function TaskBarDynamicContainer(){
 
     return(
         <React.Fragment>
-            {taskBarDynamicApps.apps.map((app) => 
-                <div className={`${styles.TaskBarIcon}`}> 
+            {taskBarDynamicApps.apps.map((app, index) => 
+                <div className={`${styles.TaskBarIcon}`} key={index}> 
                     <Image src={app.iconName} className= {styles.TaskBarIconComponent}></Image>
                 </div> 
             )}
