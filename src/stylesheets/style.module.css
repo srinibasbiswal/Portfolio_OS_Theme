@@ -92,3 +92,44 @@
   border-top-left-radius : .25rem!important;
   border-top-right-radius: .25rem!important;
 }
+
+.AppExplorerSidePanel{
+  width: 25%;
+  color: #ffffff;
+  height: 100% !important;
+}
+
+.bgTransparent{
+  background-color: transparent !important;
+}
+
+.noPadding{
+  padding: 0 !important;
+}
+
+.roundedTopRight{
+    border-top-right-radius: .25rem!important;
+}
+
+.roundedTopLeft{
+  border-top-left-radius: .25rem!important;
+}
+
+.roundedBottomLeft{
+  border-bottom-left-radius: .25rem!important;
+}
+
+.AppExplorerTitle{
+  border-top-left-radius : .25rem!important;
+  border-top-right-radius: .25rem!important;
+  color: #000000 !important;
+  padding-right: 10px;
+}
+
+.OffWhite{
+    background-color: rgba(237, 241, 244) !important;
+}
+
+.SmallFont{
+  font-size: small !important;
+}

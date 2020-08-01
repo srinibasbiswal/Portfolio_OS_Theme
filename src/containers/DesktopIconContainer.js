@@ -13,7 +13,7 @@ function DesktopIconContainer() {
                 iconName: BatmanEmojiIcon,
                 id: 1,
                 modalId: 'thisPersonModal',
-                modalShow: false
+                modalShow: true
             },
             {
                 name: 'Documents',
@@ -28,12 +28,14 @@ function DesktopIconContainer() {
     const AppModalDetails = {
         'thisPersonModal': {
             topPanel: true,
-            sidePanel: true
+            sidePanel: true,
+            data: 'This Person Data'
         },
 
         'documentsModal': {
             topPanel: true,
-            sidePanel: true
+            sidePanel: true,
+            data: 'Documents Modal Data'
         }
     };
 
