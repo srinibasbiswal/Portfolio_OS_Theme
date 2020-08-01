@@ -20,7 +20,7 @@ function AppModal(props) {
 			className={`${styles.modalOverride} ${styles[props.modaldetails.zIndex]}`}
 			style={styleRules}
 		>
-			<div className={`${styles.AppExplorerStaticTop} ${styles.BackgroundBlur}`}>
+			<div className={`${styles.AppExplorerStaticTop} ${styles.BackgroundBlur} ${styles.roundedTop}`}>
 				<div class="d-flex bd-highlight">
 					<div className="mr-auto bd-highlight">
 						<Image
@@ -28,32 +28,32 @@ function AppModal(props) {
 							height={25}
 							alt="AppExplorerName"
 							src={DocumentIcon}
-							className={`m-0 p-0`}
+							className={`m-2 p-0`}
 						></Image>
-						<span className={`font-weight-normal m-3`}>
+						<span className={`font-weight-normal m-1`}>
 							App Explorer Title
 						</span>
 					</div>
 					<div>
-						<Image className={styles.hoverPointer}
-							width={25}
-							height={25}
+						<Image className={`${styles.hoverPointer} mt-1`}
+							width={30}
+							height={30}
 							alt="MinimizeIcon"
 							src={MinimizeIcon}
 						></Image>
 					</div>
 					<div>
-						<Image className={styles.hoverPointer}
-							width={25}
-							height={25}
+						<Image className={`${styles.hoverPointer} mt-1`}
+							width={30}
+							height={30}
 							alt="MaximizeIcon"
 							src={MaximizeIcon}
 						></Image>
 					</div>
 					<div>
-						<Image onClick={props.onHide} className={styles.hoverPointer}
-							width={25}
-							height={25}
+						<Image onClick={props.onHide} className={`${styles.hoverPointer} mt-1`}
+							width={30}
+							height={30}
 							alt="CloseIcon"
 							src={CloseIcon}
 						></Image>

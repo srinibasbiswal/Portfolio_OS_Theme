@@ -54,7 +54,7 @@
 }
 
 .BackgroundBlur{
-  background-color: rgba(0, 0, 0, .80);	
+  background-color: rgba(0, 0, 0, .50);	
 	backdrop-filter: blur(15px);
 }
 
@@ -84,12 +84,11 @@
     height: 70% !important;
 }
 
-.modal-backdrop{
-  height: 0 !important;
-  width: 0 !important;
-}
-
-
 .AppExplorerStaticTop{
   color: #ffffff;
+}
+
+.roundedTop{
+  border-top-left-radius : .25rem!important;
+  border-top-right-radius: .25rem!important;
 }
