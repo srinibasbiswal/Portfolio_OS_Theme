@@ -25,12 +25,6 @@ function DesktopIconContainer() {
         ]
     });
 
-    const setModalShowValue = (index, value) => {
-        var iconsMeta = desktopIcons.icons;
-        iconsMeta[index].modalShow = value;
-        setdesktopIcons({ icons: iconsMeta });
-    }
-
     const AppModalDetails = {
         'thisPersonModal': {
             topPanel: true,
@@ -41,8 +35,24 @@ function DesktopIconContainer() {
             topPanel: true,
             sidePanel: true
         }
-
     };
+
+    const [zIndexCounter, setzIndexCounter] = useState(1000);
+
+    const [ModalzIndexValues, setModalzIndexValues] = useState({
+        'thisPersonModal': 1000,
+        'documentsModal': 1000
+    });
+
+    const setModalShowValue = (index, modalId, value) => {
+        var iconsMeta = desktopIcons.icons;
+        iconsMeta[index].modalShow = value;
+        setdesktopIcons({ icons: iconsMeta });
+        setzIndexCounter(zIndexCounter + 1);
+        var ModalzIndexValuesMeta = ModalzIndexValues
+        ModalzIndexValuesMeta[modalId] = ModalzIndexValues[modalId] + 1;
+        setModalzIndexValues(ModalzIndexValuesMeta);
+    }
 
     return (
         <div className={`d-flex align-items-start flex-column bd-highlight mt-1`}>
@@ -50,7 +60,7 @@ function DesktopIconContainer() {
                 return (
                     <React.Fragment key={index}>
                         <DesktopIconComponent
-                            onClickEvent={() => setModalShowValue(index, true)}
+                            onClickEvent={() => setModalShowValue(index, icon.modalId, true)}
                             name={icon.name}
                             iconName={icon.iconName}
                         />
@@ -60,6 +70,7 @@ function DesktopIconContainer() {
                             show={icon.modalShow}
                             onHide={() => setModalShowValue(index, false)}
                             modaldetails={AppModalDetails[icon.modalId]}
+                            zIndexValue={ModalzIndexValues[icon.modalId]}
                         />
                     </React.Fragment>
                 )

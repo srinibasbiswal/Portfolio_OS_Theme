@@ -7,17 +7,22 @@ import MinimizeIcon from '../assets/images/MinimizeIcon.png';
 import DocumentIcon from '../assets/images/DocumentsIcon.png'
 
 function AppModal(props) {
+
+	const styleRules = { zIndex: props.zIndexValue };
 	return (
 		<Modal
 			{...props}
 			size="lg"
-			backdrop="static"
+			backdrop={false}
 			aria-labelledby="contained-modal-title-vcenter"
 			centered
+			keyboard={false}
+			className={`${styles.modalOverride} ${styles[props.modaldetails.zIndex]}`}
+			style={styleRules}
 		>
-			<div className={`${styles.AppExplorerStaticTop}`}>
+			<div className={`${styles.AppExplorerStaticTop} ${styles.BackgroundBlur}`}>
 				<div class="d-flex bd-highlight">
-  					<div className="mr-auto bd-highlight">
+					<div className="mr-auto bd-highlight">
 						<Image
 							width={25}
 							height={25}
@@ -29,8 +34,8 @@ function AppModal(props) {
 							App Explorer Title
 						</span>
 					</div>
-  					<div>
-					  	<Image className={styles.hoverPointer}
+					<div>
+						<Image className={styles.hoverPointer}
 							width={25}
 							height={25}
 							alt="MinimizeIcon"
@@ -52,7 +57,7 @@ function AppModal(props) {
 							alt="CloseIcon"
 							src={CloseIcon}
 						></Image>
-  					</div>
+					</div>
 				</div>
 			</div>
 			<Modal.Header>
@@ -67,7 +72,7 @@ function AppModal(props) {
 			<Modal.Footer>
 				<Button onClick={props.onHide}>Close</Button>
 			</Modal.Footer>
-		</Modal>
+		</Modal >
 	);
 }
 
