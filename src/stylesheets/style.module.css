@@ -133,3 +133,12 @@
 .SmallFont{
   font-size: small !important;
 }
+
+.AppExplorerTopPanelBtn{
+  margin: 2px;
+}
+
+.ExplorerTopPanelIcons {
+    font-size: 20px;
+    margin: 5px;
+}

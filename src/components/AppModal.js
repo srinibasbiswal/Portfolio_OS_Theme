@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../stylesheets/style.module.css';
-import { Modal, Button, Image } from 'react-bootstrap';
+import { Modal, Button, Image, Form } from 'react-bootstrap';
 import CloseIcon from '../assets/images/CloseIcon.png';
 import MaximizeIcon from '../assets/images/MaximizeIcon.png';
 import MinimizeIcon from '../assets/images/MinimizeIcon.png';
@@ -8,6 +8,8 @@ import DocumentIcon from '../assets/images/DocumentsIcon.png';
 import ImagesIcon from '../assets/images/ImagesIcon.svg';
 import ThisPersonIcon from '../assets/images/BatmanEmojiIcon.png';
 import DownloadFolderIcon from '../assets/images/DownloadFolderIcon.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 function AppModal(props) {
 
@@ -127,6 +129,28 @@ function AppModal(props) {
 					</div>
 
 					<div className={` ${styles.OffWhite} ${styles.SmallFont} flex-fill`}>
+						<div className={`${styles.AppExplorerTopPanel} mt-2`}>
+							<Form inline>
+								<div>
+									<FontAwesomeIcon icon={faAngleLeft} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
+									<FontAwesomeIcon icon={faAngleRight} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
+									<FontAwesomeIcon icon={faSyncAlt} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
+								</div>
+								<Form.Group className={`ml-2`}>
+									<Form.Control
+										type="text"
+										placeholder={'/' + props.data}
+										readOnly
+									/>
+								</Form.Group>
+								<div className={`ml-auto mr-5`}>
+									<Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm active`}>File</Button>
+									<Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>Home</Button>
+									<Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>Share</Button>
+									<Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>View</Button>
+								</div>
+							</Form>
+						</div>
 						<div>
 							{props.modaldetails.data}
 						</div>
