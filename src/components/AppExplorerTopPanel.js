@@ -5,33 +5,41 @@ import { Button, Form } from 'react-bootstrap';
 import styles from '../stylesheets/style.module.css';
 
 function AppExplorerTopPanel(props) {
-    return (
+    if (props.modaldetails.topPanel) {
 
-        <div className={`${styles.AppExplorerTopPanel} mt-2 border-bottom`}>
+        return (
 
-            <Form inline className={`mb-2`}>
-                <div>
-                    <FontAwesomeIcon icon={faAngleLeft} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faAngleRight} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faSyncAlt} className={`${styles.RefreshIcon}`}></FontAwesomeIcon>
-                </div>
-                <Form.Group className={`ml-2`}>
-                    <Form.Control
-                        type="text"
-                        placeholder={'/' + props.data}
-                        readOnly
-                    />
-                </Form.Group>
-                <div className={`ml-auto mr-5`}>
-                    <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm active`}>File</Button>
-                    <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>Home</Button>
-                    <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>Share</Button>
-                    <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>View</Button>
-                </div>
-            </Form>
-        </div>
+            <div className={`${styles.AppExplorerTopPanel} mt-2 border-bottom`}>
 
-    );
+                <Form inline className={`mb-2`}>
+                    <div>
+                        <FontAwesomeIcon icon={faAngleLeft} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faAngleRight} className={`${styles.ExplorerTopPanelIcons}`}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faSyncAlt} className={`${styles.RefreshIcon}`}></FontAwesomeIcon>
+                    </div>
+                    <Form.Group className={`ml-2`}>
+                        <Form.Control
+                            type="text"
+                            placeholder={'/' + props.data}
+                            readOnly
+                        />
+                    </Form.Group>
+                    <div className={`ml-auto mr-5`}>
+                        <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm active`}>File</Button>
+                        <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>Home</Button>
+                        <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>Share</Button>
+                        <Button variant="outline-secondary" className={`${styles.AppExplorerTopPanelBtn} btn-sm`}>View</Button>
+                    </div>
+                </Form>
+            </div>
+
+        );
+
+    } else {
+        return null;
+    }
+
+
 }
 
 export default AppExplorerTopPanel;
