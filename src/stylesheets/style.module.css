@@ -138,7 +138,11 @@
   margin: 2px;
 }
 
-.ExplorerTopPanelIcons {
-    font-size: 20px;
+.ExplorerTopPanelIcons {    
+    margin: 5px;
+}
+
+.RefreshIcon{
+    font-size: 12px;
     margin: 5px;
 }
