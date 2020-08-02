@@ -146,3 +146,7 @@
     font-size: 12px;
     margin: 5px;
 }
+
+.AppExplorerDataPanel{
+  min-height: 125px;
+}
