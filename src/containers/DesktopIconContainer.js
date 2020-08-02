@@ -70,6 +70,7 @@ function DesktopIconContainer() {
                         <AppModal
                             data={icon.name}
                             show={icon.modalShow}
+                            iconName={icon.iconName}
                             onHide={() => setModalShowValue(index, false)}
                             modaldetails={AppModalDetails[icon.modalId]}
                             zIndexValue={ModalzIndexValues[icon.modalId]}

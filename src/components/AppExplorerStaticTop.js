@@ -17,12 +17,12 @@ function AppExplorerStaticTop(props) {
                         width={25}
                         height={25}
                         alt="AppExplorerName"
-                        src={DocumentIcon}
+                        src={props.iconName}
                         className={`m-2 p-0`}
                     ></Image>
                     <span className={`font-weight-normal m-1`}>
-                        App Explorer Title
-						</span>
+                        {props.data}
+                    </span>
                 </div>
                 <div>
                     <Image className={`${styles.hoverPointer} mt-1`}
