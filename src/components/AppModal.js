@@ -4,6 +4,7 @@ import { Modal } from 'react-bootstrap';
 import AppExplorerTopPanel from './AppExplorerTopPanel';
 import AppExplorerSidePanel from './AppExplorerSidePanel';
 import AppExplorerStaticTop from './AppExplorerStaticTop';
+import AppExplorerDataPanel from './AppExplorerDataPanel';
 
 
 function AppModal(props) {
@@ -32,9 +33,7 @@ function AppModal(props) {
 
 						<AppExplorerTopPanel {...props} ></AppExplorerTopPanel>
 
-						<div>
-							{props.modaldetails.data}
-						</div>
+						<AppExplorerDataPanel {...props}></AppExplorerDataPanel>
 
 					</div>
 
