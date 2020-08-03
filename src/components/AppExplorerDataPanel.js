@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../stylesheets/style.module.css';
+import DesktopIconComponent from './DesktopIconComponent';
 
 function AppExplorerDataPanel(props) {
-    return (
+    
+    return (        
         <div className={`${styles.AppExplorerDataPanel}`}>
-            {props.modaldetails.data}
+            {
+                  props.modaldetails.data.map((dataComponent, index) => {
+                     return(
+                         <DesktopIconComponent
+                            name={dataComponent.name}
+                            iconName={dataComponent.iconName}
+                         ></DesktopIconComponent>
+                     )
+                 })
+
+            }
         </div>
 
     );

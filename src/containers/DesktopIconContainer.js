@@ -3,6 +3,7 @@ import BatmanEmojiIcon from '../assets/images/BatmanEmojiIcon.png';
 import DocumentsIcon from '../assets/images/DocumentsIcon.png';
 import DesktopIconComponent from '../components/DesktopIconComponent';
 import AppModal from '../components/AppModal';
+import {dataConfig, showCaseComponentConfig} from '../components/dataComponents/dataConfig';
 
 function DesktopIconContainer() {
 
@@ -29,13 +30,13 @@ function DesktopIconContainer() {
         'thisPersonModal': {
             topPanel: true,
             sidePanel: true,
-            data: 'This Person Data'
+            data: getModalSubComponentData('thisPersonDataConfig')
         },
 
         'documentsModal': {
             topPanel: true,
             sidePanel: true,
-            data: 'Documents Modal Data'
+            data: getModalSubComponentData('documentsDataConfig')
         }
     };
 
@@ -54,6 +55,17 @@ function DesktopIconContainer() {
         var ModalzIndexValuesMeta = ModalzIndexValues
         ModalzIndexValuesMeta[modalId] = ModalzIndexValues[modalId] + 1;
         setModalzIndexValues(ModalzIndexValuesMeta);
+    }
+
+    function getModalSubComponentData(configId){
+        var values = {};
+        var dataValues = [];
+        Array.prototype.forEach.call(dataConfig[configId]['showCaseComponents'],element => {
+            dataValues.push(showCaseComponentConfig[element]);            
+        });
+        return(
+            dataValues
+        );
     }
 
     return (
