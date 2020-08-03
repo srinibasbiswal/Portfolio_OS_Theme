@@ -63,13 +63,10 @@
   padding: 5px;  
 }
 
-.DesktopIconName{
-  color: #ffffff !important;
-}
-
 .DesktopIcon:hover{
   background-color: rgba(255, 255, 255, 0.1) !important; 
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  cursor: pointer;
 }
 
 .hoverPointer:hover{ 
@@ -149,4 +146,16 @@
 
 .AppExplorerDataPanel{
   min-height: 125px;
+}
+
+.AppExplorerDataPanel > figure{
+  margin: 10px !important;
+}
+
+.fontColorWhite{
+  color: #ffffff !important;
+}
+
+.fontColorBlack{
+  color: #000000 !important;
 }

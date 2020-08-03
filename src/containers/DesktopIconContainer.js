@@ -77,6 +77,7 @@ function DesktopIconContainer() {
                             onClickEvent={() => setModalShowValue(index, icon.modalId, true)}
                             name={icon.name}
                             iconName={icon.iconName}
+                            captioncolor='fontColorWhite'
                         />
 
                         <AppModal

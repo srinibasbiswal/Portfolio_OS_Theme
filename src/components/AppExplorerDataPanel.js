@@ -9,10 +9,12 @@ function AppExplorerDataPanel(props) {
             {
                   props.modaldetails.data.map((dataComponent, index) => {
                      return(
-                         <DesktopIconComponent
+                        <DesktopIconComponent
+                            className={`${styles.AppExplorerDataPanel}`}
+                            captioncolor = 'fontColorBlack'                                
                             name={dataComponent.name}
                             iconName={dataComponent.iconName}
-                         ></DesktopIconComponent>
+                        ></DesktopIconComponent>
                      )
                  })
 

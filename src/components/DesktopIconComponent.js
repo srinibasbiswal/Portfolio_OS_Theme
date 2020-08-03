@@ -10,7 +10,7 @@ function DesktopIconComponent( props ){
                 alt={props.name}
                 src={props.iconName}                
             />
-            <Figure.Caption className={styles.DesktopIconName}>
+            <Figure.Caption className={styles[props.captioncolor]}>
                 {props.name}
             </Figure.Caption>
         </Figure>
