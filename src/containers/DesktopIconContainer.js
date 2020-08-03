@@ -68,12 +68,12 @@ function DesktopIconContainer() {
                         />
 
                         <AppModal
-                            data={icon.name}
-                            show={icon.modalShow}
-                            iconName={icon.iconName}
+                            name={icon.name}
+                            iconname={icon.iconName}
+                            show={icon.modalShow}                            
                             onHide={() => setModalShowValue(index, false)}
                             modaldetails={AppModalDetails[icon.modalId]}
-                            zIndexValue={ModalzIndexValues[icon.modalId]}
+                            zindexvalue={ModalzIndexValues[icon.modalId]}
                         />
                     </React.Fragment>
                 )

@@ -11,17 +11,17 @@ function AppExplorerStaticTop(props) {
     return (
 
         <div className={`${styles.AppExplorerStaticTop} ${styles.BackgroundBlur} ${styles.roundedTopRight}`}>
-            <div class="d-flex bd-highlight">
+            <div className="d-flex bd-highlight">
                 <div className={`mr-auto bd-highlight ${styles.AppExplorerTitle} ${styles.OffWhite} ${styles.SmallFont}`}>
                     <Image
                         width={25}
                         height={25}
                         alt="AppExplorerName"
-                        src={props.iconName}
+                        src={props.iconname}
                         className={`m-2 p-0`}
                     ></Image>
                     <span className={`font-weight-normal m-1`}>
-                        {props.data}
+                        {props.name}
                     </span>
                 </div>
                 <div>

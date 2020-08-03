@@ -20,7 +20,7 @@ function AppExplorerTopPanel(props) {
                     <Form.Group className={`ml-2`}>
                         <Form.Control
                             type="text"
-                            placeholder={'/' + props.data}
+                            placeholder={'/' + props.name}
                             readOnly
                         />
                     </Form.Group>

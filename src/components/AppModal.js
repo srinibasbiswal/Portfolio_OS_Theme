@@ -9,7 +9,7 @@ import AppExplorerDataPanel from './AppExplorerDataPanel';
 
 function AppModal(props) {
 
-	const styleRules = { zIndex: props.zIndexValue };
+	const styleRules = { zIndex: props.zindexvalue };
 	return (
 		<Modal
 			{...props}
