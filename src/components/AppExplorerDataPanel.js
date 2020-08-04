@@ -15,14 +15,9 @@ function AppExplorerDataPanel(props) {
         setComponentModalDetails( {componentDataList:componentDataListMeta});
     }
 
-    const handleClose = ( index) => {
+    const handleModalVisibility = (isVisible ,index) => {
         var component = componentModalDetails.componentDataList[index];
-        component.modalShow = false;
-        changeComponentModalDetails(component, index);
-    }
-    const handleShow = (index) => {
-        var component = componentModalDetails.componentDataList[index];
-        component.modalShow = true;
+        component.modalShow = isVisible;
         changeComponentModalDetails(component, index);
     }
 
@@ -39,14 +34,14 @@ function AppExplorerDataPanel(props) {
                                     captioncolor = 'fontColorBlack'                                
                                     name={dataComponent.name}
                                     iconName={dataComponent.iconName}
-                                    onClickEvent={() => handleShow(index)}
+                                    onClickEvent={() => handleModalVisibility(true, index)}
                                 />
 
                                 <AppModal
                                     name={dataComponent.name}
                                     iconname={dataComponent.iconName}
                                     show={dataComponent.modalShow}                            
-                                    onHide={() => handleClose(index)}
+                                    onHide={() => handleModalVisibility(false, index)}
                                     modaldetails={dataComponent}
                                 />
                             </React.Fragment>
