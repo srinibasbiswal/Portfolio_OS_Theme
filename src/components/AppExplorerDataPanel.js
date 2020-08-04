@@ -22,12 +22,10 @@ function AppExplorerDataPanel(props) {
     }
 
     if (props.modaldetails.modalType === 'explorer'){   
-        {console.log('dataComponent')}
         return (        
             <div className={`${styles.AppExplorerDataPanel}`}>
                 {
                     componentModalDetails.componentDataList.map((dataComponent, index) => {
-                        {console.log(dataComponent)}
                         return(
                             <React.Fragment>
                                 <DesktopIconComponent
