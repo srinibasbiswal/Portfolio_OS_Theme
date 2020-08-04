@@ -27,12 +27,12 @@ function AppExplorerDataPanel(props) {
                 {
                     componentModalDetails.componentDataList.map((dataComponent, index) => {
                         return(
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <DesktopIconComponent
                                     captioncolor = 'fontColorBlack'                                
                                     name={dataComponent.name}
                                     iconName={dataComponent.iconName}
-                                    onClickEvent={() => handleModalVisibility(true, index)}
+                                    onClickEvent={() => handleModalVisibility(true, index)}                                    
                                 />
 
                                 <AppModal
