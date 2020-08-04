@@ -3,6 +3,7 @@ import BatmanEmojiIcon from '../assets/images/BatmanEmojiIcon.png';
 import DocumentsIcon from '../assets/images/DocumentsIcon.png';
 import DesktopIconComponent from '../components/DesktopIconComponent';
 import AppModal from '../components/AppModal';
+import styles from '../stylesheets/style.module.css';
 import {dataConfig, showCaseComponentConfig} from '../components/dataComponents/dataConfig';
 
 function DesktopIconContainer() {
@@ -42,6 +43,7 @@ function DesktopIconContainer() {
 
     const [zIndexCounter, setzIndexCounter] = useState(1000);
 
+    // TODO : Make the initialization dynamic
     const [ModalzIndexValues, setModalzIndexValues] = useState({
         'thisPersonModal': 1000,
         'documentsModal': 1000
@@ -74,10 +76,12 @@ function DesktopIconContainer() {
                 return (
                     <React.Fragment key={index}>
                         <DesktopIconComponent
+                            className ={styles.DesktopIconComponent}
                             onClickEvent={() => setModalShowValue(index, icon.modalId, true)}
                             name={icon.name}
                             iconName={icon.iconName}
                             captioncolor='fontColorWhite'
+                            iconwidth={35}
                         />
 
                         <AppModal

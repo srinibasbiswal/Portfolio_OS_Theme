@@ -6,7 +6,7 @@ function DesktopIconComponent( props ){
     return(
         <Figure className={`${styles.DesktopIcon} rounded`} onClick={props.onClickEvent}>
             <Figure.Image
-                width={35}
+                width={props.iconwidth}
                 alt={props.name}
                 src={props.iconName}                
             />

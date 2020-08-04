@@ -159,3 +159,7 @@
 .fontColorBlack{
   color: #000000 !important;
 }
+
+.AppExplorerDataPanel > .DesktopIcon{
+  max-width: 80px !important;
+}

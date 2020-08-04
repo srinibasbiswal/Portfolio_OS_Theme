@@ -1,4 +1,9 @@
-import BatmanEmojiIcon from '../../assets/images/BatmanEmojiIcon.png';
+import AboutMeIcon from '../../assets/images/AboutMeIcon.png';
+import ExperienceIcon from '../../assets/images/ExperienceIcon.png';
+import EducationIcon from '../../assets/images/EducationIcon.png';
+import ContactMeIcon from '../../assets/images/ContactMeIcon.png';
+import ProjectsIcon from '../../assets/images/ProjectsIcon.png';
+import SkillsIcon from '../../assets/images/SkillsIcon.png';
 
 export const dataConfig = {
 
@@ -15,7 +20,7 @@ export const dataConfig = {
 export const showCaseComponentConfig = {
     'aboutMe' : {
         name: 'About Me',
-        iconName: BatmanEmojiIcon,
+        iconName: AboutMeIcon,
         id: 1,
         modalId: 'aboutMeModal',
         dataConfigId : 'aboutMe',
@@ -24,7 +29,7 @@ export const showCaseComponentConfig = {
 
     'experience' : {
         name: 'Experience',
-        iconName: BatmanEmojiIcon,
+        iconName: ExperienceIcon,
         id: 1,
         modalId: 'experienceModal',
         dataConfigId : 'experience',
@@ -33,7 +38,7 @@ export const showCaseComponentConfig = {
 
     'education' : {
         name: 'Education',
-        iconName: BatmanEmojiIcon,
+        iconName: EducationIcon,
         id: 1,
         modalId: 'EducationModal',
         dataConfigId : 'education',
@@ -42,7 +47,7 @@ export const showCaseComponentConfig = {
 
     'contact': {
         name: 'Contact Me',
-        iconName: BatmanEmojiIcon,
+        iconName: ContactMeIcon,
         id: 1,
         modalId: 'ContactMeModal',
         dataConfigId : 'contact',
@@ -51,7 +56,7 @@ export const showCaseComponentConfig = {
 
     'projects' : {
         name: 'Projects',
-        iconName: BatmanEmojiIcon,
+        iconName: ProjectsIcon,
         id: 1,
         modalId: 'ProjectsModal',
         dataConfigId : 'projects',
@@ -60,7 +65,7 @@ export const showCaseComponentConfig = {
 
     'skills' : {
         name: 'Skills',
-        iconName: BatmanEmojiIcon,
+        iconName: SkillsIcon,
         id: 1,
         modalId: 'SkillsModal',
         dataConfigId : 'skills',
