@@ -31,12 +31,14 @@ function DesktopIconContainer() {
         'thisPersonModal': {
             topPanel: true,
             sidePanel: true,
+            modalType: 'explorer',
             data: getModalSubComponentData('thisPersonDataConfig')
         },
 
         'documentsModal': {
             topPanel: true,
             sidePanel: true,
+            modalType: 'explorer',
             data: getModalSubComponentData('documentsDataConfig')
         }
     };

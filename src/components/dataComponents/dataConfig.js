@@ -24,7 +24,8 @@ export const showCaseComponentConfig = {
         id: 1,
         modalId: 'aboutMeModal',
         dataConfigId : 'aboutMe',
-        modalShow: false 
+        modalShow: false ,
+        modalType :'componentData'
     }, 
 
     'experience' : {
@@ -33,7 +34,8 @@ export const showCaseComponentConfig = {
         id: 1,
         modalId: 'experienceModal',
         dataConfigId : 'experience',
-        modalShow: false 
+        modalShow: false ,
+        modalType :'componentData'
     }, 
 
     'education' : {
@@ -42,7 +44,8 @@ export const showCaseComponentConfig = {
         id: 1,
         modalId: 'EducationModal',
         dataConfigId : 'education',
-        modalShow: false 
+        modalShow: false ,
+        modalType :'componentData'
     },
 
     'contact': {
@@ -51,7 +54,8 @@ export const showCaseComponentConfig = {
         id: 1,
         modalId: 'ContactMeModal',
         dataConfigId : 'contact',
-        modalShow: false 
+        modalShow: false ,
+        modalType :'componentData'
     },
 
     'projects' : {
@@ -60,7 +64,8 @@ export const showCaseComponentConfig = {
         id: 1,
         modalId: 'ProjectsModal',
         dataConfigId : 'projects',
-        modalShow: false 
+        modalShow: false ,
+        modalType :'componentData'
     },
 
     'skills' : {
@@ -69,6 +74,7 @@ export const showCaseComponentConfig = {
         id: 1,
         modalId: 'SkillsModal',
         dataConfigId : 'skills',
-        modalShow: false 
+        modalShow: false ,
+        modalType :'componentData'
     }
 }
