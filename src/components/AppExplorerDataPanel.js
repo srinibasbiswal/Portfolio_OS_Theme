@@ -50,7 +50,9 @@ function AppExplorerDataPanel(props) {
         );
     }else if (props.modaldetails.modalType === 'componentData'){
         return(
-            <h1>componentData</h1>
+            <React.Fragment>
+            <props.modaldetails.componentData></props.modaldetails.componentData>
+            </React.Fragment>
         )
     }else{
         return(

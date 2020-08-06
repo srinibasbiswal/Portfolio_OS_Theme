@@ -4,6 +4,7 @@ import EducationIcon from '../../assets/images/EducationIcon.png';
 import ContactMeIcon from '../../assets/images/ContactMeIcon.png';
 import ProjectsIcon from '../../assets/images/ProjectsIcon.png';
 import SkillsIcon from '../../assets/images/SkillsIcon.png';
+import AboutComponent from './AboutComponent';
 
 export const dataConfig = {
 
@@ -25,7 +26,8 @@ export const showCaseComponentConfig = {
         modalId: 'aboutMeModal',
         dataConfigId : 'aboutMe',
         modalShow: false ,
-        modalType :'componentData'
+        modalType :'componentData',
+        componentData : AboutComponent
     }, 
 
     'experience' : {
@@ -35,7 +37,8 @@ export const showCaseComponentConfig = {
         modalId: 'experienceModal',
         dataConfigId : 'experience',
         modalShow: false ,
-        modalType :'componentData'
+        modalType :'componentData',
+        componentData : AboutComponent
     }, 
 
     'education' : {
@@ -45,7 +48,8 @@ export const showCaseComponentConfig = {
         modalId: 'EducationModal',
         dataConfigId : 'education',
         modalShow: false ,
-        modalType :'componentData'
+        modalType :'componentData',
+        componentData : AboutComponent
     },
 
     'contact': {
@@ -55,7 +59,8 @@ export const showCaseComponentConfig = {
         modalId: 'ContactMeModal',
         dataConfigId : 'contact',
         modalShow: false ,
-        modalType :'componentData'
+        modalType :'componentData',
+        componentData : AboutComponent
     },
 
     'projects' : {
@@ -65,7 +70,8 @@ export const showCaseComponentConfig = {
         modalId: 'ProjectsModal',
         dataConfigId : 'projects',
         modalShow: false ,
-        modalType :'componentData'
+        modalType :'componentData',
+        componentData : AboutComponent
     },
 
     'skills' : {
@@ -75,6 +81,7 @@ export const showCaseComponentConfig = {
         modalId: 'SkillsModal',
         dataConfigId : 'skills',
         modalShow: false ,
-        modalType :'componentData'
+        modalType :'componentData',
+        componentData : AboutComponent
     }
 }
