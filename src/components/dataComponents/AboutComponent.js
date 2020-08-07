@@ -5,7 +5,7 @@ import justAPic from '../../assets/images/justAPic.svg';
 function AboutComponent(){
 
     return(
-        <Card className={`shadow-lg bg-white rounded m-3`}>
+        <Card className={`shadow-lg bg-white rounded m-5 h-75`}>
             <Card.Body className={`row`}>
                 <div className={`col-md-6 d-flex`}>
                     <blockquote className={`blockquote text-center my-auto`}>
@@ -13,10 +13,11 @@ function AboutComponent(){
                     Someone famous in Source Title 
                     </blockquote>
                 </div>
-                <div className={`col-md-6 text-center`}>
+                <div className={`col-md-6 text-center d-flex`}>
                     <Image 
                         src={justAPic}
                         height={200}
+                        className={`my-auto`}
                     />
                 </div>
                 <div></div>
