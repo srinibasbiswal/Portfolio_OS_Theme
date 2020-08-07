@@ -5,6 +5,7 @@ import ContactMeIcon from '../../assets/images/ContactMeIcon.png';
 import ProjectsIcon from '../../assets/images/ProjectsIcon.png';
 import SkillsIcon from '../../assets/images/SkillsIcon.png';
 import AboutComponent from './AboutComponent';
+import ExperienceComponent from './ExperienceComponent';
 
 export const dataConfig = {
 
@@ -38,7 +39,7 @@ export const showCaseComponentConfig = {
         dataConfigId : 'experience',
         modalShow: false ,
         modalType :'componentData',
-        componentData : AboutComponent
+        componentData : ExperienceComponent
     }, 
 
     'education' : {
