@@ -15,7 +15,7 @@ function DesktopIconContainer() {
                 iconName: BatmanEmojiIcon,
                 id: 1,
                 modalId: 'thisPersonModal',
-                modalShow: true
+                modalShow: false
             },
             {
                 name: 'Documents',

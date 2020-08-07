@@ -22,7 +22,7 @@ function ExperienceComponent(){
                             <div className={`${styles.timeline_arrow}`}></div>
                             <h2 className={`h5 mb-0`}>Associate Software Developer</h2>
                             <span className={`font-weight-normal text-gray`}>
-                                KloudGin - Hyderabad<br/>
+                                KloudGin<br/>
                             </span>
                             <span className={`small text-gray`}>
                                 <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
@@ -39,10 +39,10 @@ function ExperienceComponent(){
                             <div className={`${styles.timeline_arrow}`}></div>
                             <h2 className={`h5 mb-0`}>Web Developer</h2>
                             <span className={`medium text-gray`}>
-                                Talspo
+                                Talspo <br/>
                             </span>
                             <span className={`small text-gray`}>
-                                <i className={`fa fa-clock-o mr-1`}></i>
+                                <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
                                 5 April, 2019
                             </span>
                             <p className={`text-small mt-2 font-weight-light`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper.</p>
@@ -56,7 +56,7 @@ function ExperienceComponent(){
                             <div className={`${styles.timeline_arrow}`}></div>
                             <h2 className={`h5 mb-0`}>Freelance Developer</h2>
                             <span className={`small text-gray`}>
-                                <i className={`fa fa-clock-o mr-1`}></i>
+                                <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
                                 2017 - 2019 
                             </span>
                             <p className={`text-small mt-2 font-weight-light`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper.</p>
