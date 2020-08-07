@@ -74,11 +74,9 @@
 } 
 
 .modalOverride {
-    top: 10% !important;
     right: 20% !important;
     left: 20% !important;
-    width: 70% !important;
-    height: 70% !important;
+    width: 80% !important;
 }
 
 .AppExplorerStaticTop{
@@ -162,4 +160,13 @@
 
 .AppExplorerDataPanel > .DesktopIcon{
   max-width: 80px !important;
+}
+
+.modalBodyOverRide{
+  height: 500px !important;
+}
+
+.ModalDataPanel{
+height: 100% !important;
+overflow: auto;
 }

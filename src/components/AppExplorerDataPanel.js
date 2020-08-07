@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../stylesheets/style.module.css';
 import DesktopIconComponent from './DesktopIconComponent';
 import AppModal from './AppModal';
+import classes from '../stylesheets/style.module.css';
 
 function AppExplorerDataPanel(props) {
 

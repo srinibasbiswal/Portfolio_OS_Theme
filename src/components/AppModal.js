@@ -20,7 +20,7 @@ function AppModal(props) {
 			className={`${styles.modalOverride}`}
 			style={styleRules}
 		>
-			<Modal.Body className={`${styles.noPadding} d-flex`}>
+			<Modal.Body className={`${styles.noPadding} ${styles.modalBodyOverRide} d-flex`}>
 
 				<AppExplorerSidePanel {...props}></AppExplorerSidePanel>
 
@@ -28,7 +28,7 @@ function AppModal(props) {
 
 					<AppExplorerStaticTop {...props}></AppExplorerStaticTop>
 
-					<div className={` ${styles.OffWhite} ${styles.SmallFont} flex-fill`}>
+					<div className={` ${styles.OffWhite} ${styles.SmallFont}  ${styles.ModalDataPanel} flex-fill `}>
 
 						<AppExplorerTopPanel {...props} ></AppExplorerTopPanel>
 
