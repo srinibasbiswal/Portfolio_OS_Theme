@@ -174,3 +174,16 @@ overflow: auto;
 .shadowOnHoverLarge:hover{
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
 }
+
+.SkillCard{
+  min-height: 200px !important;
+}
+
+.SkillBadge{
+  border-radius: 21px !important;
+  height: 42px !important;
+}
+
+.SkillBadgePlus{
+  border-radius: 50% !important;
+}

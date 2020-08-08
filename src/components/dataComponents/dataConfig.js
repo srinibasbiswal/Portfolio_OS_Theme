@@ -8,6 +8,7 @@ import AboutComponent from './AboutComponent';
 import ExperienceComponent from './ExperienceComponent';
 import EducationComponent from './EducationComponent';
 import ProjectComponent from './ProjectComponent';
+import SkillsComponent from './SkillsComponent';
 
 export const dataConfig = {
 
@@ -85,6 +86,6 @@ export const showCaseComponentConfig = {
         dataConfigId : 'skills',
         modalShow: false ,
         modalType :'componentData',
-        componentData : AboutComponent
+        componentData : SkillsComponent
     }
 }
