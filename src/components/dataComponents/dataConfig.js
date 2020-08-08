@@ -7,6 +7,7 @@ import SkillsIcon from '../../assets/images/SkillsIcon.png';
 import AboutComponent from './AboutComponent';
 import ExperienceComponent from './ExperienceComponent';
 import EducationComponent from './EducationComponent';
+import ProjectComponent from './ProjectComponent';
 
 export const dataConfig = {
 
@@ -73,7 +74,7 @@ export const showCaseComponentConfig = {
         dataConfigId : 'projects',
         modalShow: false ,
         modalType :'componentData',
-        componentData : AboutComponent
+        componentData : ProjectComponent
     },
 
     'skills' : {
