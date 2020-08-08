@@ -184,6 +184,10 @@ overflow: auto;
   height: 42px !important;
 }
 
-.SkillBadgePlus{
-  border-radius: 50% !important;
+.ContactIndividual{
+  font-size: 1.2em;
+}
+
+.ContactIndividual a{
+  text-decoration: none;
 }

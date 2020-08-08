@@ -9,6 +9,7 @@ import ExperienceComponent from './ExperienceComponent';
 import EducationComponent from './EducationComponent';
 import ProjectComponent from './ProjectComponent';
 import SkillsComponent from './SkillsComponent';
+import ContactComponent from './ContactComponent';
 
 export const dataConfig = {
 
@@ -64,7 +65,7 @@ export const showCaseComponentConfig = {
         dataConfigId : 'contact',
         modalShow: false ,
         modalType :'componentData',
-        componentData : AboutComponent
+        componentData : ContactComponent
     },
 
     'projects' : {
