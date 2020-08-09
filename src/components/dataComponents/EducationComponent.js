@@ -18,7 +18,7 @@ function EducationComponent(){
                     		<h5>ITER, Siksha 'O' Anusandhan (Deemed to be University)</h5>
                     		<div>
 								<FontAwesomeIcon icon={faGraduationCap} className={`mr-1`}></FontAwesomeIcon>
-								<span>Bachelor of Technology - 2019</span>
+								<span>Bachelor's Degree in Computer Science and Engineering - 2019</span>
 							</div>
                   		</div>
                 	</div>
