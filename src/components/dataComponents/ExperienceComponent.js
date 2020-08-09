@@ -28,7 +28,9 @@ function ExperienceComponent(){
                                 <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
                                 17 June, 2019 - Present
                             </span>
-                            <p className={`text-small mt-2 font-weight-light`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                            <p className={`text-small mt-2 font-weight-light`}>
+                                I am a part of the Product Development team at KloudGin, where I have developed multiple API and implementaion modules of EAM and FSM.
+                            </p>
                         </li>
                         <li className={`${styles.timeline_item} bg-white rounded ml-3 p-4 shadow`}>
                             <Image
@@ -45,7 +47,9 @@ function ExperienceComponent(){
                                 <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
                                 5 April, 2019
                             </span>
-                            <p className={`text-small mt-2 font-weight-light`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper.</p>
+                            <p className={`text-small mt-2 font-weight-light`}>
+                                I was a key member of the Frontend Development team where we developed the product from the initial phase.
+                            </p>
                         </li>
                         <li className={`${styles.timeline_item} bg-white rounded ml-3 p-4 shadow`}>
                             <Image
@@ -59,7 +63,9 @@ function ExperienceComponent(){
                                 <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
                                 2017 - 2019 
                             </span>
-                            <p className={`text-small mt-2 font-weight-light`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper.</p>
+                            <p className={`text-small mt-2 font-weight-light`}>
+                                I was a freelance developer during my Bachelor's degree where I worked with different established companies like Prelude, Ediolon and Youngster's Worldwide.
+                            </p>
                         </li>
                     </ul>
                 </div>
