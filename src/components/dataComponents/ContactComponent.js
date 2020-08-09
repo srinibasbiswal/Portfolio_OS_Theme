@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
@@ -6,6 +6,36 @@ import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
 import styles from '../../stylesheets/style.module.css';
 
 function ContactComponent(){
+
+    const [emailResponse, setEmailResponse] = useState({
+        name : '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (event) => {
+        const target = event.target;
+        setEmailResponse({[target.name] : target.value});
+    }
+
+    const handleSubmit = () => {
+        console.log('inside handle submit');
+        const templateId = 'from_website';
+        sendFeedback(templateId, {message_html: emailResponse.message, from_name: emailResponse.name, reply_to: emailResponse.email})
+    }
+    
+
+    const sendFeedback =  (templateId, variables) => {
+        console.log('inside sendFeedback');
+        window.emailjs.send(
+          'default_service', templateId,
+          variables
+          ).then(res => {
+            console.log('Email successfully sent!')
+          })
+          // Handle errors here however you like, or use a React error boundary
+          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+      }
     return(
         <Card className={`shadow-lg bg-white rounded m-3`}>
             <Card.Body>
@@ -52,21 +82,21 @@ function ContactComponent(){
                 <div className={`row d-flex`}>
                     <Card className={`col-10 mx-auto mt-5`}>
                         <Card.Body>
-                            <Form>
+                            <Form >
                                 <Form.Group controlId="exampleForm.ControlInput1">
                                     <Form.Label>Your Name</Form.Label>
-                                    <Form.Control type="text" placeholder="John Doe" />
+                                    <Form.Control type="text" name='name' placeholder="John Doe" value={emailResponse.name} onChange={handleChange}/>
                                 </Form.Group>
                                 <Form.Group controlId="exampleForm.ControlInput1">
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" placeholder="name@example.com" />
+                                    <Form.Control type="email" name='email' placeholder="name@example.com" value={emailResponse.email} onChange={handleChange}/>
                                 </Form.Group>
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Your Message</Form.Label>
-                                    <Form.Control as="textarea" rows="3" />
+                                    <Form.Control as="textarea" name='message' rows="3" value={emailResponse.message} onChange={handleChange}/>
                                 </Form.Group>
                                 <Form.Group controlId="exampleForm.ControlButton">
-                                    <Button type="submit" class="btn btn-primary">Submit</Button>
+                                    <Button class="btn btn-primary" onClick={handleSubmit}>Submit</Button>
                                 </Form.Group>
 
                             </Form>
