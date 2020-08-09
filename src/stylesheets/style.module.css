@@ -191,3 +191,11 @@ overflow: auto;
 .ContactIndividual a{
   text-decoration: none;
 }
+
+.UnsetLineHeight{
+  line-height: unset !important;
+}
+
+.ProjectCard{
+  min-height: 250px !important;
+}

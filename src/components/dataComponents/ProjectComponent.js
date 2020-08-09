@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Badge } from 'react-bootstrap';
 import styles from '../../stylesheets/style.module.css';
 
 function ProjectComponent(){
@@ -8,24 +8,45 @@ function ProjectComponent(){
             <div className={`text-center`}></div>
             <div className={`row`}>
                 <div className={`col`}>
-                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge}`}>
+                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge} ${styles.ProjectCard}`}>
                         <Card.Body className={`text-center`}>
-                            <Card.Title >Card Title</Card.Title>
+                            <Card.Title >NoteStack</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                                A notes management platform/application where students can share their course notes easily with each other.<br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Android
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Java
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Firebase
+                                </Badge>
+                                <br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Firestore
+                                </Badge>
                             </Card.Text>
                             <Button variant="primary">View Project</Button>
                         </Card.Body>
                     </Card>
                 </div>
                 <div className={`col`}>
-                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge}`}>
+                <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge} ${styles.ProjectCard}`}>
                         <Card.Body className={`text-center`}>
-                            <Card.Title >Card Title</Card.Title>
+                            <Card.Title >Bus Management</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                                A bus management system for ITER, BBSR which helps to know different bus routes and makes easy to decode which route to take.
+                                <br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Python
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Tkinter
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Firebase
+                                </Badge>
                             </Card.Text>
                             <Button variant="primary">View Project</Button>
                         </Card.Body>
@@ -34,24 +55,59 @@ function ProjectComponent(){
             </div>
             <div className={`row`}>
                 <div className={`col h-100`}>
-                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge}`}>
+                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge} ${styles.ProjectCard}`}>
                         <Card.Body className={`text-center`}>
-                            <Card.Title >Card Title</Card.Title>
+                            <Card.Title >Flight Ticket Saver</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                                A flight booking system which was dealing with the bumping of seats with the help of Etherium Smart Contract. This was a project for IATA Hackathon.
+                                <br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Python
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    DJANGO
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    HTML
+                                </Badge>
+                                <br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    CSS
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Javascript
+                                </Badge>
                             </Card.Text>
                             <Button variant="primary">View Project</Button>
                         </Card.Body>
                     </Card>
                 </div>
                 <div className={`col h-100`}>
-                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge}`}>
+                    <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge} ${styles.ProjectCard}`}>
                         <Card.Body className={`text-center`}>
-                            <Card.Title >Card Title</Card.Title>
+                            <Card.Title >Seat Swapper</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                                A train seat swapping system where we can get our desired train seat without any extra payment. This was a project for IBS hackathon.
+                                <br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Java
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    MYSql
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    BlockChain
+                                </Badge>
+                                <br/>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    HTML
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    CSS
+                                </Badge>
+                                <Badge  variant="primary" className={`${styles.UnsetLineHeight} m-1`}>
+                                    Javascript
+                                </Badge>
                             </Card.Text>
                             <Button variant="primary">View Project</Button>
                         </Card.Body>
