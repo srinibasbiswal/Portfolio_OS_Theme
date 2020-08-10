@@ -44,7 +44,7 @@ function ContactComponent(){
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
                                 <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                                <span> / <a href="mailto:srinibasbiswal02@gmail.com" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
+                                <span> / <a target="_blank"  href="mailto:srinibasbiswal02@gmail.com" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
@@ -53,7 +53,7 @@ function ContactComponent(){
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
                                 <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
-                                <span> / <a href="https://www.linkedin.com/in/srinibasbiswal/" className={`stretched-link text-decoration-none text-secondary`}>in/srinibasbiswal</a>
+                                <span> / <a target="_blank" href="https://www.linkedin.com/in/srinibasbiswal/" className={`stretched-link text-decoration-none text-secondary`}>in/srinibasbiswal</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
@@ -64,7 +64,7 @@ function ContactComponent(){
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
                                 <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
-                                <span> / <a href="https://github.com/srinibasbiswal" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal</a>
+                                <span> / <a target="_blank" href="https://github.com/srinibasbiswal" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
@@ -73,7 +73,7 @@ function ContactComponent(){
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
                                 <FontAwesomeIcon icon={faFacebookMessenger}></FontAwesomeIcon>
-                                <span> / <a href="http://m.me/srinibas.biswal97" className={`stretched-link text-decoration-none text-secondary`}>srinibas.biswal97</a>
+                                <span> / <a target="_blank" href="http://m.me/srinibas.biswal97" className={`stretched-link text-decoration-none text-secondary`}>srinibas.biswal97</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
