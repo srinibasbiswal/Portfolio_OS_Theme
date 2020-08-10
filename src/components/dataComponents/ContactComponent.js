@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
 import styles from '../../stylesheets/style.module.css';
 
@@ -44,7 +44,7 @@ function ContactComponent(){
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
                                 <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                                <span> / <a href="" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
+                                <span> / <a href="mailto:srinibasbiswal02@gmail.com" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
@@ -52,8 +52,8 @@ function ContactComponent(){
                     <div className={`col-6`}>
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                                <span> / <a href="" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
+                                <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
+                                <span> / <a href="https://www.linkedin.com/in/srinibasbiswal/" className={`stretched-link text-decoration-none text-secondary`}>in/srinibasbiswal</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
@@ -63,8 +63,8 @@ function ContactComponent(){
                     <div className={`col-6`}>
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                                <span> / <a href="" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
+                                <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+                                <span> / <a href="https://github.com/srinibasbiswal" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
@@ -72,8 +72,8 @@ function ContactComponent(){
                     <div className={`col-6`}>
                         <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
                             <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                                <span> / <a href="" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
+                                <FontAwesomeIcon icon={faFacebookMessenger}></FontAwesomeIcon>
+                                <span> / <a href="http://m.me/srinibas.biswal97" className={`stretched-link text-decoration-none text-secondary`}>srinibas.biswal97</a>
                                 </span>                                
                             </Card.Body>
                         </Card>
