@@ -10,8 +10,17 @@ function ContactComponent(){
     const [emailResponse, setEmailResponse] = useState({
         name : '',
         email: '',
-        message: ''
+        message: '',
+        response: '',
+        errorMessage: ''
     });
+
+    const ErrorCode = {
+        NAME_EMPTY : 'Please enter name.',
+        EMAIL_EMPTY : 'Please enter email',
+        MESSAGE_EMPTY : 'Please enter message',
+        EMAIL_FAILED : 'Sorry! Email sending failed. Please connect through other mediums.'
+    }
 
     const handleChange = (event) => {
         const target = event.target;
@@ -19,20 +28,32 @@ function ContactComponent(){
     }
 
     const handleSubmit = () => {
-        console.log('inside handle submit');
+        setEmailResponse({errorMessage : ''});
+        setEmailResponse({response : ''});
         const templateId = 'from_website';
-        console.log(emailResponse.message);
-        let templateParams = {
-            from_name: emailResponse.name,
-            message_html: emailResponse.message,
-            senders_email: emailResponse.email,
+        let templateParams = {            
+            message_html: (emailResponse.message != null && emailResponse.message != '') 
+                ? emailResponse.message 
+                : setErrorMessage(ErrorCode.MESSAGE_EMPTY),
+            senders_email: (emailResponse.message != null && emailResponse.message != '') 
+                ? emailResponse.message 
+                : setErrorMessage(ErrorCode.MESSAGE_EMPTY),
+            from_name: (emailResponse.name != null && emailResponse.name != '') 
+                ? emailResponse.name 
+                : setErrorMessage(ErrorCode.NAME_EMPTY)
        }
-        sendFeedback(templateId,  templateParams)
+       if (emailResponse.errorMessage == null || emailResponse.errorMessage == ''){
+            // sendFeedback(templateId,  templateParams)
+       }
     }
-    
+
+    const setErrorMessage = (errorCode) => {
+        // setEmailResponse({response : `<Alert variant={danger}> ${[ErrorCode.NAME_EMPTY]} </Alert>`});
+        setEmailResponse({response : 'asdas'})
+        console.log(emailResponse)
+    }    
 
     const sendFeedback =  (templateId, variables) => {
-        console.log('inside sendFeedback');
         window.emailjs.send(
           'default_service', templateId,
           variables
@@ -102,6 +123,7 @@ function ContactComponent(){
                                 </Form.Group>
                                 <Form.Group controlId="exampleForm.ControlButton">
                                     <Button class="btn btn-primary" onClick={handleSubmit}>Submit</Button>
+                                    <span>dasda</span>
                                 </Form.Group>
 
                             </Form>
