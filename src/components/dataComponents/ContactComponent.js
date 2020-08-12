@@ -21,7 +21,13 @@ function ContactComponent(){
     const handleSubmit = () => {
         console.log('inside handle submit');
         const templateId = 'from_website';
-        sendFeedback(templateId, {message_html: emailResponse.message, from_name: emailResponse.name, reply_to: emailResponse.email})
+        console.log(emailResponse.message);
+        let templateParams = {
+            from_name: emailResponse.name,
+            message_html: emailResponse.message,
+            senders_email: emailResponse.email,
+       }
+        sendFeedback(templateId,  templateParams)
     }
     
 
@@ -33,7 +39,6 @@ function ContactComponent(){
           ).then(res => {
             console.log('Email successfully sent!')
           })
-          // Handle errors here however you like, or use a React error boundary
           .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
       }
     return(
