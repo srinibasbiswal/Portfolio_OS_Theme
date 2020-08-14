@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Form, Button } from 'react-bootstrap';
+import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
@@ -8,59 +8,64 @@ import styles from '../../stylesheets/style.module.css';
 function ContactComponent(){
 
     const [emailResponse, setEmailResponse] = useState({
-        name : '',
-        email: '',
-        message: '',
-        response: '',
-        errorMessage: ''
+        template : {            
+            name : '',
+            email: '',
+            message: '',
+            response: ''
+        }
     });
-
-    const ErrorCode = {
-        NAME_EMPTY : 'Please enter name.',
-        EMAIL_EMPTY : 'Please enter email',
-        MESSAGE_EMPTY : 'Please enter message',
-        EMAIL_FAILED : 'Sorry! Email sending failed. Please connect through other mediums.'
-    }
 
     const handleChange = (event) => {
         const target = event.target;
-        setEmailResponse({[target.name] : target.value});
+        var templateMeta = emailResponse.template;
+        templateMeta[target.name] = target.value;
+        setEmailResponse({template : templateMeta});
+        console.log(emailResponse);
     }
 
-    const handleSubmit = () => {
-        setEmailResponse({errorMessage : ''});
-        setEmailResponse({response : ''});
-        const templateId = 'from_website';
-        let templateParams = {            
-            message_html: (emailResponse.message != null && emailResponse.message != '') 
-                ? emailResponse.message 
-                : setErrorMessage(ErrorCode.MESSAGE_EMPTY),
-            senders_email: (emailResponse.message != null && emailResponse.message != '') 
-                ? emailResponse.message 
-                : setErrorMessage(ErrorCode.MESSAGE_EMPTY),
-            from_name: (emailResponse.name != null && emailResponse.name != '') 
-                ? emailResponse.name 
-                : setErrorMessage(ErrorCode.NAME_EMPTY)
-       }
-       if (emailResponse.errorMessage == null || emailResponse.errorMessage == ''){
-            // sendFeedback(templateId,  templateParams)
-       }
-    }
+    const [validated, setValidated] = useState(false);
 
-    const setErrorMessage = (errorCode) => {
-        // setEmailResponse({response : `<Alert variant={danger}> ${[ErrorCode.NAME_EMPTY]} </Alert>`});
-        setEmailResponse({response : 'asdas'})
-        console.log(emailResponse)
-    }    
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false){
+            event.preventDefault();
+            event.stopPropagation();            
+            setValidated(true);
+        }else{
+            event.preventDefault();
+            event.stopPropagation();
+            const templateId = 'from_website';
+            let templateParams = {            
+                message: emailResponse.template.message,
+                sender_email: emailResponse.template.email,
+                sender_name: emailResponse.template.name
+            }
+            console.log(templateParams);
+            sendFeedback(templateId,  templateParams)
+        }
+    }  
 
     const sendFeedback =  (templateId, variables) => {
         window.emailjs.send(
           'default_service', templateId,
           variables
           ).then(res => {
-            console.log('Email successfully sent!')
-          })
-          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+            var templateMeta = {            
+                name : '',
+                email: '',
+                message: '',
+                response: <Alert variant="success" className={`mx-auto text-center`}> Message sent successfully! </Alert>
+            }
+            setEmailResponse({template : templateMeta});
+            console.log(emailResponse);
+        })
+          .catch(err => {
+              console.error('Oh well, you failed. Here some thoughts on the error that occured:', err)
+              var templateMeta = emailResponse.template;
+              templateMeta.response = <Alert variant="danger" className={`mx-auto text-center`}> Sorry! Couldn't send message. Please connect through other mediums. </Alert>
+              setEmailResponse({template : templateMeta })
+            })
       }
     return(
         <Card className={`shadow-lg bg-white rounded m-3`}>
@@ -108,26 +113,35 @@ function ContactComponent(){
                 <div className={`row d-flex`}>
                     <Card className={`col-10 mx-auto mt-5`}>
                         <Card.Body>
-                            <Form >
-                                <Form.Group controlId="exampleForm.ControlInput1">
+                            <Form noValidate validated={validated} onSubmit={handleSubmit} >
+                                <Form.Group>
                                     <Form.Label>Your Name</Form.Label>
-                                    <Form.Control type="text" name='name' placeholder="John Doe" value={emailResponse.name} onChange={handleChange}/>
+                                    <Form.Control required  type="text" name='name' placeholder="John Doe" value={emailResponse.template.name} onChange={handleChange} />
+                                    <Form.Control.Feedback type="invalid">
+                                        Please enter your name.
+                                    </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlInput1">
+                                <Form.Group>
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control type="email" name='email' placeholder="name@example.com" value={emailResponse.email} onChange={handleChange}/>
+                                    <Form.Control required type="email" name='email' placeholder="name@example.com" value={emailResponse.template.email} onChange={handleChange} />
+                                    <Form.Control.Feedback type="invalid">
+                                        Please enter a valid email.
+                                    </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
+                                <Form.Group>
                                     <Form.Label>Your Message</Form.Label>
-                                    <Form.Control as="textarea" name='message' rows="3" value={emailResponse.message} onChange={handleChange}/>
+                                    <Form.Control required as="textarea" name='message' rows="3" value={emailResponse.template.message} onChange={handleChange} />
+                                    <Form.Control.Feedback type="invalid">
+                                        Please enter the message.
+                                    </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlButton">
-                                    <Button class="btn btn-primary" onClick={handleSubmit}>Submit</Button>
-                                    <span>dasda</span>
+                                {emailResponse.template.response}
+                                <Form.Group controlId="exampleForm.ControlButton" className={`d-flex text-center`}>
+                                    
+                                    <button class="btn btn-primary mx-auto" type='submit' >Submit</button>                                    
                                 </Form.Group>
-
+                                
                             </Form>
-
                         </Card.Body>
                     </Card>
                 </div>
