@@ -21,7 +21,7 @@ import { faThumbtack, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 function StartMenuContainer(props){
     return(
-       <Card className={`${styles.StartMenu} ${styles.BackgroundBlur}`}>
+       <Card className={`${styles.StartMenu} ${styles.BackgroundBlur} ${styles.CustomScrollBar}  visible`}>
            <Card.Body>
                <Card className={` ${styles.ProfileCard} d-flex ${styles.BackgroundBlur} m-2`}>
                    <Image className={`img-circle rounded-circle mx-auto ${styles.CardImgTop}`} src={AboutMe}></Image>

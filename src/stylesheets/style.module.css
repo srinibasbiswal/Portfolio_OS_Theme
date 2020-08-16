@@ -207,8 +207,6 @@ overflow: auto;
   min-width: 500px !important;
   max-height: 80vh;
   overflow: auto;
-  
-    /* visibility: hidden; */
 }
 
 .StartMenuFigure{
@@ -223,4 +221,25 @@ overflow: auto;
   top: 2px;
   right: 2px;
   max-height: 40px !important;
+}
+
+
+.CustomScrollBar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.CustomScrollBar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.CustomScrollBar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555
 }
