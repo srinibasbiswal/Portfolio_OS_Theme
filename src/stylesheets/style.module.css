@@ -207,17 +207,12 @@ overflow: auto;
   min-width: 500px !important;
   max-height: 80vh;
   overflow: auto;
-  background-color: transparent !important;
   
     /* visibility: hidden; */
 }
-.ProfileCard , .PinnedAppsCard , .AllAppsCard{
-  /* height: 200px !important; */
-  /* background-color: transparent !important; */
-}
 
 .StartMenuFigure{
-width: 5rem !important;
+  width: 5rem !important;
   height: 5rem !important;
 }
 
