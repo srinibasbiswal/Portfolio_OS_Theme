@@ -16,3 +16,18 @@ code {
 .modal-content{
   background-color: transparent !important;
 }
+
+
+.example-enter {
+  height: 0px;
+}
+
+.example-enter.example-enter-active {
+  height: 750px;
+  -webkit-transition: height .3s ease;
+}
+
+.example-leave.example-leave-active {
+  height: 0px;
+  -webkit-transition: height .3s ease;
+}

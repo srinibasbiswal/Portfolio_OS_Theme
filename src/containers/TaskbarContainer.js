@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Image } from 'react-bootstrap';
+import { Navbar, Nav, Image, Collapse } from 'react-bootstrap';
 import styles from '../stylesheets/style.module.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
@@ -8,10 +8,12 @@ import DocumentsIcon from '../assets/images/DocumentsIcon.png';
 import ToolBarContainer from './ToolBarContainer';
 import TaskBarDynamicContainer from './TaskBarDynamicContainer';
 import StartMenuContainer from './StartMenuContainer';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 function TaskbarContainer(){
 
     const [greeting, setGreeting] = useState('Good Morning,');
+    const [open, setOpen] = useState(false);
 
     const showStartmenu = () => {
         var greeting;
@@ -24,17 +26,36 @@ function TaskbarContainer(){
           greeting = "Good Evening,";
         }
         setGreeting(greeting);
+        setOpen(!open);
     }
     return(
         <React.Fragment>
         <Navbar fixed="bottom" className={`${styles.TaskBar} ${styles.BackgroundBlur} shadow`}>
-            <div className={`${styles.TaskBarIcon}`}> 
-                <FontAwesomeIcon icon={faWindows} className={styles.TaskBarIconComponent} onClick={showStartmenu}></FontAwesomeIcon> 
-                <StartMenuContainer greetingMsg={greeting}></StartMenuContainer>
+            <div className={`${styles.TaskBarIcon}`} onClick={showStartmenu}> 
+                <FontAwesomeIcon icon={faWindows} className={styles.TaskBarIconComponent} ></FontAwesomeIcon> 
+                {open 
+                ? <CSSTransitionGroup
+                    transitionName='example'
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout = {300}
+                >
+                    <StartMenuContainer greetingMsg={greeting} showStartMenu={open}></StartMenuContainer>
+                </CSSTransitionGroup>
+                : null}
+                {/* <StartMenuContainer greetingMsg={greeting} showStartMenu={open}></StartMenuContainer> */}
             </div> 
             <Nav className="mr-auto">
                 <div className={`${styles.TaskBarIcon}`}> 
                     <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
+                    {open 
+                ? <CSSTransitionGroup
+                    transitionName='example'
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout = {300}
+                >
+                    <StartMenuContainer greetingMsg={greeting} showStartMenu={open}></StartMenuContainer>
+                </CSSTransitionGroup>
+                : null}
                 </div>
                 <div className={`${styles.TaskBarIcon}`}> 
                     <Image src={DocumentsIcon} className= {styles.TaskBarIconComponent}></Image>
