@@ -3,8 +3,11 @@ import ClockComponent from '../components/ClockComponent';
 import styles from '../stylesheets/style.module.css'; 
 import { faChevronUp, faWifi, faVolumeUp, faBatteryThreeQuarters } from "@fortawesome/free-solid-svg-icons";
 import ToolBarComponent from '../components/ToolBarComponent';
+import TaskBarComponentPopup from './TaskBarComponentPopup';
+import {ComponentNames} from '../components/dataComponents/Enums';
 
-function ToolBarContainer(){
+function ToolBarContainer( props ){
+    console.log(props)
 
     const [toolBarIcons, setToolBarIcons] = useState({
         icons: [
@@ -22,8 +25,12 @@ function ToolBarContainer(){
                     <ToolBarComponent iconName={icon.iconName}></ToolBarComponent>
                 </div>
             )}
-            <div> 
-                <ClockComponent></ClockComponent>
+            <div  onClick={props.onClickEvent}> 
+                <ClockComponent ></ClockComponent>
+                {props.taskBarComponentPopupStatus.popUpStates.ClockAndCalendar
+                    ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.ClockAndCalendar}></TaskBarComponentPopup>
+                    : null
+                }
             </div>
         </React.Fragment>
         );

@@ -252,3 +252,7 @@ overflow: auto;
 .CortanaText{
   color : #4cc2fc !important;
 }
+
+.RightZero{
+  right: 0 !important;
+}

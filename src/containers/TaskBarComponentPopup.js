@@ -4,6 +4,7 @@ import CortanaComponent from '../components/CortanaComponent';
 import {ComponentNames} from '../components/dataComponents/Enums';
 import styles from '../stylesheets/style.module.css';
 import { Card } from 'react-bootstrap';
+import ClockAndCalendar from '../components/ClockAndCalendar';
 
 function TaskBarComponentPopup(props){
 
@@ -25,8 +26,17 @@ function TaskBarComponentPopup(props){
                 </Card>
             );
             break;
+
+        case ComponentNames.ClockAndCalendar:
+            return(
+                <Card className={`${styles.StartMenu} ${styles.BackgroundBlur} ${styles.CustomScrollBar} ${styles.RightZero}`}>
+                    <ClockAndCalendar></ClockAndCalendar>
+                </Card>
+            );
+            break;
     
         default:
+            return null;
             break;
     }
 

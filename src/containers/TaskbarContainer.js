@@ -22,6 +22,7 @@ function TaskbarContainer(){
     });
 
     const handleTaskBarShow = (key) => {
+        console.log(key)
         var popUpStatusMeta = taskBarPopupShow.popUpStates;
         if (popUpStatusMeta[key]){
             popUpStatusMeta[key] = !popUpStatusMeta[key];
@@ -59,7 +60,10 @@ function TaskbarContainer(){
             </Nav>
 
             <Nav>
-                <ToolBarContainer></ToolBarContainer>
+                <ToolBarContainer 
+                    taskBarComponentPopupStatus = {taskBarPopupShow}
+                    onClickEvent={() => handleTaskBarShow('ClockAndCalendar')}
+                />
             </Nav>
             
         </Navbar>
