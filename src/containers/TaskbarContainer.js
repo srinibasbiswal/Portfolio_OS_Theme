@@ -13,24 +13,47 @@ import {ComponentNames} from '../components/dataComponents/Enums';
 
 function TaskbarContainer(){
 
-    const [open, setOpen] = useState(false);
+    const [taskBarPopupShow, settaskBarPopupShow] = useState({
+        popUpStates : {
+            StartMenu : false,
+            Cortana : false,
+            ClockAndCalendar: false   
+        }   
+    });
 
-    const showStartmenu = () => {        
-        setOpen(!open);
+    const handleTaskBarShow = () => {
+        var key = 'StartMenu';
+        console.log('hello')
+        var popUpStatusMeta = taskBarPopupShow.popUpStates;
+        if (popUpStatusMeta[key]){
+            popUpStatusMeta[key] = !popUpStatusMeta[key];
+            console.log(popUpStatusMeta);
+            settaskBarPopupShow({popUpStates : popUpStatusMeta});
+        }else{
+            popUpStatusMeta.StartMenu = false;
+            popUpStatusMeta.Cortana = false;
+            popUpStatusMeta.ClockAndCalendar = false;
+            popUpStatusMeta[key] = true;
+            console.log(popUpStatusMeta);
+            settaskBarPopupShow({popUpStates: popUpStatusMeta});
+        }
     }
 
     return(
-        <React.Fragment>
         <Navbar fixed="bottom" className={`${styles.TaskBar} ${styles.BackgroundBlur} shadow`}>
-            <div className={`${styles.TaskBarIcon}`} onClick={showStartmenu}> 
+            <div className={`${styles.TaskBarIcon}`} onClick={handleTaskBarShow}> 
                 <FontAwesomeIcon icon={faWindows} className={styles.TaskBarIconComponent} ></FontAwesomeIcon> 
-                {open 
+                {taskBarPopupShow.popUpStates.StartMenu
                 ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.StartMenu}></TaskBarComponentPopup>
                 : null}
             </div> 
             <Nav className="mr-auto">
-                <div className={`${styles.TaskBarIcon}`}> 
+                <div className={`${styles.TaskBarIcon}`} onClick={handleTaskBarShow}> 
                     <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
+                    {console.log(taskBarPopupShow.popUpStates.Cortana )}
+                    {taskBarPopupShow.Cortana 
+                    ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.Cortana}></TaskBarComponentPopup>
+                    : null}
                 </div>
                 <div className={`${styles.TaskBarIcon}`}> 
                     <Image src={DocumentsIcon} className= {styles.TaskBarIconComponent}></Image>
@@ -44,7 +67,6 @@ function TaskbarContainer(){
             
         </Navbar>
 
-        </React.Fragment>
     );
 }
 
