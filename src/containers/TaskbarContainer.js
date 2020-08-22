@@ -23,7 +23,6 @@ function TaskbarContainer(){
 
     const handleTaskBarShow = () => {
         var key = 'StartMenu';
-        console.log('hello')
         var popUpStatusMeta = taskBarPopupShow.popUpStates;
         if (popUpStatusMeta[key]){
             popUpStatusMeta[key] = !popUpStatusMeta[key];
@@ -50,7 +49,6 @@ function TaskbarContainer(){
             <Nav className="mr-auto">
                 <div className={`${styles.TaskBarIcon}`} onClick={handleTaskBarShow}> 
                     <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
-                    {console.log(taskBarPopupShow.popUpStates.Cortana )}
                     {taskBarPopupShow.Cortana 
                     ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.Cortana}></TaskBarComponentPopup>
                     : null}
