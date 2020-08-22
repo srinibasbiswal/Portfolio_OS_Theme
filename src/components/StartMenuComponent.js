@@ -26,19 +26,7 @@ function StartMenuComponent(props){
                 <Card className={` ${styles.ProfileCard} d-flex ${styles.BackgroundBlur} m-2`}>
                     <Image className={`img-circle rounded-circle mx-auto ${styles.CardImgTop}`} src={AboutMe}></Image>
                         <span className={`small text-center`}>{props.greetingMsg} Srinibas</span>
-                        <Image className={`${styles.CloseButton} img-circle rounded-circle`} src={PowerOff}></Image>
-                        {/* <InputGroup className={`d-flex`}>                        
-                            <FormControl
-                            placeholder="Type here to search"
-                            aria-label="Type here to search"
-                            className={`col-md-8 ml-auto mr-0 text-center mt-2`}
-                            />
-                            <InputGroup.Append className={`mr-auto mt-2`}>
-                                <InputGroup.Text id="basic-addon1">
-                                <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> 
-                                </InputGroup.Text>
-                            </InputGroup.Append>
-                        </InputGroup> */}                    
+                        <Image className={`${styles.CloseButton} img-circle rounded-circle`} src={PowerOff}></Image>                    
                         <p className={`text-center small`}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         </p>

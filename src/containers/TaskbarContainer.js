@@ -21,8 +21,7 @@ function TaskbarContainer(){
         }   
     });
 
-    const handleTaskBarShow = () => {
-        var key = 'StartMenu';
+    const handleTaskBarShow = (key) => {
         var popUpStatusMeta = taskBarPopupShow.popUpStates;
         if (popUpStatusMeta[key]){
             popUpStatusMeta[key] = !popUpStatusMeta[key];
@@ -40,16 +39,16 @@ function TaskbarContainer(){
 
     return(
         <Navbar fixed="bottom" className={`${styles.TaskBar} ${styles.BackgroundBlur} shadow`}>
-            <div className={`${styles.TaskBarIcon}`} onClick={handleTaskBarShow}> 
+            <div className={`${styles.TaskBarIcon}`} onClick={() => handleTaskBarShow('StartMenu')}> 
                 <FontAwesomeIcon icon={faWindows} className={styles.TaskBarIconComponent} ></FontAwesomeIcon> 
                 {taskBarPopupShow.popUpStates.StartMenu
                 ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.StartMenu}></TaskBarComponentPopup>
                 : null}
             </div> 
             <Nav className="mr-auto">
-                <div className={`${styles.TaskBarIcon}`} onClick={handleTaskBarShow}> 
+                <div className={`${styles.TaskBarIcon}`} onClick={() => handleTaskBarShow('Cortana')}> 
                     <Image src={CortanaIcon} className= {styles.TaskBarIconComponent}></Image>
-                    {taskBarPopupShow.Cortana 
+                    {taskBarPopupShow.popUpStates.Cortana 
                     ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.Cortana}></TaskBarComponentPopup>
                     : null}
                 </div>
