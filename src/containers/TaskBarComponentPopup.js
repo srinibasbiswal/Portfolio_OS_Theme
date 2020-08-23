@@ -7,6 +7,7 @@ import { Card } from 'react-bootstrap';
 import ClockAndCalendar from '../components/ClockAndCalendar';
 import VolumeBarComponent from '../components/VolumeBarComponent';
 import WifiComponent from '../components/WifiComponent';
+import BatteryComponent from '../components/BatteryComponent';
 
 function TaskBarComponentPopup(props){
 
@@ -49,6 +50,14 @@ function TaskBarComponentPopup(props){
             return(
                 <Card className={`${styles.StartMenu} ${styles.BackgroundBlur} ${styles.CustomScrollBar} ${styles.RightZero}`}>
                     <WifiComponent></WifiComponent>
+                </Card>
+            );
+            break;
+
+        case ComponentNames.Battery_Indicator:  
+            return(
+                <Card className={`${styles.StartMenu} ${styles.BackgroundBlur} ${styles.CustomScrollBar} ${styles.RightZero}`}>
+                    <BatteryComponent></BatteryComponent>
                 </Card>
             );
             break;

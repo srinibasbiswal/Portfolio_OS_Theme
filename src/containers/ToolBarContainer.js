@@ -13,8 +13,9 @@ function ToolBarContainer( props ){
         icons: [
             { name: 'Show More', value: 'Show_More', iconName: faChevronUp, id: 1 },
             { name: 'Battery Indicator', value: 'Battery_Indicator', iconName: faBatteryThreeQuarters, id: 2 },
-            { name: 'Volume Indicator',value: 'Volume_Indicator', iconName: faVolumeUp, id: 4 },
-            { name: 'Wifi Indicator', value: 'Wifi_Indicator', iconName: faWifi, id: 3 }
+            { name: 'Wifi Indicator', value: 'Wifi_Indicator', iconName: faWifi, id: 3 },
+            { name: 'Volume Indicator',value: 'Volume_Indicator', iconName: faVolumeUp, id: 4 }
+            
             
         ]
     });

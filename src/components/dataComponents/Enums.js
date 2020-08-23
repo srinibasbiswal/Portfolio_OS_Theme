@@ -3,5 +3,6 @@ export const ComponentNames = {
     Cortana : 'Cortana',
     ClockAndCalendar : 'ClockAndCalendar',
     Volume_Indicator : 'Volume_Indicator',
-    Wifi_Indicator : 'Wifi_Indicator'
+    Wifi_Indicator : 'Wifi_Indicator',
+    Battery_Indicator: 'Battery_Indicator'
 }
