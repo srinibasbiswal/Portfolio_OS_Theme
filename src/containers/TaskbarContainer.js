@@ -17,6 +17,9 @@ function TaskbarContainer(){
         popUpStates : {
             StartMenu : false,
             Cortana : false,
+            Battery_Indicator : false,
+            Wifi_Indicator : false,
+            Volume_Indicator : false,
             ClockAndCalendar: false   
         }   
     });
@@ -24,14 +27,17 @@ function TaskbarContainer(){
     const handleTaskBarShow = (key) => {
         console.log(key)
         var popUpStatusMeta = taskBarPopupShow.popUpStates;
+        console.log(typeof (popUpStatusMeta))
         if (popUpStatusMeta[key]){
             popUpStatusMeta[key] = !popUpStatusMeta[key];
             console.log(popUpStatusMeta);
             settaskBarPopupShow({popUpStates : popUpStatusMeta});
         }else{
-            popUpStatusMeta.StartMenu = false;
-            popUpStatusMeta.Cortana = false;
-            popUpStatusMeta.ClockAndCalendar = false;
+            for (var k in popUpStatusMeta) { 
+                if (popUpStatusMeta.hasOwnProperty(k)) { 
+                    popUpStatusMeta[k] = false;
+                } 
+            } 
             popUpStatusMeta[key] = true;
             console.log(popUpStatusMeta);
             settaskBarPopupShow({popUpStates: popUpStatusMeta});
@@ -62,7 +68,7 @@ function TaskbarContainer(){
             <Nav>
                 <ToolBarContainer 
                     taskBarComponentPopupStatus = {taskBarPopupShow}
-                    onClickEvent={() => handleTaskBarShow('ClockAndCalendar')}
+                    onClickEvent={(value) => handleTaskBarShow(value)}
                 />
             </Nav>
             

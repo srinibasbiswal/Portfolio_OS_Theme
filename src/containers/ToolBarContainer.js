@@ -11,21 +11,27 @@ function ToolBarContainer( props ){
 
     const [toolBarIcons, setToolBarIcons] = useState({
         icons: [
-            { name: 'Show More', iconName: faChevronUp, id: 1 },
-            { name: 'Battery Indicator', iconName: faBatteryThreeQuarters, id: 2 },
-            { name: 'Wifi Indicator', iconName: faWifi, id: 3 },
-            { name: 'Volume Indicator', iconName: faVolumeUp, id: 4 }
+            { name: 'Show More', value: 'Show_More', iconName: faChevronUp, id: 1 },
+            { name: 'Battery Indicator', value: 'Battery_Indicator', iconName: faBatteryThreeQuarters, id: 2 },
+            { name: 'Wifi Indicator', value: 'Wifi_Indicator', iconName: faWifi, id: 3 },
+            { name: 'Volume Indicator',value: 'Volume_Indicator', iconName: faVolumeUp, id: 4 }
         ]
     });
 
     return(
         <React.Fragment>
             {toolBarIcons.icons.map((icon, index) =>
-                <div className={styles.ToolBarIcon} key={index}>
-                    <ToolBarComponent iconName={icon.iconName}></ToolBarComponent>
+                <div className={styles.ToolBarIcon} key={index} onClick={() => props.onClickEvent(icon.value)}>
+                    <ToolBarComponent 
+                        iconName={icon.iconName}                        
+                    />
+                    {props.taskBarComponentPopupStatus.popUpStates[icon.value]
+                    ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.ClockAndCalendar}></TaskBarComponentPopup>
+                    : null
+                    }
                 </div>
             )}
-            <div  onClick={props.onClickEvent}> 
+            <div onClick={() => props.onClickEvent('ClockAndCalendar')}> 
                 <ClockComponent ></ClockComponent>
                 {props.taskBarComponentPopupStatus.popUpStates.ClockAndCalendar
                     ? <TaskBarComponentPopup taskBarPopupData={ComponentNames.ClockAndCalendar}></TaskBarComponentPopup>
