@@ -25,12 +25,9 @@ function TaskbarContainer(){
     });
 
     const handleTaskBarShow = (key) => {
-        console.log(key)
         var popUpStatusMeta = taskBarPopupShow.popUpStates;
-        console.log(typeof (popUpStatusMeta))
         if (popUpStatusMeta[key]){
             popUpStatusMeta[key] = !popUpStatusMeta[key];
-            console.log(popUpStatusMeta);
             settaskBarPopupShow({popUpStates : popUpStatusMeta});
         }else{
             for (var k in popUpStatusMeta) { 
@@ -39,7 +36,6 @@ function TaskbarContainer(){
                 } 
             } 
             popUpStatusMeta[key] = true;
-            console.log(popUpStatusMeta);
             settaskBarPopupShow({popUpStates: popUpStatusMeta});
         }
     }
