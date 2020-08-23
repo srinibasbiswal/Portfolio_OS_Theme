@@ -15,17 +15,32 @@ import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
                 </Container>
             </ContextMenuTrigger>
 
-            <ContextMenu id="same_unique_identifier">
-                <MenuItem data={'th1'}>
-                ContextMenu Item 1
+            <ContextMenu id="same_unique_identifier" className={`${styles.RightClickMenu} ${styles.BackgroundBlur} ${styles.fontColorWhite} rounded`}>
+                <MenuItem 
+                    className={`${styles.RightClickMenuItem} ${styles.MediumFont} border-bottom p-2 rounded lead`}
+                    onClick={()=> window.open('https://github.com/srinibasbiswal/Portfolio_OS_Theme/', '_blank')}
+                >
+                    View Source Code
                 </MenuItem>
-                <MenuItem data={'th2'} >
-                ContextMenu Item 2
+                <MenuItem 
+                    className={`${styles.RightClickMenuItem} ${styles.MediumFont} border-bottom p-2 rounded lead`}
+                    onClick={()=> window.open('https://github.com/srinibasbiswal/', '_blank')}
+                >
+                    GitHub Profile
                 </MenuItem>
-                <MenuItem divider />
-                <MenuItem data={'th3'}>
-                ContextMenu Item 3
+                <MenuItem 
+                    className={`${styles.RightClickMenuItem} ${styles.MediumFont} border-bottom p-2 rounded lead`}
+                    onClick={()=> window.open('mailto: srinibasbiswal02@gmail.com', '_blank')}
+                >
+                    Mail Me
                 </MenuItem>
+                <MenuItem 
+                    className={`${styles.RightClickMenuItem} ${styles.MediumFont} border-bottom p-2 rounded lead`}
+                    onClick={()=> window.open("someLink", "_blank")}
+                >
+                    Contact Me
+                </MenuItem>
+                
             </ContextMenu>
        </div>
      );

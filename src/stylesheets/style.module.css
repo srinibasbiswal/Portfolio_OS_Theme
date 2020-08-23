@@ -256,3 +256,11 @@ overflow: auto;
 .RightZero{
   right: 0 !important;
 }
+
+.MediumFont{
+  font-size: medium !important;
+}
+.RightClickMenuItem:hover{
+  background-color: #000000;
+  cursor: pointer;
+}
