@@ -40,3 +40,25 @@ export const Experiences = [
         organizationPicture : Freelance
     }
 ]
+
+export const EducationList = [
+    {
+        instituteName : 'ITER, Siksha \'O\' Anusandhan (Deemed to be University)',
+        degree : 'Bachelor\'s Degree in Computer Science and Engineering',
+        year : '2019',
+        id : 1
+    },
+    {
+        instituteName : 'O.D.M. Public School, Bhubaneswar',
+        degree : 'Intermediate',
+        year : '2015',
+        id : 2
+    },
+    {
+        instituteName : 'Prabhujee English Medium School, Bhubaneswar',
+        degree : 'Matriculation',
+        year : '2013',
+        id : 3
+    }
+
+]

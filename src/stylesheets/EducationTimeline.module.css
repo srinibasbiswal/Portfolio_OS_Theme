@@ -7,25 +7,25 @@
     z-index: 2;
   }
   
-  .how_it_works.row .col_2 {
+  .timeLine.row .col_2 {
     align-self: stretch;
   }
-  .how_it_works.row .col_2::after {
+  .timeLine.row .col_2::after {
     content: "";
     position: absolute;
     border-left: 3px solid #8CA6DB;
     z-index: 1;
   }
-  .how_it_works.row .col_2.bottom::after {
+  .timeLine.row .col_2.bottom::after {
     height: 50%;
     left: 50%;
     top: 50%;
   }
-  .how_it_works.row .col_2.full::after {
+  .timeLine.row .col_2.full::after {
     height: 100%;
     left: calc(50% - 3px);
   }
-  .how_it_works.row .col_2.top::after {
+  .timeLine.row .col_2.top::after {
     height: 50%;
     left: 50%;
     top: 0;
