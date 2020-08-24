@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
-import justAPic from '../../assets/images/justAPic.svg';
+
+import {Person,AboutMeData} from './dataSet';
 
 function AboutComponent(){
 
@@ -9,16 +10,27 @@ function AboutComponent(){
             <Card.Body className={`row`}>
                 <div className={`col-md-8 d-flex`}>                    
                     <blockquote className={`blockquote text-center my-auto`}>
-                        <h2>Srinibas Biswal</h2>
-                        <p className={`lead`}>I'm a techno-functional Software Developement Engineer from India.</p>
-                        <p><small>I enjoy taking complex problems and convertin to an usable format. My major domains are Web Devleopment and Python Prgramming.</small></p>
-                        <p><small>When I'm not coding, you will find me watching an episode of The Office or travelling to a new place.</small></p>
+                        <h2>{Person.name}</h2>
+                        <p className={`lead`}>
+                            {AboutMeData.intro}
+                        </p>
+                        <p>
+                            <small>
+                                {AboutMeData.desc}
+                            </small>
+                        </p>
+                        <p>
+                            <small>
+                                {AboutMeData.outro}
+                            </small>
+                        </p>
                     </blockquote>
                 </div>
                 <div className={`col-md-4 text-center d-flex`}>
                     <Image 
-                        src={justAPic}
+                        src={Person.profilePic}
                         height={200}
+                        alt={'Profile Pic'}
                         className={`my-auto`}
                     />
                 </div>
