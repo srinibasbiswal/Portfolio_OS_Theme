@@ -3,70 +3,46 @@ import styles from '../../stylesheets/timeline.module.css';
 import { Card, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock} from "@fortawesome/free-regular-svg-icons";
-import KloudGin from '../../assets/images/KloudGin.png';
-import Talspo from '../../assets/images/Talspo.png';
-import Freelance from '../../assets/images/Freelance.png';
+import {Experiences} from './dataSet';
 
 function ExperienceComponent(){
     return(
     <Card className={`shadow-lg bg-white rounded m-3`}>
             <Card.Body className={`row`}>
                 <div className={`col-lg-10 mx-auto`}>          
-                    <ul className={`${styles.timeline}`}>                        
-                        <li className={`${styles.timeline_item} bg-white rounded ml-3 p-4 shadow`}>
-                            <Image
-                                className={styles.before}
-                                src={KloudGin}
-                                height={50}
-                            />
-                            <div className={`${styles.timeline_arrow}`}></div>
-                            <h2 className={`h5 mb-0`}>Associate Software Developer</h2>
-                            <span className={`font-weight-normal text-gray`}>
-                                KloudGin<br/>
-                            </span>
-                            <span className={`small text-gray`}>
-                                <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
-                                17 June, 2019 - Present
-                            </span>
-                            <p className={`text-small mt-2 font-weight-light`}>
-                                I am a part of the Product Development team at KloudGin, where I have developed multiple API and implementaion modules of EAM and FSM.
-                            </p>
-                        </li>
-                        <li className={`${styles.timeline_item} bg-white rounded ml-3 p-4 shadow`}>
-                            <Image
-                                className={styles.before}
-                                src={Talspo}
-                                height={50}
-                            />
-                            <div className={`${styles.timeline_arrow}`}></div>
-                            <h2 className={`h5 mb-0`}>Web Developer</h2>
-                            <span className={`medium text-gray`}>
-                                Talspo <br/>
-                            </span>
-                            <span className={`small text-gray`}>
-                                <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
-                                5 April, 2019
-                            </span>
-                            <p className={`text-small mt-2 font-weight-light`}>
-                                I was a key member of the Frontend Development team where we developed the product from the initial phase.
-                            </p>
-                        </li>
-                        <li className={`${styles.timeline_item} bg-white rounded ml-3 p-4 shadow`}>
-                            <Image
-                                className={styles.before}
-                                src={Freelance}
-                                height={50}
-                            />
-                            <div className={`${styles.timeline_arrow}`}></div>
-                            <h2 className={`h5 mb-0`}>Freelance Developer</h2>
-                            <span className={`small text-gray`}>
-                                <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
-                                2017 - 2019 
-                            </span>
-                            <p className={`text-small mt-2 font-weight-light`}>
-                                I was a freelance developer during my Bachelor's degree where I worked with different established companies like Prelude, Ediolon and Youngster's Worldwide.
-                            </p>
-                        </li>
+                    <ul className={`${styles.timeline}`}>       
+                        {
+                            Experiences.map((experience, index) => {                              
+                                return(
+                                
+                                <li className={`${styles.timeline_item} bg-white rounded ml-3 p-4 shadow`}>
+                                    <Image
+                                        className={styles.before}
+                                        src={experience.organizationPicture}
+                                        height={50}
+                                        alt={'Org Pic'}
+                                    />
+                                    <div className={`${styles.timeline_arrow}`}></div>
+                                    <h2 className={`h5 mb-0`}>{experience.position}</h2>
+                                    {experience.organization? 
+                                        <span className={`font-weight-normal text-gray`}> 
+                                            {experience.organization}
+                                            <br/>
+                                        </span>
+                                    : null}                                                                           
+                                         
+                                    <span className={`small text-gray`}>
+                                        <FontAwesomeIcon icon={faClock} className={`mr-1`}></FontAwesomeIcon>
+                                        {experience.startDate ? experience.startDate : null} 
+                                        {experience.endDate ? ' - '+experience.endDate : null}
+                                    </span>
+                                    <p className={`text-small mt-2 font-weight-light`}>
+                                        {experience.description}
+                                    </p>
+                                </li>   
+                                )                         
+                            })
+                        }
                     </ul>
                 </div>
             </Card.Body>
