@@ -39,7 +39,7 @@ export const Experiences = [
         description : 'I was a freelance developer during my Bachelor\'s degree where I worked with different established companies like Prelude, Ediolon and Youngster\'s Worldwide.',
         organizationPicture : Freelance
     }
-]
+];
 
 export const EducationList = [
     {
@@ -60,5 +60,33 @@ export const EducationList = [
         year : '2013',
         id : 3
     }
+];
 
+export const Projects = [
+    {
+        projectName : 'NoteStack',
+        description : 'A notes management platform/application where students can share their course notes easily with each other.',
+        technologyStack : ['Android','Java','Firebase','Firestore'],
+        link : 'https://github.com/srinibasbiswal/NoteStack'
+    },
+    {
+        projectName : 'Bus Management',
+        description : 'A bus management system for ITER, BBSR which helps to know different bus routes and makes easy to decode which route to take.',
+        technologyStack : ['Python','TKinter','Firebase'],
+        link : 'https://iter-bus.firebaseapp.com/'
+    },
+    {
+        projectName : 'Seat Swapper',
+        description : 'A train seat swapping system where we can get our desired train seat without any extra payment. This was a project for IBS hackathon.',
+        technologyStack : ['Java','MySQL','BlockChain','HTML','CSS','JavaScript'],
+        link : 'https://github.com/srinibasbiswal/IBS-Hackathon'
+    },
+    {
+        projectName : 'Flight Ticket Saver',
+        description : 'A flight booking system which was dealing with the bumping of seats with the help of Etherium Smart Contract. This was a project for IATA Hackathon.',
+        technologyStack : ['Python','DJANGO','HTML','CSS','JavaScript'],
+        link : 'https://github.com/srinibasbiswal/IATA-Hackathon'
+    }
 ]
+
+
