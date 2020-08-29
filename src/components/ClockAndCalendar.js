@@ -8,7 +8,7 @@ function ClockAndCalendar(){
 
     return(
         <Card.Body>
-            <Card className={`${styles.BackgroundBlur} ${styles.TaskBarPopupCard} m-2 d-flex`}>
+            <Card className={`${styles.TaskBarPopupCard} m-2 d-flex`}>
                 <InfiniteCalendar
                     width={400}
                     height={300}

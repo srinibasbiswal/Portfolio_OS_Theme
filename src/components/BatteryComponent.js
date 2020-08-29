@@ -8,7 +8,7 @@ function BatteryComponent (){
 
     return(
         <Card.Body>
-            <Card className={`${styles.BackgroundBlur} p-2`}>
+            <Card className={`${styles.TaskBarPopupCard} p-2`}>
                 <Container className={`row`}>
                     <Col md={2}><FontAwesomeIcon icon={faChargingStation} size="2x"></FontAwesomeIcon></Col>
                     <Col md={10}>

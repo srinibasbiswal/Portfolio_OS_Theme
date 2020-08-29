@@ -251,6 +251,7 @@ overflow: auto;
 
 .TaskBarPopupCard{
   min-height: 100px !important;
+  background-color: #202040 !important;
 }
 
 .CortanaText{

@@ -23,7 +23,7 @@ function StartMenuComponent(props){
     return(      
         
             <Card.Body>
-                <Card className={` ${styles.ProfileCard} d-flex ${styles.BackgroundBlur} m-2`}>
+                <Card className={` ${styles.ProfileCard} d-flex ${styles.TaskBarPopupCard} m-2`}>
                     <Image className={`img-circle rounded-circle mx-auto ${styles.CardImgTop}`} src={AboutMe}></Image>
                         <span className={`small text-center`}>{props.greetingMsg} Srinibas</span>
                         <Image className={`${styles.CloseButton} img-circle rounded-circle`} src={PowerOff}></Image>                    
@@ -31,7 +31,7 @@ function StartMenuComponent(props){
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         </p>
                 </Card>
-                <Card className = {`${styles.PinnedAppsCard} ${styles.BackgroundBlur} m-2`}>
+                <Card className = {`${styles.PinnedAppsCard} ${styles.TaskBarPopupCard} m-2`}>
                     <div className={`m-2`}>
                             <span class="badge badge-dark"><FontAwesomeIcon icon={faThumbtack}></FontAwesomeIcon> Pinned Apps </span>
                     </div>
@@ -70,7 +70,7 @@ function StartMenuComponent(props){
                         </div>
 
                 </Card>
-                <Card className = {`${styles.AllAppsCard} ${styles.BackgroundBlur} m-2`}>
+                <Card className = {`${styles.AllAppsCard} m-2 ${styles.TaskBarPopupCard}`}>
                         <div className={`m-2`}>
                             <span class="badge badge-dark"><FontAwesomeIcon icon={faRocket}></FontAwesomeIcon> All Apps </span>
                     </div>

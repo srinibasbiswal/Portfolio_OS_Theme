@@ -8,7 +8,7 @@ function VolumeBarComponent (){
 
     return(
         <Card.Body>
-            <Card className={`${styles.BackgroundBlur} p-2`}>
+            <Card className={`${styles.TaskBarPopupCard} p-2`}>
                 <Form>
                     <Form.Group>
                         <Form.Label>

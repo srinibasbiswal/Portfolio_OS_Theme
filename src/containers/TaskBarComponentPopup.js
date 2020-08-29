@@ -16,7 +16,7 @@ function TaskBarComponentPopup(props){
     switch (props.taskBarPopupData) {        
         case ComponentNames.StartMenu:           
             return(
-                <Card className={`${styles.StartMenu} ${styles.BackgroundBlur} ${styles.CustomScrollBar}`}>
+                <Card className={`${styles.StartMenu} ${styles.BackgroundBlur} ${styles.CustomScrollBar}`} >
                     <StartMenuComponent greetingMsg={greeting}></StartMenuComponent>
                 </Card>
             );

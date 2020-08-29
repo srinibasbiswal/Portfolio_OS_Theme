@@ -9,7 +9,7 @@ function CortanaComponent(){
     return(
     
     <Card.Body>
-        <Card className={`${styles.BackgroundBlur} ${styles.TaskBarPopupCard} m-2 d-flex`}>
+        <Card className={`${styles.TaskBarPopupCard} m-2 d-flex`}>
             <InputGroup className={`d-flex my-auto`}>                        
                 <FormControl
                     placeholder="Type here to search"
@@ -24,7 +24,7 @@ function CortanaComponent(){
             </InputGroup>           
         </Card>
 
-        <Card className={`${styles.BackgroundBlur}`}>
+        <Card className={`${styles.TaskBarPopupCard}`}>
             <Card.Body className={`text-center`}>
                 <Figure>
                     <Figure.Image
