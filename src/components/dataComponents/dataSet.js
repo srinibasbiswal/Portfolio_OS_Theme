@@ -89,4 +89,38 @@ export const Projects = [
     }
 ]
 
+export const SkillSet = [
+    {
+        name : 'Language Proficiency',
+        values : [
+            'Python',
+            'Java',
+            'JavaScript',
+            'ReactJS',
+            'Firebase',
+            'HTML',
+            'CSS'
+        ]
+    },
+    {
+        name : 'Tools Proficiency',
+        values : [
+            'Git',
+            'PyCharm',
+            'Eclipse',
+            'IntelliJ IDEA',
+            'Postman'
+        ]
+    },
+    {
+        name : 'Database Proficiency',
+        values : [
+            'MySQL',
+            'MongoDB',
+            'Firestore'
+        ]
+    }
+
+]
+
 
