@@ -2,7 +2,7 @@ import justAPic from '../../assets/images/justAPic.svg';
 import KloudGin from '../../assets/images/KloudGin.png';
 import Talspo from '../../assets/images/Talspo.png';
 import Freelance from '../../assets/images/Freelance.png';
-import { faLinkedin, faGithub, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
 
 export const Person = {
@@ -147,11 +147,11 @@ export const ContactPoints = [
         icon : faGithub
     },
     {
-        field : 'fbMessenger',
-        fieldName: 'Facebook Messenger',
-        value : 'srinibas.biswal97',
-        link : 'http://m.me/srinibas.biswal97',
-        icon : faFacebookMessenger
+        field : 'twitter',
+        fieldName: 'Twitter',
+        value : 'srinibasbiswal',
+        link : 'https://twitter.com/srinibasbiswal',
+        icon : faTwitter
     }
 
 ]
