@@ -28,7 +28,7 @@ function StartMenuComponent(props){
                         <span className={`small text-center`}>{props.greetingMsg} Srinibas</span>
                         <Image className={`${styles.CloseButton} img-circle rounded-circle`} src={PowerOff}></Image>                    
                         <p className={`text-center small`}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            This is a static menu currently. More to come soon !!
                         </p>
                 </Card>
                 <Card className = {`${styles.PinnedAppsCard} ${styles.TaskBarPopupCard} m-2`}>
