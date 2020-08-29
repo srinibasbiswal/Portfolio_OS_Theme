@@ -16,18 +16,12 @@ code {
 .modal-content{
   background-color: transparent !important;
 }
+/* .modal-dialog{
+  max-width: 900px !important;
+} */
 
-
-.example-enter {
-  height: 0px;
-}
-
-.example-enter.example-enter-active {
-  height: 750px;
-  -webkit-transition: height .3s ease;
-}
-
-.example-leave.example-leave-active {
-  height: 0px;
-  -webkit-transition: height .3s ease;
+@media screen and (min-width: 992px){
+  .modal-lg, .modal-xl {
+      max-width: 900px !important;
+  }
 }

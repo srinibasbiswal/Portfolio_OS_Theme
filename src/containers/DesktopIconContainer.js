@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import BatmanEmojiIcon from '../assets/images/BatmanEmojiIcon.png';
 import DocumentsIcon from '../assets/images/DocumentsIcon.png';
+import ContactMeIcon from '../assets/images/ContactMeIcon.png';
 import DesktopIconComponent from '../components/DesktopIconComponent';
 import AppModal from '../components/AppModal';
 import styles from '../stylesheets/style.module.css';
 import {dataConfig, showCaseComponentConfig} from '../components/dataComponents/dataConfig';
+import ContactComponent from '../components/dataComponents/ContactComponent';
 
 function DesktopIconContainer() {
 
@@ -23,6 +25,13 @@ function DesktopIconContainer() {
                 id: 2,
                 modalId: 'documentsModal',
                 modalShow: false
+            },
+            {
+                name: 'Contact Card',
+                iconName: ContactMeIcon,
+                id: 3,
+                modalId: 'contactModal',
+                modalShow: false
             }
         ]
     });
@@ -40,6 +49,13 @@ function DesktopIconContainer() {
             sidePanel: true,
             modalType: 'explorer',
             data: getModalSubComponentData('documentsDataConfig')
+        },
+
+        'contactModal': {
+            topPanel: true,
+            sidePanel: true,
+            modalType: 'componentData',
+            componentData : ContactComponent
         }
     };
 
@@ -48,7 +64,8 @@ function DesktopIconContainer() {
     // TODO : Make the initialization dynamic
     const [ModalzIndexValues, setModalzIndexValues] = useState({
         'thisPersonModal': 1000,
-        'documentsModal': 1000
+        'documentsModal': 1000,
+        'contactModal':1000
     });
 
     const setModalShowValue = (index, modalId, value) => {
@@ -57,7 +74,7 @@ function DesktopIconContainer() {
         setdesktopIcons({ icons: iconsMeta });
         setzIndexCounter(zIndexCounter + 1);
         var ModalzIndexValuesMeta = ModalzIndexValues
-        ModalzIndexValuesMeta[modalId] = ModalzIndexValues[modalId] + 1;
+        ModalzIndexValuesMeta[modalId] = zIndexCounter;
         setModalzIndexValues(ModalzIndexValuesMeta);
     }
 
