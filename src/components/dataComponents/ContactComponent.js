@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
 import styles from '../../stylesheets/style.module.css';
+import {ContactPoints} from '../dataComponents/dataSet';
 
 function ContactComponent(){
 
@@ -71,66 +70,51 @@ function ContactComponent(){
         <Card className={`shadow-lg bg-white rounded m-3`}>
             <Card.Body>
                 <div className={`row`}>
-                    <div className={`col-6`}>
-                        <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
-                            <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-                                <span> / <a target="_blank"  href="mailto:srinibasbiswal02@gmail.com" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal02@gmail.com</a>
-                                </span>                                
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className={`col-6`}>
-                        <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
-                            <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
-                                <span> / <a target="_blank" href="https://www.linkedin.com/in/srinibasbiswal/" className={`stretched-link text-decoration-none text-secondary`}>in/srinibasbiswal</a>
-                                </span>                                
-                            </Card.Body>
-                        </Card>
-                    </div>
+                    {ContactPoints.map((contact, index) => {
+                        return(
+                            <div className={`col-6`}>
+                                <Card className={`shadow-sm text-center m-2 ${styles.shadowOnHover}`}>
+                                    <Card.Body  className={`${styles.ContactIndividual}`}>
+                                        {
+                                            (contact.icon == null || contact.icon == '') 
+                                            ?<h6>{contact.fieldName}</h6>
+                                            :<FontAwesomeIcon icon={contact.icon}></FontAwesomeIcon>
+                                        }
+                                       
+                                        <span> / <a target="_blank"  href={contact.link} className={`stretched-link text-decoration-none text-secondary`}>{contact.value}</a>
+                                        </span>                                
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        )
+
+                    })}
                 </div>
-                <div className={`row`}>
-                    <div className={`col-6`}>
-                        <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
-                            <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
-                                <span> / <a target="_blank" href="https://github.com/srinibasbiswal" className={`stretched-link text-decoration-none text-secondary`}>srinibasbiswal</a>
-                                </span>                                
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className={`col-6`}>
-                        <Card className={`shadow text-center m-2 ${styles.shadowOnHoverLarge}`}>
-                            <Card.Body  className={`${styles.ContactIndividual}`}>
-                                <FontAwesomeIcon icon={faFacebookMessenger}></FontAwesomeIcon>
-                                <span> / <a target="_blank" href="http://m.me/srinibas.biswal97" className={`stretched-link text-decoration-none text-secondary`}>srinibas.biswal97</a>
-                                </span>                                
-                            </Card.Body>
-                        </Card>
-                    </div>
-                </div>
+            
                 <div className={`row d-flex`}>
-                    <Card className={`col-10 mx-auto mt-5`}>
+                    <Card className={`shadow-sm col-10 mx-auto mt-5`}>
                         <Card.Body>
                             <Form noValidate validated={validated} onSubmit={handleSubmit} >
+                                <blockquote class="blockquote text-center">
+                                    <p>Send me a message !!</p>
+                                </blockquote>
                                 <Form.Group>
                                     <Form.Label>Your Name</Form.Label>
-                                    <Form.Control required  type="text" name='name' placeholder="John Doe" value={emailResponse.template.name} onChange={handleChange} />
+                                    <Form.Control required  type="text" name='name' placeholder="Binod" value={emailResponse.template.name} onChange={handleChange} />
                                     <Form.Control.Feedback type="invalid">
                                         Please enter your name.
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Email address</Form.Label>
-                                    <Form.Control required type="email" name='email' placeholder="name@example.com" value={emailResponse.template.email} onChange={handleChange} />
+                                    <Form.Control required type="email" name='email' placeholder="binod@nooneknows.com" value={emailResponse.template.email} onChange={handleChange} />
                                     <Form.Control.Feedback type="invalid">
                                         Please enter a valid email.
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Your Message</Form.Label>
-                                    <Form.Control required as="textarea" name='message' rows="3" value={emailResponse.template.message} onChange={handleChange} />
+                                    <Form.Control required as="textarea" name='message' placeholder="Binod!!" rows="3" value={emailResponse.template.message} onChange={handleChange} />
                                     <Form.Control.Feedback type="invalid">
                                         Please enter the message.
                                     </Form.Control.Feedback>

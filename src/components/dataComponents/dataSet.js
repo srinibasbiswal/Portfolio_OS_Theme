@@ -2,6 +2,8 @@ import justAPic from '../../assets/images/justAPic.svg';
 import KloudGin from '../../assets/images/KloudGin.png';
 import Talspo from '../../assets/images/Talspo.png';
 import Freelance from '../../assets/images/Freelance.png';
+import { faLinkedin, faGithub, faFacebookMessenger} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
 
 export const Person = {
     name: 'Srinibas Biswal',
@@ -120,7 +122,37 @@ export const SkillSet = [
             'Firestore'
         ]
     }
-
 ]
 
+export const ContactPoints = [
+    {
+        field : 'email',
+        fieldName : 'Email',
+        value : 'srinibasbiswal02@gmail.com',
+        link : 'mailto:srinibasbiswal02@gmail.com',
+        icon : faEnvelope
+    },
+    {
+        field : 'linkedIn',
+        fieldName : 'LinkedIn',
+        value : 'in/srinibasbiswal',
+        link : 'https://www.linkedin.com/in/srinibasbiswal/',
+        icon : faLinkedin
+    },
+    {
+        field : 'github',
+        fieldName: 'GitHub',
+        value : 'srinibasbiswal',
+        link : 'https://github.com/srinibasbiswal',
+        icon : faGithub
+    },
+    {
+        field : 'fbMessenger',
+        fieldName: 'Facebook Messenger',
+        value : 'srinibas.biswal97',
+        link : 'http://m.me/srinibas.biswal97',
+        icon : faFacebookMessenger
+    }
+
+]
 
