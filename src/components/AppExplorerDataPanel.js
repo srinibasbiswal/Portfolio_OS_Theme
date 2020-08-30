@@ -3,6 +3,7 @@ import styles from '../stylesheets/style.module.css';
 import DesktopIconComponent from './DesktopIconComponent';
 import AppModal from './AppModal';
 import classes from '../stylesheets/style.module.css';
+import { Alert } from 'react-bootstrap';
 
 function AppExplorerDataPanel(props) {
 
@@ -56,8 +57,11 @@ function AppExplorerDataPanel(props) {
             </React.Fragment>
         )
     }else{
+        console.log("Modal Type is set to : "+props.modaldetails.modalType)
         return(
-        <h2>hello 2</h2>
+            <Alert variant='danger' className={`m-5`}>
+                Something gone wrong !! Check the console for logs.
+            </Alert>
         )
     }
 }
