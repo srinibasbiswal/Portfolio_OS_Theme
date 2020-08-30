@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../stylesheets/style.module.css';
 import { Modal } from 'react-bootstrap';
 import AppExplorerTopPanel from './AppExplorerTopPanel';
@@ -9,6 +9,21 @@ import AppExplorerDataPanel from './AppExplorerDataPanel';
 
 function AppModal(props) {
 	const styleRules = { zIndex: props.zindexvalue };
+
+	const [windowSize, setWindowSize] = useState({
+		width: undefined,
+		height: undefined,
+	  });
+	
+	  useEffect(() => {
+		  setWindowSize({
+			width: window.innerWidth,
+			height: window.innerHeight,
+		  });
+	}, []);
+
+	console.log(windowSize.height , windowSize.width)
+
 	return (
 		<Modal
 			{...props}
@@ -22,7 +37,10 @@ function AppModal(props) {
 		>
 			<Modal.Body className={`${styles.noPadding} ${styles.modalBodyOverRide} d-flex`}>
 
-				<AppExplorerSidePanel {...props}></AppExplorerSidePanel>
+				{windowSize.width != undefined && windowSize.width > 800 
+					? <AppExplorerSidePanel {...props}></AppExplorerSidePanel>
+					: null
+				}
 
 				<div className={`flex-fill d-flex flex-column`}>
 
