@@ -269,3 +269,28 @@ overflow: auto;
   background-color: #000000;
   cursor: pointer;
 }
+@media screen and (max-width: 768px){
+  .Hide_SD {
+    display: none !important;
+  }
+
+  .SD_Lead{
+    font-size: 1rem !important;
+  }
+
+  .M_SD{
+    margin:  1rem !important;
+  }
+
+  .P_Small{
+    line-height: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .Hide_MD {
+    display: none !important;
+  }
+}
+
+
