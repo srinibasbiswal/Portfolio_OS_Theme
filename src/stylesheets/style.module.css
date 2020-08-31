@@ -285,6 +285,12 @@ overflow: auto;
   .P_Small{
     line-height: 1.25rem !important;
   }
+
+  .modalOverride {
+    right: 5% !important;
+    left: 5% !important;
+    width: 90% !important;
+  }
 }
 
 @media screen and (min-width: 768px){
