@@ -69,10 +69,13 @@ function ContactComponent(){
     return(
         <Card className={`shadow-lg bg-white rounded m-3`}>
             <Card.Body>
+                <blockquote class="blockquote text-center">
+                    <p>My Social Links!!</p>
+                </blockquote>
                 <div className={`row`}>
                     {ContactPoints.map((contact, index) => {
                         return(
-                            <div className={`col-6`}>
+                            <div className={`col-md-6`}>
                                 <Card className={`shadow-sm text-center m-2 ${styles.shadowOnHover}`}>
                                     <Card.Body  className={`${styles.ContactIndividual}`}>
                                         {
@@ -92,11 +95,11 @@ function ContactComponent(){
                 </div>
             
                 <div className={`row d-flex`}>
-                    <Card className={`shadow-sm col-10 mx-auto mt-5`}>
+                    <Card className={`col-12 mx-auto mt-5`}>
                         <Card.Body>
                             <Form noValidate validated={validated} onSubmit={handleSubmit} >
                                 <blockquote class="blockquote text-center">
-                                    <p>Send me a message !!</p>
+                                    <p>Send me a message!!</p>
                                 </blockquote>
                                 <Form.Group>
                                     <Form.Label>Your Name</Form.Label>
