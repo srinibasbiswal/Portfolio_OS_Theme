@@ -291,6 +291,10 @@ overflow: auto;
     left: 5% !important;
     width: 90% !important;
   }
+
+  .StartMenu{
+    min-width: 100px !important;
+  }
 }
 
 @media screen and (min-width: 768px){
