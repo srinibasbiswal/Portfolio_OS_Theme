@@ -12,7 +12,7 @@ function ProjectComponent(){
             {
                 Projects.map((project, index) => {
                     return(
-                    <div className={`col-6`}>
+                    <div className={`col-sm-12 col-md-6`}>
                         <Card className={`m-4 rounded shadow ${styles.shadowOnHoverLarge} ${styles.ProjectCard}`}>
                             <Card.Body className={`text-center`}>
                                 <Card.Title >{project.projectName}</Card.Title>
