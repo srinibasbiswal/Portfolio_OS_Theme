@@ -269,6 +269,12 @@ overflow: auto;
   background-color: #000000;
   cursor: pointer;
 }
+
+.ClockAndCalendar{
+  height: 400px !important;
+  width: 400px !important;
+}
+
 @media screen and (max-width: 768px){
   .Hide_SD {
     display: none !important;
@@ -295,6 +301,12 @@ overflow: auto;
   .StartMenu{
     min-width: 100px !important;
   }
+
+  .ClockAndCalendar{
+    height: 400px !important;
+    width: 350px !important;
+  }
+
 }
 
 @media screen and (min-width: 768px){
