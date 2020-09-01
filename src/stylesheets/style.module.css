@@ -307,6 +307,10 @@ overflow: auto;
     width: 350px !important;
   }
 
+  .ToolBarPopUpComponent{
+    min-width: 350px !important;
+  }
+
 }
 
 @media screen and (min-width: 768px){
