@@ -4,6 +4,7 @@ import EducationIcon from '../../assets/images/EducationIcon.png';
 import ContactMeIcon from '../../assets/images/ContactMeIcon.png';
 import ProjectsIcon from '../../assets/images/ProjectsIcon.png';
 import SkillsIcon from '../../assets/images/SkillsIcon.png';
+import MapIcon from '../../assets/images/MapIcon.png';
 import AboutComponent from './AboutComponent';
 import ExperienceComponent from './ExperienceComponent';
 import EducationComponent from './EducationComponent';
@@ -92,7 +93,7 @@ export const showCaseComponentConfig = {
     },
     'location' : {
         name: 'My Location',
-        iconName: SkillsIcon,
+        iconName: MapIcon,
         id: 7,
         modalId: 'LocationModal',
         dataConfigId : 'location',
