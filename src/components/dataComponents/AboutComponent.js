@@ -1,32 +1,41 @@
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
-
+import styles from '../../stylesheets/style.module.css';
 import {Person,AboutMeData} from './dataSet';
 
 function AboutComponent(){
 
     return(
-        <Card className={`shadow-lg bg-white rounded m-5 h-75`}>
+        <Card className={`shadow-lg bg-white rounded m-md-5 h-md-75 ${styles.M_SD}`}>
             <Card.Body className={`row`}>
+                <div className={`col-md-4 text-center ${styles.Hide_MD}`}>
+                    <Image 
+                        src={Person.profilePic}
+                        height={100}
+                        alt={'Profile Pic'}
+                        className={`my-auto`}
+                    />
+                </div>
                 <div className={`col-md-8 d-flex`}>                    
                     <blockquote className={`blockquote text-center my-auto`}>
-                        <h2>{Person.name}</h2>
-                        <p className={`lead`}>
+                        <h2 className={`${styles.Hide_SD}`}>{Person.name}</h2>
+                        <h3 className={`${styles.Hide_MD}`}>{Person.name}</h3>
+                        <p className={`lead ${styles.SD_Lead}`}>
                             {AboutMeData.intro}
                         </p>
-                        <p>
+                        <p className={`${styles.P_Small}`}>
                             <small>
                                 {AboutMeData.desc}
                             </small>
                         </p>
-                        <p>
+                        <p className={`${styles.P_Small}`}>
                             <small>
                                 {AboutMeData.outro}
                             </small>
                         </p>
                     </blockquote>
                 </div>
-                <div className={`col-md-4 text-center d-flex`}>
+                <div className={`col-md-4 text-center d-md-flex ${styles.Hide_SD}`}>
                     <Image 
                         src={Person.profilePic}
                         height={200}

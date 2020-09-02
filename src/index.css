@@ -16,9 +16,6 @@ code {
 .modal-content{
   background-color: transparent !important;
 }
-/* .modal-dialog{
-  max-width: 900px !important;
-} */
 
 @media screen and (min-width: 992px){
   .modal-lg, .modal-xl {

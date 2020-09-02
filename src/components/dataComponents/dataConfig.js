@@ -4,12 +4,14 @@ import EducationIcon from '../../assets/images/EducationIcon.png';
 import ContactMeIcon from '../../assets/images/ContactMeIcon.png';
 import ProjectsIcon from '../../assets/images/ProjectsIcon.png';
 import SkillsIcon from '../../assets/images/SkillsIcon.png';
+import MapIcon from '../../assets/images/MapIcon.png';
 import AboutComponent from './AboutComponent';
 import ExperienceComponent from './ExperienceComponent';
 import EducationComponent from './EducationComponent';
 import ProjectComponent from './ProjectComponent';
 import SkillsComponent from './SkillsComponent';
 import ContactComponent from './ContactComponent';
+import MapContainer from '../../containers/MapContainer';
 
 export const dataConfig = {
 
@@ -18,7 +20,7 @@ export const dataConfig = {
     },
 
     'documentsDataConfig' : {
-        'showCaseComponents' : ['projects', 'skills']
+        'showCaseComponents' : ['projects', 'skills','location']
     }
 
 };
@@ -38,7 +40,7 @@ export const showCaseComponentConfig = {
     'experience' : {
         name: 'Experience',
         iconName: ExperienceIcon,
-        id: 1,
+        id: 2,
         modalId: 'experienceModal',
         dataConfigId : 'experience',
         modalShow: false ,
@@ -49,7 +51,7 @@ export const showCaseComponentConfig = {
     'education' : {
         name: 'Education',
         iconName: EducationIcon,
-        id: 1,
+        id: 3,
         modalId: 'EducationModal',
         dataConfigId : 'education',
         modalShow: false ,
@@ -60,7 +62,7 @@ export const showCaseComponentConfig = {
     'contact': {
         name: 'Contact Me',
         iconName: ContactMeIcon,
-        id: 1,
+        id: 4,
         modalId: 'ContactMeModal',
         dataConfigId : 'contact',
         modalShow: false ,
@@ -71,7 +73,7 @@ export const showCaseComponentConfig = {
     'projects' : {
         name: 'Projects',
         iconName: ProjectsIcon,
-        id: 1,
+        id: 5,
         modalId: 'ProjectsModal',
         dataConfigId : 'projects',
         modalShow: false ,
@@ -82,11 +84,21 @@ export const showCaseComponentConfig = {
     'skills' : {
         name: 'Skills',
         iconName: SkillsIcon,
-        id: 1,
+        id: 6,
         modalId: 'SkillsModal',
         dataConfigId : 'skills',
         modalShow: false ,
         modalType :'componentData',
         componentData : SkillsComponent
+    },
+    'location' : {
+        name: 'My Location',
+        iconName: MapIcon,
+        id: 7,
+        modalId: 'LocationModal',
+        dataConfigId : 'location',
+        modalShow: false ,
+        modalType :'componentData',
+        componentData : MapContainer
     }
 }

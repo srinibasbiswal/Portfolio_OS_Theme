@@ -20,7 +20,7 @@ function EducationComponent(){
 										<div className={`${TimeLineStyle.col_2} col-2 text-center bottom d-inline-flex justify-content-center align-items-center`}>
 											<div className={`${TimeLineStyle.circle} font-weight-bold`}>{education.id}</div>
 										</div>
-										<div className={`col-6`}>
+										<div className={`col-10`}>
 											<h5>{education.instituteName}</h5>
 											<div>
 												<FontAwesomeIcon icon={faGraduationCap} className={`mr-1`}></FontAwesomeIcon>
@@ -52,7 +52,7 @@ function EducationComponent(){
 											<div className={`${TimeLineStyle.col_2} col-2 text-center top d-inline-flex justify-content-center align-items-center`}>
 												<div className={`${TimeLineStyle.circle} font-weight-bold`}>{education.id}</div>
 											</div>
-											<div className={`col-6`}>
+											<div className={`col-10`}>
 												<h5>{education.instituteName}</h5>
 												<div>
 													<FontAwesomeIcon icon={faGraduationCap} className={`mr-1`}></FontAwesomeIcon>
@@ -82,7 +82,7 @@ function EducationComponent(){
 										</div>
 
 										<div className={`row align-items-center justify-content-end ${TimeLineStyle.timeLine} d-flex`}>
-											<div className={`col-6 text-right`}>
+											<div className={`col-10 text-right`}>
 												<h5>{education.instituteName}</h5>
 												<div>
 													<FontAwesomeIcon icon={faGraduationCap} className={`mr-1`}></FontAwesomeIcon>

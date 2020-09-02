@@ -156,3 +156,21 @@ export const ContactPoints = [
 
 ]
 
+export const LocationDetails = [
+    {
+        placeName: 'Current Location : Hyderabad, India',
+        latitude : 17.3850,
+        longitude : 78.4867,
+        dx : -90,
+        dy: -30
+    },
+    {
+        placeName: 'Hometown : Bhubaneswar, India',
+        latitude : 20.2961,
+        longitude : 85.8245,
+        dx : -30,
+        dy: -90
+    }
+]
+
+

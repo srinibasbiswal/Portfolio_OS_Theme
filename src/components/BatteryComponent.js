@@ -8,13 +8,15 @@ function BatteryComponent (){
 
     return(
         <Card.Body>
-            <Card className={`${styles.TaskBarPopupCard} p-2`}>
+            <Card className={`${styles.TaskBarPopupCard} ${styles.ToolBarPopUpComponent}p-2`}>
                 <Container className={`row`}>
                     <Col md={2}><FontAwesomeIcon icon={faChargingStation} size="2x"></FontAwesomeIcon></Col>
                     <Col md={10}>
-                        Charging<br/>
-                        90 %, 10 minutes to fully charged.<br/>
-                        <Button variant="success" className={`float-right`} size="sm">Power Saver</Button>
+                        <p className={`m-2`}>
+                            Charging<br/>
+                            90 %, 10 minutes to fully charged.<br/>
+                            <Button variant="success" className={`float-right`} size="sm">Power Saver</Button>
+                        </p>
                     </Col>
                 </Container>
                 

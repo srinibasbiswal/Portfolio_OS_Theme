@@ -2,7 +2,7 @@
 ul.timeline {
     list-style-type: none;
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.5rem !important;
 }
 
  /* Timeline vertical line */
@@ -29,7 +29,7 @@ li.timeline_item {
     border-bottom: 0.5rem solid transparent;
     display: block;
     position: absolute;
-    left: 2rem;
+    left: 2rem !important;
 }
 
 /* Timeline item circle marker */
@@ -40,8 +40,22 @@ li.timeline_item {
     position: absolute;
     border-radius: 5px;
     border: 3px solid #fff;
-    left: -25px;
+    left: -25px !important;
     z-index: 400;
     margin-top: -18px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+}
+
+@media screen and (max-width: 768px){
+    .before{
+        left: -15px !important;
+    }
+
+    .timeline_arrow{
+        left: 2.25rem !important;
+    }
+    ul.timeline{
+        padding-left: 1.75rem !important;
+    }
 }

@@ -10,10 +10,8 @@ function ClockAndCalendar(){
         <Card.Body>
             <Card className={`${styles.TaskBarPopupCard} m-2 d-flex`}>
                 <InfiniteCalendar
-                    width={400}
-                    height={300}
                     selected={new Date()}
-                    className={`p-2 mx-auto`}
+                    className={`p-2 mx-auto ${styles.ClockAndCalendar}`}
                 />
             </Card>
         </Card.Body>
