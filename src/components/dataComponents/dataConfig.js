@@ -10,7 +10,7 @@ import EducationComponent from './EducationComponent';
 import ProjectComponent from './ProjectComponent';
 import SkillsComponent from './SkillsComponent';
 import ContactComponent from './ContactComponent';
-import MapComponent from '../MapComponent';
+import MapContainer from '../../containers/MapContainer';
 
 export const dataConfig = {
 
@@ -98,6 +98,6 @@ export const showCaseComponentConfig = {
         dataConfigId : 'location',
         modalShow: false ,
         modalType :'componentData',
-        componentData : MapComponent
+        componentData : MapContainer
     }
 }

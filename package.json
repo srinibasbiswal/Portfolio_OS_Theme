@@ -20,6 +20,7 @@
     "react-infinite-calendar": "^2.3.1",
     "react-live-clock": "^4.0.5",
     "react-scripts": "3.4.1",
+    "react-simple-maps": "^2.1.2",
     "react-transition-group": "^1.2.1"
   },
   "scripts": {
