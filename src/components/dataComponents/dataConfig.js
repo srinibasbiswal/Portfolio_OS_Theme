@@ -13,6 +13,7 @@ import SkillsComponent from './SkillsComponent';
 import ContactComponent from './ContactComponent';
 import MapContainer from '../../containers/MapContainer';
 import Pdf from './Srinibas_Biswal_Resume.pdf';
+import PDFViewer from '../PDFViewer';
 
 export const dataConfig = {
 
@@ -109,7 +110,9 @@ export const showCaseComponentConfig = {
         modalId: 'resume',
         dataConfigId : 'resume',
         modalShow: false ,
-        modalType :'externalLink',
+        modalType :'componentData',
+        componentData : PDFViewer,
+        isDocument: true,        
         link : Pdf
     }
 }

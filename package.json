@@ -19,6 +19,7 @@
     "react-dom": "^16.13.1",
     "react-infinite-calendar": "^2.3.1",
     "react-live-clock": "^4.0.5",
+    "react-pdf": "^5.0.0",
     "react-scripts": "3.4.1",
     "react-simple-maps": "^2.1.2",
     "react-transition-group": "^1.2.1"
