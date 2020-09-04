@@ -12,6 +12,7 @@ import ProjectComponent from './ProjectComponent';
 import SkillsComponent from './SkillsComponent';
 import ContactComponent from './ContactComponent';
 import MapContainer from '../../containers/MapContainer';
+import Pdf from './Srinibas_Biswal_Resume.pdf';
 
 export const dataConfig = {
 
@@ -20,7 +21,7 @@ export const dataConfig = {
     },
 
     'documentsDataConfig' : {
-        'showCaseComponents' : ['projects', 'skills','location']
+        'showCaseComponents' : ['projects', 'skills','location','resume']
     }
 
 };
@@ -100,5 +101,15 @@ export const showCaseComponentConfig = {
         modalShow: false ,
         modalType :'componentData',
         componentData : MapContainer
+    },
+    'resume' : {
+        name: 'Resume',
+        iconName: MapIcon,
+        id: 8,
+        modalId: 'resume',
+        dataConfigId : 'resume',
+        modalShow: false ,
+        modalType :'externalLink',
+        link : Pdf
     }
 }
