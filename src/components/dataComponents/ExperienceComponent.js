@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '../../stylesheets/timeline.module.css';
+import bgstyles from '../../stylesheets/BGStyle.module.css';
+import customStyles from '../../stylesheets/style.module.css';
 import { Card, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock} from "@fortawesome/free-regular-svg-icons";
@@ -7,9 +9,25 @@ import {Experiences} from './dataSet';
 
 function ExperienceComponent(){
     return(
-    <Card className={`shadow-lg bg-white rounded m-3`}>
-            <Card.Body className={`row`}>
-                <div className={`col-lg-10 mx-auto`}>          
+        <Card className={`bg-white rounded m-md-5 ${bgstyles.ColorShadow_LG}  ${customStyles.M_SD}`}>
+            <div className={`${bgstyles.area}`} >
+                    <ul className={`${bgstyles.circles}`}>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div > 
+            <Card.Body className={`rounded row ${bgstyles.ripple_background}`}>
+                
+                <div className={`col-lg-10 mx-auto`}>  
+                           
                     <ul className={`${styles.timeline}`}>       
                         {
                             Experiences.map((experience, index) => {                              

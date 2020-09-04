@@ -1,13 +1,28 @@
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
 import styles from '../../stylesheets/style.module.css';
+import bgstyles from '../../stylesheets/BGStyle.module.css';
 import {Person,AboutMeData} from './dataSet';
 
 function AboutComponent(){
 
     return(
-        <Card className={`shadow-lg bg-white rounded m-md-5 h-md-75 ${styles.M_SD}`}>
-            <Card.Body className={`row`}>
+        <Card className={` bg-white rounded m-md-5 h-md-75 ${bgstyles.ColorShadow_LG} ${styles.M_SD}`}>
+            <Card.Body className={`row ${bgstyles.ripple_background} rounded`}>                
+                <div className={`${bgstyles.area}`} >
+                    <ul className={`${bgstyles.circles}`}>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div >               
                 <div className={`col-md-4 text-center ${styles.Hide_MD}`}>
                     <Image 
                         src={Person.profilePic}

@@ -1,14 +1,29 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import TimeLineStyle from '../../stylesheets/EducationTimeline.module.css';
+import bgstyles from '../../stylesheets/BGStyle.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap} from "@fortawesome/free-solid-svg-icons";
 import {EducationList} from './dataSet';
 
 function EducationComponent(){
     return(
-        <Card className={`shadow-lg bg-white rounded m-3`}>
-            <Card.Body className={`row`}>
+        <Card className={`bg-white rounded m-5 ${bgstyles.ColorShadow_LG}`}>
+            <Card.Body className={`row ${bgstyles.ripple_background} rounded`}>
+			<div className={`${bgstyles.area}`} >
+                    <ul className={`${bgstyles.circles}`}>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div > 
             	<div className={`container`}>
                 	<h2 className={`pb-3 pt-2 border-bottom mb-5 text-center`}>Educational Timeline</h2>
 
