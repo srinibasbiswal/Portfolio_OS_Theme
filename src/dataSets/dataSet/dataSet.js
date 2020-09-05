@@ -1,4 +1,4 @@
-import ProfilePic from '../images/justAPic.svg';
+import ProfilePic from '../images/ProfilePic.jpeg';
 import KloudGin from '../images/KloudGin.png';
 import Talspo from '../images/Talspo.png';
 import Freelance from '../images/Freelance.png';
@@ -13,8 +13,8 @@ export const Person = {
 };
 
 export const AboutMeData = {
-    intro: ' I\'m a techno-functional Software Developement Engineer from India.',
-    desc : 'I enjoy taking complex problems and converting to an usable format. My major domains are Web Devleopment and Python Prgramming.',
+    intro: ' I\'m a techno-functional Software Development Engineer from India.',
+    desc : 'I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development and Python Programming.',
     outro: 'When I\'m not coding, you will find me watching an episode of The Office or exploring a new place.'
 };
 
