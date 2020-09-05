@@ -313,6 +313,11 @@ overflow: auto;
     min-width: 350px !important;
   }
 
+  .PDFPage > canvas{
+    width : 350px !important;
+    height : 500px !important;
+  }
+
 }
 
 @media screen and (min-width: 768px){
@@ -330,3 +335,4 @@ overflow: auto;
 .fontColorRed{
   color: #ff0000;
 }
+

@@ -4,10 +4,12 @@ import Talspo from '../../assets/images/Talspo.png';
 import Freelance from '../../assets/images/Freelance.png';
 import { faLinkedin, faGithub, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
+import ResumePDF from './Srinibas_Biswal_Resume.pdf';
 
 export const Person = {
     name: 'Srinibas Biswal',
-    profilePic : justAPic
+    profilePic : justAPic,
+    resumePDF : ResumePDF
 };
 
 export const AboutMeData = {
