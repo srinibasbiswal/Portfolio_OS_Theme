@@ -28,8 +28,8 @@ function AboutComponent(){
                         src={Person.profilePic}
                         height={100}
                         alt={'Profile Pic'}
-                        className={`my-auto`}
-                    />
+                        className={`${styles.myPic} my-auto`}
+                    />                    
                 </div>
                 <div className={`col-md-8 d-flex`}>                    
                     <blockquote className={`blockquote text-center my-auto`}>
@@ -55,7 +55,7 @@ function AboutComponent(){
                         src={Person.profilePic}
                         height={200}
                         alt={'Profile Pic'}
-                        className={`my-auto`}
+                        className={`${styles.myPic} my-auto`}
                     />
                 </div>
                 <div></div>

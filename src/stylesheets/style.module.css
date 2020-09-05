@@ -336,3 +336,6 @@ overflow: auto;
   color: #ff0000;
 }
 
+.myPic{
+  border-radius: 50% !important;
+}
