@@ -22,7 +22,7 @@ function AppModal(props) {
 		  });
 	}, []);
 
-	console.log(windowSize.height , windowSize.width)
+	// console.log(windowSize.height , windowSize.width)
 
 	return (
 		<Modal

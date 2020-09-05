@@ -7,7 +7,7 @@ import TaskBarComponentPopup from './TaskBarComponentPopup';
 import {ComponentNames} from '../components/dataComponents/Enums';
 
 function ToolBarContainer( props ){
-    console.log(props)
+    // console.log(props)
 
     const [toolBarIcons, setToolBarIcons] = useState({
         icons: [
