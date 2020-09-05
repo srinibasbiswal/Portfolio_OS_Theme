@@ -5,7 +5,7 @@ import customStyles from '../../stylesheets/style.module.css';
 import { Card, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock} from "@fortawesome/free-regular-svg-icons";
-import {Experiences} from './dataSet';
+import {Experiences} from '../../dataSets/dataSet/dataSet';
 
 function ExperienceComponent(){
     return(

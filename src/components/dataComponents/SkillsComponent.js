@@ -4,7 +4,7 @@ import styles from '../../stylesheets/style.module.css';
 import bgstyles from '../../stylesheets/BGStyle.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle} from "@fortawesome/free-solid-svg-icons";
-import {SkillSet} from '../dataComponents/dataSet';
+import {SkillSet} from '../../dataSets/dataSet/dataSet';
 
 function SkillsComponent(){
     const popover = (

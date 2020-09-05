@@ -3,7 +3,7 @@ import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../stylesheets/style.module.css';
 import bgstyles from '../../stylesheets/BGStyle.module.css';
-import {ContactPoints} from '../dataComponents/dataSet';
+import {ContactPoints} from '../../dataSets/dataSet/dataSet';
 
 function ContactComponent(){
 

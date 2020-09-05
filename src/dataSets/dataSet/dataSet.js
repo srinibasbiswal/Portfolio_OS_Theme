@@ -1,7 +1,7 @@
-import justAPic from '../../assets/images/justAPic.svg';
-import KloudGin from '../../assets/images/KloudGin.png';
-import Talspo from '../../assets/images/Talspo.png';
-import Freelance from '../../assets/images/Freelance.png';
+import justAPic from '../images/justAPic.svg';
+import KloudGin from '../images/KloudGin.png';
+import Talspo from '../images/Talspo.png';
+import Freelance from '../images/Freelance.png';
 import { faLinkedin, faGithub, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope} from "@fortawesome/free-regular-svg-icons";
 import ResumePDF from './Srinibas_Biswal_Resume.pdf';

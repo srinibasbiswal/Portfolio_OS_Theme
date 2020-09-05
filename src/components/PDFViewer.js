@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { Button } from 'react-bootstrap';
 import styles from '../stylesheets/style.module.css';
-import {Person} from '../components/dataComponents/dataSet';
+import {Person} from '../dataSets/dataSet/dataSet';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image } from 'react-bootstrap';
 import styles from '../../stylesheets/style.module.css';
 import bgstyles from '../../stylesheets/BGStyle.module.css';
-import {Person,AboutMeData} from './dataSet';
+import {Person,AboutMeData} from '../../dataSets/dataSet/dataSet';
 
 function AboutComponent(){
 

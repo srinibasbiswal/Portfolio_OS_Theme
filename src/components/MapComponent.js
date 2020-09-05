@@ -6,7 +6,7 @@ import {
     Annotation,
     ZoomableGroup
   } from "react-simple-maps";
-import {LocationDetails} from './dataComponents/dataSet';
+import {LocationDetails} from '../dataSets/dataSet/dataSet';
   
 function MapComponent(){
 

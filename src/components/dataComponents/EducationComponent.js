@@ -4,7 +4,7 @@ import TimeLineStyle from '../../stylesheets/EducationTimeline.module.css';
 import bgstyles from '../../stylesheets/BGStyle.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap} from "@fortawesome/free-solid-svg-icons";
-import {EducationList} from './dataSet';
+import {EducationList} from '../../dataSets/dataSet/dataSet';
 
 function EducationComponent(){
     return(

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button, Badge } from 'react-bootstrap';
 import styles from '../../stylesheets/style.module.css';
 import bgstyles from '../../stylesheets/BGStyle.module.css';
-import {Projects} from '../dataComponents/dataSet';
+import {Projects} from '../../dataSets/dataSet/dataSet';
 
 function ProjectComponent(){
 
