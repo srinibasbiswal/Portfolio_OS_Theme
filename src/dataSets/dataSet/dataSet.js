@@ -1,4 +1,4 @@
-import justAPic from '../images/justAPic.svg';
+import ProfilePic from '../images/justAPic.svg';
 import KloudGin from '../images/KloudGin.png';
 import Talspo from '../images/Talspo.png';
 import Freelance from '../images/Freelance.png';
@@ -8,14 +8,14 @@ import ResumePDF from './Srinibas_Biswal_Resume.pdf';
 
 export const Person = {
     name: 'Srinibas Biswal',
-    profilePic : justAPic,
+    profilePic : ProfilePic,
     resumePDF : ResumePDF
 };
 
 export const AboutMeData = {
     intro: ' I\'m a techno-functional Software Developement Engineer from India.',
-    desc : 'I enjoy taking complex problems and convertin to an usable format. My major domains are Web Devleopment and Python Prgramming.',
-    outro: 'When I\'m not coding, you will find me watching an episode of The Office or travelling to a new place.'
+    desc : 'I enjoy taking complex problems and converting to an usable format. My major domains are Web Devleopment and Python Prgramming.',
+    outro: 'When I\'m not coding, you will find me watching an episode of The Office or exploring a new place.'
 };
 
 export const Experiences = [
