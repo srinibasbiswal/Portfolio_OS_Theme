@@ -10,7 +10,7 @@ function EducationComponent(){
     return(
         <Card className={`bg-white rounded m-5 ${bgstyles.ColorShadow_LG}`}>
             <Card.Body className={`row ${bgstyles.ripple_background} rounded`}>
-			<div className={`${bgstyles.area}`} >
+				<div className={`${bgstyles.area}`} >
                     <ul className={`${bgstyles.circles}`}>
                         <li></li>
                         <li></li>

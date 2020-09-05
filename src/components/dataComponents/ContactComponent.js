@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../stylesheets/style.module.css';
+import bgstyles from '../../stylesheets/BGStyle.module.css';
 import {ContactPoints} from '../dataComponents/dataSet';
 
 function ContactComponent(){
@@ -67,11 +68,25 @@ function ContactComponent(){
             })
       }
     return(
-        <Card className={`shadow-lg bg-white rounded m-3`}>
-            <Card.Body>
+        <Card className={`bg-white rounded m-3 ${bgstyles.ColorShadow_LG}`}>
+            <Card.Body className={` ${bgstyles.ripple_background} rounded`}>   
+                <div className={`${bgstyles.area}`} >
+                    <ul className={`${bgstyles.circles}`}>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div >    
                 <blockquote class="blockquote text-center">
                     <p>My Social Links!!</p>
-                </blockquote>
+                </blockquote>    
                 <div className={`row`}>
                     {ContactPoints.map((contact, index) => {
                         return(
@@ -95,7 +110,7 @@ function ContactComponent(){
                 </div>
             
                 <div className={`row d-flex`}>
-                    <Card className={`col-12 mx-auto mt-5`}>
+                    <Card className={`col-md-8 mx-auto mt-3`}>
                         <Card.Body>
                             <Form noValidate validated={validated} onSubmit={handleSubmit} >
                                 <blockquote class="blockquote text-center">
