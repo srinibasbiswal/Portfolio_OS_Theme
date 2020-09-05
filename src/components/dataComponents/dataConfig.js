@@ -4,6 +4,7 @@ import EducationIcon from '../../assets/images/EducationIcon.png';
 import ContactMeIcon from '../../assets/images/ContactMeIcon.png';
 import ProjectsIcon from '../../assets/images/ProjectsIcon.png';
 import SkillsIcon from '../../assets/images/SkillsIcon.png';
+import ResumeIcon from '../../assets/images/ResumeIcon.png';
 import MapIcon from '../../assets/images/MapIcon.png';
 import AboutComponent from './AboutComponent';
 import ExperienceComponent from './ExperienceComponent';
@@ -105,7 +106,7 @@ export const showCaseComponentConfig = {
     },
     'resume' : {
         name: 'Resume',
-        iconName: MapIcon,
+        iconName: ResumeIcon,
         id: 8,
         modalId: 'resume',
         dataConfigId : 'resume',
