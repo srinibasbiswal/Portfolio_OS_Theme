@@ -1,8 +1,7 @@
 import React from 'react';
 import { Modal, Button, Card, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import styles from '../stylesheets/style.module.css';
-import DesktopIconComponent from './DesktopIconComponent';
-import ContactMeIcon from '../assets/images/ContactMeIcon.png';
+import bgstyles from '../stylesheets/BGStyle.module.css';
 
 function CreditModal(props) {
     return (
@@ -22,8 +21,9 @@ function CreditModal(props) {
         <Modal.Body
             className={`${styles.OffWhite}`}
         >
-            <Card className="text-center">
-                <Card.Body>
+            <Card className={`text-center ${bgstyles.ColorShadow_LG}`}>
+                <Card.Body className={`${bgstyles.ripple_background} rounded`}>                
+                    <div>
                     <p>
                         <span className={`font-weight-bold`}>Icons Pack :</span>
                         <a href="https://icons8.com/" target='_blank' class="badge badge-info m-2">Icons8</a>
@@ -48,7 +48,7 @@ function CreditModal(props) {
                         <a href="https://github.com/" target='_blank' class="badge badge-info m-2">GitHub</a>
                         <a href="https://stackoverflow.com/" target='_blank' class="badge badge-info m-2">stackoverflow</a>
                     </p>
-                    
+                    </div>                    
                 </Card.Body>
 
             </Card>
