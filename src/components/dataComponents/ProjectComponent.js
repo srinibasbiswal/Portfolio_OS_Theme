@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import { Card, Button, Badge } from 'react-bootstrap';
 import styles from '../../stylesheets/style.module.css';
+import bgstyles from '../../stylesheets/BGStyle.module.css';
 import {Projects} from '../dataComponents/dataSet';
 
 function ProjectComponent(){
 
     return(
-        <div className={`h-100 m-0 container`}>
-            <div className={`text-center`}></div>
-            <div className={`row`}>
-            {
+        <div className={`h-100 m-0 container ${bgstyles.ColorShadow_LG}`}>
+            <Card>
+                <div className={`row ${bgstyles.ripple_background} rounded`}>                
+                    <ul className={`${bgstyles.circles}`}>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>               
+                {
                 Projects.map((project, index) => {
                     return(
                     <div className={`col-sm-12 col-md-6`}>
@@ -36,8 +49,9 @@ function ProjectComponent(){
                     </div>  
                     )                  
                 })
-            }                
-            </div>
+                }                
+                </div>
+            </Card>
         </div>
     );
 }
