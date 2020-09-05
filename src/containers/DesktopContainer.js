@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import styles from '../stylesheets/style.module.css';
 import TaskbarContainer from './TaskbarContainer';
 import DesktopIconContainer from './DesktopIconContainer';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+import CreditModal from '../components/CreditModal';
 
  function DesktopContainer(){
+    const [modalShow, setModalShow] = useState(false);
+
      return (
          <div>
             <ContextMenuTrigger id="same_unique_identifier">
@@ -36,10 +39,14 @@ import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
                 </MenuItem>
                 <MenuItem 
                     className={`${styles.RightClickMenuItem} ${styles.MediumFont} border-bottom p-2 rounded lead`}
-                    onClick={()=> window.open("someLink", "_blank")}
+                    onClick={() => setModalShow(true)}
                 >
-                    Contact Me
+                    Credits
                 </MenuItem>
+                <CreditModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
                 
             </ContextMenu>
        </div>

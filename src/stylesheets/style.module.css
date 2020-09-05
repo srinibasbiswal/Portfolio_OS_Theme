@@ -320,3 +320,13 @@ overflow: auto;
     display: none !important;
   }
 }
+
+
+.FooterText{
+  left: 35% !important;
+  position: absolute;
+}
+
+.fontColorRed{
+  color: #ff0000;
+}
