@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import BatmanEmojiIcon from '../assets/images/BatmanEmojiIcon.png';
 import DocumentsIcon from '../assets/images/DocumentsIcon.png';
 import ContactMeIcon from '../assets/images/ContactMeIcon.png';
+import ResumeIcon from '../assets/images/ResumeIcon.png';
 import DesktopIconComponent from '../components/DesktopIconComponent';
 import AppModal from '../components/AppModal';
 import styles from '../stylesheets/style.module.css';
 import {dataConfig, showCaseComponentConfig} from '../components/dataComponents/dataConfig';
 import ContactComponent from '../components/dataComponents/ContactComponent';
+import PDFViewer from '../components/PDFViewer';
 
 function DesktopIconContainer() {
 
@@ -32,6 +34,13 @@ function DesktopIconContainer() {
                 id: 3,
                 modalId: 'contactModal',
                 modalShow: false
+            },
+            {
+                name: 'View Resume',
+                iconName: ResumeIcon,
+                id: 4,
+                modalId: 'resumeModal',
+                modalShow: false
             }
         ]
     });
@@ -50,12 +59,17 @@ function DesktopIconContainer() {
             modalType: 'explorer',
             data: getModalSubComponentData('documentsDataConfig')
         },
-
         'contactModal': {
             topPanel: true,
             sidePanel: true,
             modalType: 'componentData',
             componentData : ContactComponent
+        },
+        'resumeModal': {
+            topPanel: true,
+            sidePanel: true,
+            modalType: 'componentData',
+            componentData : PDFViewer
         }
     };
 
@@ -65,7 +79,8 @@ function DesktopIconContainer() {
     const [ModalzIndexValues, setModalzIndexValues] = useState({
         'thisPersonModal': 1000,
         'documentsModal': 1000,
-        'contactModal':1000
+        'contactModal':1000,
+        'resumeModal':1000
     });
 
     const setModalShowValue = (index, modalId, value) => {
