@@ -186,6 +186,8 @@ overflow: auto;
 .SkillBadge{
   border-radius: 21px !important;
   height: 40px !important;
+  background-color: #F5F5F5 !important;
+  color: #000000 !important;
 }
 
 .ContactIndividual{

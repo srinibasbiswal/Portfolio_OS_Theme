@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, OverlayTrigger, Button, Popover } from 'react-bootstrap';
 import styles from '../../stylesheets/style.module.css';
+import bgstyles from '../../stylesheets/BGStyle.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle} from "@fortawesome/free-solid-svg-icons";
 import {SkillSet} from '../dataComponents/dataSet';
@@ -19,7 +20,19 @@ function SkillsComponent(){
             {
                 SkillSet.map((skill, index) => {
                     return(
-                        <Card className={`row m-3 ${styles.SkillCard}`}>
+                        <Card className={`row m-3 ${styles.SkillCard}  ${bgstyles.ripple_background}`}>
+                            <ul className={`${bgstyles.circles}`}>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>   
                             <Card.Title className={`m-2 text-center`}>{skill.name}</Card.Title>
                             <Card.Body className={`d-flex`}>
                                 <div className={`mx-auto d-flex flex-wrap justify-content-center w-75`}>
