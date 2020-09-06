@@ -4,7 +4,7 @@ A portfolio website based on the Windows OS theme.
 
 ## How to edit
 
-Replace the configuration with your details by changing in [dataset.js](src/components/dataComponents/dataSet.js) 
+Replace the configuration with your details by changing in [dataset](src/dataSets) 
 
 ## Available Scripts
 
