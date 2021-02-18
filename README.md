@@ -15,24 +15,22 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+### Homepage
+![Homepage](https://github.com/srinibasbiswal/Portfolio_OS_Theme/blob/master/Screenshots/HomeScreen.png?raw=true)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### File Explorer - This Person
+![File Explorer - This Person](https://github.com/srinibasbiswal/Portfolio_OS_Theme/blob/master/Screenshots/This_Person.png?raw=true)
 
-### `npm run build`
+### File Explorer - Documents
+![File Explorer - Documents](https://github.com/srinibasbiswal/Portfolio_OS_Theme/blob/master/Screenshots/Documents.png?raw=true)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Start Menu
+![Start Menu](https://github.com/srinibasbiswal/Portfolio_OS_Theme/blob/master/Screenshots/Start_Menu.png?raw=true)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Calendar
+![Calendar](https://github.com/srinibasbiswal/Portfolio_OS_Theme/blob/master/Screenshots/Calendar.png?raw=true)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Right Click
+![Right Click](https://github.com/srinibasbiswal/Portfolio_OS_Theme/blob/master/Screenshots/Right_Click.png?raw=true)
