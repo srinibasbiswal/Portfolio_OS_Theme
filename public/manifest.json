@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio OS Theme",
-  "name": "A portfolio website based in Windows theme.",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#3399ff",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }
