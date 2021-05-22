@@ -1,4 +1,4 @@
-import apps from "../Data/apps.config";
+import appConfig from "../Data/apps.config";
 import AppStateDocument from "../Documents/AppStateDocument";
 import { ACTION_TYPES } from "../Documents/enums";
 
@@ -7,7 +7,7 @@ const initialAppState = new AppStateDocument();
 const appStateReducer = (state = [initialAppState], action) => {
 	switch (action.type) {
 		case ACTION_TYPES.APP_INIT:
-			let appsList = apps;
+			let appsList = appConfig;
 			var apps = [];
 			if (
 				appsList != undefined &&

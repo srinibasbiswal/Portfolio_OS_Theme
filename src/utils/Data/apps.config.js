@@ -1,4 +1,4 @@
-const apps = [
+const appConfig = [
 	{
 		id: "aboutMe",
 		name: "About Me",
@@ -13,4 +13,4 @@ const apps = [
 	},
 ];
 
-export default apps;
+export default appConfig;

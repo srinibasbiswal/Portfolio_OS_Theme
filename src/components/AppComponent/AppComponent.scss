@@ -3,6 +3,16 @@
 .app-component {
 	display: inline-block !important;
 	min-height: 200px !important;
-	min-width: 200px !important;
+	min-width: 300px !important;
 	background-color: white;
+}
+
+.app-topbar {
+	height: 32px !important;
+	width: 100% !important;
+}
+
+.close-button:hover {
+	color: var(--color-white);
+	background-color: var(--color-red);
 }

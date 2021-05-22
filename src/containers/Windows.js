@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import DesktopContainer from "./DesktopContainer";
 import LockScreen from "./LockScreen";
