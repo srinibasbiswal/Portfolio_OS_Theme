@@ -1,17 +1,18 @@
 import React from "react";
 import Clock from "react-live-clock";
-import { Icon } from "@fluentui/react/lib/Icon";
+import { Icon } from "@fluentui/react";
 import "./LockScreen.scss";
 
-function LockWallpaperScreen(props) {
-	const currentWallpaper = props.currentWallpaper;
+function LockWallpaperScreen() {
 	return (
-		<div
-			class="uk-background-cover uk-background-muted screenHeight"
-			style={{
-				backgroundImage: `url(${currentWallpaper})`,
-			}}
-		>
+		<div className="screenHeight">
+			{/* LockScreenIcons */}
+			<div className="uk-position-top-center uk-overlay uk-flex uk-flex-column">
+				<div className="font-color-white uk-text-meta">
+					<p>Click anywhere or swipe up to unlock.</p>
+				</div>
+			</div>
+
 			{/* LockScreen Clock */}
 			<div className="uk-position-bottom-left uk-overlay uk-flex uk-flex-column">
 				<h1 className="uk-heading-large uk-margin-remove-bottom font-color-white ">
@@ -24,7 +25,9 @@ function LockWallpaperScreen(props) {
 
 			{/* LockScreenIcons */}
 			<div className="uk-position-bottom-right uk-overlay uk-flex uk-flex-column">
-				<Icon iconName="WifiEthernet" />
+				<div className="font-color-white uk-text-lead">
+					<Icon iconName="WifiEthernet" />
+				</div>
 			</div>
 		</div>
 	);
