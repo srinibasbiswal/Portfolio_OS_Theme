@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import DesktopContainer from "./DesktopContainer";
 import LockScreen from "./LockScreen";
 
 function Windows() {
@@ -13,7 +14,7 @@ function Windows() {
 				} else if (systemState.isShutDown) {
 					return <div>ShutDown</div>;
 				} else if (systemState.isDesktop) {
-					return <div>Desktop</div>;
+					return <DesktopContainer />;
 				} else {
 					return <div>Something went wrong !!</div>;
 				}
