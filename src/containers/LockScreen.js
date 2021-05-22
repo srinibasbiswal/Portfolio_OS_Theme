@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import LockWallpaperScreen from "../components/LockScreen/LockWallpaperScreen";
 import wallpaper1 from "../assets/LockScreenImages/wallpaper1.jpg";
+import SignInScreen from "../components/LockScreen/SignInScreen";
 
-function LockScreen() {
+function LockScreen(props) {
 	const [showSignInPage, setLockScreenState] = useState(false);
-
 	const currentWallpaper = wallpaper1;
 	let changeScreenState = () => {
 		setLockScreenState(true);
 	};
+
 	return (
 		<div
 			className="uk-background-cover uk-background-muted screenHeight"
@@ -19,7 +20,7 @@ function LockScreen() {
 		>
 			{(() => {
 				if (showSignInPage) {
-					return <div>Sign In screen</div>;
+					return <SignInScreen />;
 				} else {
 					return <LockWallpaperScreen />;
 				}
