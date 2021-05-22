@@ -1,10 +1,10 @@
 import "./App.css";
-import { PrimaryButton } from "@fluentui/react";
+import Windows from "./containers/Windows";
 
 function App() {
 	return (
 		<div>
-			<PrimaryButton />
+			<Windows />
 		</div>
 	);
 }
