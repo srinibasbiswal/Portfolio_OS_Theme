@@ -7,6 +7,7 @@ const systemStateReducer = (state = initialSystemState, action) => {
 	switch (action.type) {
 		case ACTION_TYPES.SET_STATE:
 			var newSystemState = new SystemStateDocument();
+			newSystemState.isLocked = false;
 			newSystemState[action.systemState] = true;
 			return {
 				...state,
@@ -15,14 +16,7 @@ const systemStateReducer = (state = initialSystemState, action) => {
 				isDesktop: newSystemState.isDesktop,
 			};
 		default:
-			var newSystemState = new SystemStateDocument();
-			newSystemState.isLocked = true;
-			return {
-				...state,
-				isLocked: newSystemState.isLocked,
-				isShutDown: newSystemState.isShutDown,
-				isDesktop: newSystemState.isDesktop,
-			};
+			return state;
 	}
 };
 
