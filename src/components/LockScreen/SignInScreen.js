@@ -1,9 +1,16 @@
 import React from "react";
 import "./LockScreen.scss";
+import { setSystemState } from "../../utils/actions/systemStateAction";
+import { useDispatch } from "react-redux";
 import avatar from "../../assets/baseImages/default_avatar.svg";
 import { Icon, PrimaryButton, TextField } from "@fluentui/react";
 
 function SignInScreen() {
+	const dispatch = useDispatch();
+	const setNextSystemState = (systemState) => {
+		dispatch(setSystemState(systemState));
+	};
+
 	return (
 		<div className="screenHeight SignInOverlay">
 			{/* Sign In Form */}
@@ -30,7 +37,11 @@ function SignInScreen() {
 					/>
 				</div>
 				<div className="uk-margin-small-top">
-					<PrimaryButton text="Sign In" allowDisabledFocus />
+					<PrimaryButton
+						text="Sign In"
+						allowDisabledFocus
+						onClick={() => setNextSystemState("isDesktop")}
+					/>
 				</div>
 			</div>
 
