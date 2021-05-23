@@ -2,6 +2,7 @@ import { IconButton } from "@fluentui/react";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { filterObjectList } from "../../utils/services/common-util-servies";
+import ActionCenter from "../ActionCenter/ActionCenter";
 import AppComponent from "../AppComponent/AppComponent";
 import AppIcon from "../Base/AppIcon";
 import TaskBarIcon from "../Base/TaskBarIcon";
@@ -50,6 +51,7 @@ function Desktop() {
 	) {
 		return (
 			<div className="screenHeight">
+				<ActionCenter />
 				<div className="uk-position-left uk-flex uk-flex-column">
 					{desktopApps.map((app, index) => {
 						return <AppIcon appInfo={app} key={index} />;
@@ -88,6 +90,19 @@ function Desktop() {
 									<TaskBarIcon appInfo={app} key={index} />
 								);
 							})}
+						</div>
+					</div>
+					<div className="uk-position-right uk-flex">
+						<div
+							className="uk-height-1-1 taskbar-icon"
+							uk-toggle="target: #action-center"
+						>
+							<IconButton
+								iconProps={{ iconName: "ActionCenter" }}
+								title="Action Center"
+								ariaLabel="Action Center"
+								className="uk-height-1-1 taskbar-icon"
+							/>
 						</div>
 					</div>
 				</div>
