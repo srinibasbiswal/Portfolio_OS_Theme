@@ -1,0 +1,23 @@
+.start-menu {
+	height: 80% !important;
+	width: 50vw !important;
+	top: calc(20% - 40px) !important;
+}
+
+.start-quick-actions {
+	width: 42px !important;
+	height: 100% !important;
+}
+.start-app-list {
+	width: calc((100%-42px) - 60%);
+	height: 100% !important;
+}
+.start-tiles {
+	width: calc((100%-42px) - 40%);
+	height: 100% !important;
+}
+
+.quick-action-button {
+	width: 40px !important;
+	height: 40px !important;
+}

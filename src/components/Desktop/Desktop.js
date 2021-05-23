@@ -6,6 +6,7 @@ import ActionCenter from "../ActionCenter/ActionCenter";
 import AppComponent from "../AppComponent/AppComponent";
 import AppIcon from "../Base/AppIcon";
 import TaskBarIcon from "../Base/TaskBarIcon";
+import StartMenu from "../StartMenu/StartMenu";
 import "./Desktop.scss";
 
 function Desktop() {
@@ -52,6 +53,7 @@ function Desktop() {
 		return (
 			<div className="screenHeight">
 				<ActionCenter />
+				<StartMenu />
 				<div className="uk-position-left uk-flex uk-flex-column">
 					{desktopApps.map((app, index) => {
 						return <AppIcon appInfo={app} key={index} />;
@@ -64,13 +66,18 @@ function Desktop() {
 				</div>
 				<div className="uk-position-bottom uk-width-expand taskbar-bottom">
 					<div className="uk-position-left uk-flex">
-						<div>
-							<IconButton
-								iconProps={{ iconName: "WindowsLogo" }}
-								title="Start"
-								ariaLabel="Start"
+						<div className="uk-flex">
+							<div
 								className="uk-height-1-1 taskbar-icon"
-							/>
+								uk-toggle="target: #start-menu"
+							>
+								<IconButton
+									iconProps={{ iconName: "WindowsLogo" }}
+									title="Start"
+									ariaLabel="Start"
+									className="uk-height-1-1 taskbar-icon"
+								/>
+							</div>
 							<IconButton
 								iconProps={{ iconName: "Search" }}
 								title="Search"
