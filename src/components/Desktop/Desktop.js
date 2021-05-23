@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { filterObjectList } from "../../utils/services/common-util-servies";
 import AppComponent from "../AppComponent/AppComponent";
 import AppIcon from "../Base/AppIcon";
 
 function Desktop() {
 	const appState = useSelector((state) => state.appState);
 	const [desktopApps, setDesktopApps] = useState([]);
+	const [onDesktopApps, setonDesktopApps] = useState([]);
 	useEffect(() => {
 		var desktopAppList = [];
+		var onDesktopAppList = [];
 		if (
 			appState !== undefined &&
 			appState !== null &&
 			appState.apps !== undefined &&
-			appState.apps !== null &&
-			appState.apps[0].id !== undefined &&
-			appState.apps[0].id !== null &&
-			appState.apps[0].id !== ""
+			appState.apps !== null
 		) {
-			appState.apps.forEach((app) => {
-				desktopAppList.push(app);
-			});
+			desktopAppList = filterObjectList(appState.apps, "id", "aboutMe");
+			onDesktopAppList = filterObjectList(
+				appState.apps,
+				"isMaximized",
+				true
+			);
 			setDesktopApps(desktopAppList);
+			setonDesktopApps(onDesktopAppList);
 		}
 	}, [appState]);
 
@@ -33,12 +37,12 @@ function Desktop() {
 			<div className="screenHeight">
 				<div className="uk-position-left uk-flex uk-flex-column">
 					{desktopApps.map((app, index) => {
-						return <AppIcon appInfo={app} />;
+						return <AppIcon appInfo={app} key={index} />;
 					})}
 				</div>
 				<div className="app-playground uk-position-right">
-					{desktopApps.map((app, index) => {
-						return <AppComponent appInfo={app} />;
+					{onDesktopApps.map((app, index) => {
+						return <AppComponent appInfo={app} key={index} />;
 					})}
 				</div>
 			</div>

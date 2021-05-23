@@ -1,6 +1,10 @@
 import appConfig from "../Data/apps.config";
 import AppStateDocument from "../Documents/AppStateDocument";
 import { ACTION_TYPES } from "../Documents/enums";
+import {
+	filterObjectListById,
+	replaceObjectListByKey,
+} from "../services/common-util-servies";
 
 const initialAppState = new AppStateDocument();
 
@@ -10,8 +14,8 @@ const appStateReducer = (state = [initialAppState], action) => {
 			let appsList = appConfig;
 			var apps = [];
 			if (
-				appsList != undefined &&
-				appsList != null &&
+				appsList !== undefined &&
+				appsList !== null &&
 				appsList.length > 0
 			) {
 				for (let i = 0; i < appsList.length; i++) {
@@ -23,6 +27,28 @@ const appStateReducer = (state = [initialAppState], action) => {
 					apps.push(newApp);
 				}
 			}
+			return {
+				apps,
+			};
+		case ACTION_TYPES.APP_CLICK:
+			var currentAppState = filterObjectListById(
+				state.apps,
+				action.app.id
+			);
+			var apps = [];
+			if (currentAppState.isOpened) {
+				if (currentAppState.isMaximized) {
+					currentAppState.isMaximized = false;
+					currentAppState.isMinimized = true;
+				} else {
+					currentAppState.isMaximized = true;
+					currentAppState.isMinimized = false;
+				}
+			} else {
+				currentAppState.isMaximized = true;
+				currentAppState.isOpened = true;
+			}
+			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
 			return {
 				apps,
 			};

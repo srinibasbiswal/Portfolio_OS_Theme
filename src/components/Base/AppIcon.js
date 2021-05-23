@@ -1,9 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { handleApplicationClick } from "../../utils/actions/appStateAction";
 import folder from "../../assets/baseImages/default_folder.png";
 
 function AppIcon(props) {
+	const dispatch = useDispatch();
+	const handleIconClick = (app) => {
+		dispatch(handleApplicationClick(app));
+	};
+
 	return (
-		<div className="uk-text-center uk-margin-small uk-button">
+		<div
+			className="uk-text-center uk-margin-small uk-button"
+			onClick={() => handleIconClick(props.appInfo)}
+		>
 			<div>
 				<img
 					className="uk-border-circle"
