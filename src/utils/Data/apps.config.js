@@ -4,12 +4,14 @@ const appConfig = [
 		name: "About Me",
 		order: 1,
 		icon: "",
+		showInDesktop: true,
 	},
 	{
 		id: "documents",
 		name: "documents",
 		order: 2,
 		icon: "",
+		showInDesktop: true,
 	},
 ];
 

@@ -9,6 +9,8 @@ class AppStateDocument {
 		this.isMinimized = false;
 		this.isOpened = false;
 		this.showInDesktop = false;
+		this.showInStartMenu = false;
+		this.showInTaskBar = false;
 	}
 }
 

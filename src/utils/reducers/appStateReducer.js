@@ -24,6 +24,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 					newApp.name = appsList[i].name;
 					newApp.icon = appsList[i].icon;
 					newApp.order = appsList[i].order;
+					newApp.showInDesktop = appsList[i].showInDesktop;
 					apps.push(newApp);
 				}
 			}
