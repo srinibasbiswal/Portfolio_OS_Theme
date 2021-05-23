@@ -1,0 +1,12 @@
+@import "../../theme/variables";
+
+.taskbar-clock {
+	height: 40px !important;
+	width: unset !important;
+	margin-right: unset !important;
+}
+
+.clock-timer {
+	font-size: 12px !important;
+	color: var(--font-white) !important;
+}

@@ -5,6 +5,8 @@ import { filterObjectList } from "../../utils/services/common-util-servies";
 import ActionCenter from "../ActionCenter/ActionCenter";
 import AppComponent from "../AppComponent/AppComponent";
 import AppIcon from "../Base/AppIcon";
+import CalendarOverlay from "../Base/CalendarOverlay";
+import ClockComponent from "../Base/ClockComponent";
 import TaskBarIcon from "../Base/TaskBarIcon";
 import StartMenu from "../StartMenu/StartMenu";
 import "./Desktop.scss";
@@ -54,6 +56,7 @@ function Desktop() {
 			<div className="screenHeight">
 				<ActionCenter />
 				<StartMenu />
+				<CalendarOverlay />
 				<div className="uk-position-left uk-flex uk-flex-column">
 					{desktopApps.map((app, index) => {
 						return <AppIcon appInfo={app} key={index} />;
@@ -100,6 +103,9 @@ function Desktop() {
 						</div>
 					</div>
 					<div className="uk-position-right uk-flex">
+						<div>
+							<ClockComponent />
+						</div>
 						<div
 							className="uk-height-1-1 taskbar-icon"
 							uk-toggle="target: #action-center"

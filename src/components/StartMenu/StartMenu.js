@@ -17,6 +17,7 @@ function StartMenu() {
 				key: "lock",
 				iconProps: { iconName: "Lock" },
 				text: "Lock",
+				className: "test",
 			},
 			{
 				key: "shutDown",
@@ -26,7 +27,7 @@ function StartMenu() {
 			{
 				key: "reStart",
 				iconProps: { iconName: "Refresh" },
-				text: "restart",
+				text: "Restart",
 			},
 		],
 	});
