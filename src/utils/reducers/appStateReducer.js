@@ -66,7 +66,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 				state.apps,
 				action.app.id
 			);
-			currentAppState.isMaximized = true;
+			currentAppState.isMaximized = !currentAppState.isMaximized;
 			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
 			return {
 				apps,

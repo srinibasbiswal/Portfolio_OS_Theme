@@ -20,9 +20,15 @@ function AppComponent(props) {
 			position={null}
 			grid={[1, 1]}
 			scale={1}
+			defaultPosition={{ x: 0, y: 0 }}
 			handle=".app-topbar"
 		>
-			<div className="app-component uk-border-rounded uk-box-shadow-medium ">
+			<div
+				className={
+					"app-component uk-border-rounded uk-box-shadow-medium " +
+					(props.appInfo.isMaximized ? "maximized" : "")
+				}
+			>
 				<div className="uk-position-top app-topbar uk-background-muted uk-border-rounded">
 					<div className="uk-align-left uk-margin-small-left">
 						{props.appInfo.name}

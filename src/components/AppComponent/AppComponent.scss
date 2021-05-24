@@ -16,3 +16,9 @@
 	color: var(--color-white);
 	background-color: var(--color-red);
 }
+
+.maximized {
+	margin-left: -10% !important;
+	width: 110% !important;
+	height: calc(100% - 40px) !important;
+}
