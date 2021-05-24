@@ -14,7 +14,7 @@ function TaskBarIcon(props) {
 			onClick={() => handleIconClick(props.appInfo)}
 			className={
 				"taskbar-icon uk-flex uk-flex-center uk-flex-middle taskbar-icon-active" +
-				(props.appInfo.isMaximized ? " onDesktop" : "")
+				(!props.appInfo.isMinimized ? " onDesktop" : "")
 			}
 		>
 			<img

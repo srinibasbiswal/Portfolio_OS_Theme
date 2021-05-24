@@ -12,3 +12,10 @@ export const handleApplicationClick = (app) => {
 		app: app,
 	};
 };
+
+export const handleAppFucntions = (app, type) => {
+	return {
+		type: type,
+		app: app,
+	};
+};

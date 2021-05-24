@@ -31,6 +31,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 			return {
 				apps,
 			};
+
 		case ACTION_TYPES.APP_CLICK:
 			var currentAppState = filterObjectListById(
 				state.apps,
@@ -38,17 +39,47 @@ const appStateReducer = (state = [initialAppState], action) => {
 			);
 			var apps = [];
 			if (currentAppState.isOpened) {
-				if (currentAppState.isMaximized) {
-					currentAppState.isMaximized = false;
-					currentAppState.isMinimized = true;
-				} else {
-					currentAppState.isMaximized = true;
-					currentAppState.isMinimized = false;
-				}
+				currentAppState.isMinimized = !currentAppState.isMinimized;
 			} else {
-				currentAppState.isMaximized = true;
+				currentAppState.isMinimized = false;
+				currentAppState.isMaximized = false;
 				currentAppState.isOpened = true;
 			}
+			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
+			return {
+				apps,
+			};
+
+		case ACTION_TYPES.MINIMIZE:
+			var currentAppState = filterObjectListById(
+				state.apps,
+				action.app.id
+			);
+			currentAppState.isMinimized = true;
+			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
+			return {
+				apps,
+			};
+
+		case ACTION_TYPES.MAXIMIZE:
+			var currentAppState = filterObjectListById(
+				state.apps,
+				action.app.id
+			);
+			currentAppState.isMaximized = true;
+			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
+			return {
+				apps,
+			};
+
+		case ACTION_TYPES.CLOSE:
+			var currentAppState = filterObjectListById(
+				state.apps,
+				action.app.id
+			);
+			currentAppState.isMinimized = false;
+			currentAppState.isMaximized = false;
+			currentAppState.isOpened = false;
 			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
 			return {
 				apps,

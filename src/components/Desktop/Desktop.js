@@ -29,15 +29,15 @@ function Desktop() {
 				"showInDesktop",
 				true
 			);
-			onDesktopAppList = filterObjectList(
-				appState.apps,
-				"isMaximized",
-				true
-			);
 			onTaskBarAppList = filterObjectList(
 				appState.apps,
 				"isOpened",
 				true
+			);
+			onDesktopAppList = filterObjectList(
+				onTaskBarAppList,
+				"isMinimized",
+				false
 			);
 			setDesktopApps(desktopAppList);
 			setonDesktopApps(onDesktopAppList);

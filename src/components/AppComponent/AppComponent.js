@@ -2,8 +2,16 @@ import { IconButton } from "@fluentui/react";
 import React from "react";
 import Draggable from "react-draggable";
 import "./AppComponent.scss";
+import { useDispatch } from "react-redux";
+import { handleAppFucntions } from "../../utils/actions/appStateAction";
+import { ACTION_TYPES } from "../../utils/Documents/enums";
 
 function AppComponent(props) {
+	const dispatch = useDispatch();
+	const handleAppFunctionClick = (app, type) => {
+		dispatch(handleAppFucntions(app, type));
+	};
+
 	return (
 		<Draggable
 			axis={"both"}
@@ -14,7 +22,7 @@ function AppComponent(props) {
 			scale={1}
 			handle=".app-topbar"
 		>
-			<div className="app-component uk-border-rounded">
+			<div className="app-component uk-border-rounded uk-box-shadow-medium ">
 				<div className="uk-position-top app-topbar uk-background-muted uk-border-rounded">
 					<div className="uk-align-left uk-margin-small-left">
 						{props.appInfo.name}
@@ -24,17 +32,35 @@ function AppComponent(props) {
 							iconProps={{ iconName: "ChromeMinimize" }}
 							title="Minimize"
 							ariaLabel="Minimize"
+							onClick={() =>
+								handleAppFunctionClick(
+									props.appInfo,
+									ACTION_TYPES.MINIMIZE
+								)
+							}
 						/>
 						<IconButton
 							iconProps={{ iconName: "ChromeRestore" }}
 							title="Restore"
 							ariaLabel="Restore"
+							onClick={() =>
+								handleAppFunctionClick(
+									props.appInfo,
+									ACTION_TYPES.MAXIMIZE
+								)
+							}
 						/>
 						<IconButton
 							iconProps={{ iconName: "ChromeClose" }}
 							title="Close"
 							ariaLabel="Close"
 							className="close-button"
+							onClick={() =>
+								handleAppFunctionClick(
+									props.appInfo,
+									ACTION_TYPES.CLOSE
+								)
+							}
 						/>
 					</div>
 				</div>
