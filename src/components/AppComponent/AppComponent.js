@@ -1,4 +1,4 @@
-import { IconButton } from "@fluentui/react";
+import { IconButton, Nav } from "@fluentui/react";
 import React from "react";
 import Draggable from "react-draggable";
 import "./AppComponent.scss";
@@ -11,6 +11,33 @@ function AppComponent(props) {
 	const handleAppFunctionClick = (app, type) => {
 		dispatch(handleAppFucntions(app, type));
 	};
+
+	const navLinkGroups = [
+		{
+			links: [
+				{
+					name: "About Me",
+					key: "aboutMe",
+				},
+				{
+					name: "Experience",
+					key: "experience",
+				},
+				{
+					name: "Education",
+					key: "education",
+				},
+				{
+					name: "Skills",
+					key: "skills",
+				},
+				{
+					name: "Resume",
+					key: "resume",
+				},
+			],
+		},
+	];
 
 	return (
 		<Draggable
@@ -25,50 +52,74 @@ function AppComponent(props) {
 		>
 			<div
 				className={
-					"app-component uk-border-rounded uk-box-shadow-medium " +
+					"app-component uk-border-rounded uk-box-shadow-medium uk-flex uk-flex-row " +
 					(props.appInfo.isMaximized ? "maximized" : "")
 				}
 			>
-				<div className="uk-position-top app-topbar uk-background-muted uk-border-rounded">
-					<div className="uk-align-left uk-margin-small-left">
-						{props.appInfo.name}
+				<div className="app-sidebar blur">
+					<ul class="uk-list sidebar-list uk-margin-large-top">
+						<li className="sidebar-list-item uk-margin-remove sidebar-list-item-active">
+							About Me
+						</li>
+						<li className="sidebar-list-item  uk-margin-remove">
+							Experience
+						</li>
+						<li className="sidebar-list-item  uk-margin-remove">
+							Education
+						</li>
+						<li className="sidebar-list-item uk-margin-remove">
+							Skills
+						</li>
+						<li className="sidebar-list-item  uk-margin-remove">
+							Resume
+						</li>
+					</ul>
+				</div>
+				<div className="app-content-container">
+					<div className="app-topbar uk-background-secondary uk-border-rounded uk-grid uk-margin-remove">
+						<div className="uk-width-auto uk-background-secondary app-title uk-margin-medium-right">
+							{props.appInfo.name}
+						</div>
+						<div className="uk-width-expand app-top-functions">
+							<div className="uk-align-right">
+								<IconButton
+									iconProps={{ iconName: "ChromeMinimize" }}
+									title="Minimize"
+									ariaLabel="Minimize"
+									onClick={() =>
+										handleAppFunctionClick(
+											props.appInfo,
+											ACTION_TYPES.MINIMIZE
+										)
+									}
+								/>
+								<IconButton
+									iconProps={{ iconName: "ChromeRestore" }}
+									title="Restore"
+									ariaLabel="Restore"
+									onClick={() =>
+										handleAppFunctionClick(
+											props.appInfo,
+											ACTION_TYPES.MAXIMIZE
+										)
+									}
+								/>
+								<IconButton
+									iconProps={{ iconName: "ChromeClose" }}
+									title="Close"
+									ariaLabel="Close"
+									className="close-button"
+									onClick={() =>
+										handleAppFunctionClick(
+											props.appInfo,
+											ACTION_TYPES.CLOSE
+										)
+									}
+								/>
+							</div>
+						</div>
 					</div>
-					<div className="uk-align-right">
-						<IconButton
-							iconProps={{ iconName: "ChromeMinimize" }}
-							title="Minimize"
-							ariaLabel="Minimize"
-							onClick={() =>
-								handleAppFunctionClick(
-									props.appInfo,
-									ACTION_TYPES.MINIMIZE
-								)
-							}
-						/>
-						<IconButton
-							iconProps={{ iconName: "ChromeRestore" }}
-							title="Restore"
-							ariaLabel="Restore"
-							onClick={() =>
-								handleAppFunctionClick(
-									props.appInfo,
-									ACTION_TYPES.MAXIMIZE
-								)
-							}
-						/>
-						<IconButton
-							iconProps={{ iconName: "ChromeClose" }}
-							title="Close"
-							ariaLabel="Close"
-							className="close-button"
-							onClick={() =>
-								handleAppFunctionClick(
-									props.appInfo,
-									ACTION_TYPES.CLOSE
-								)
-							}
-						/>
-					</div>
+					<div className="app-content uk-background-secondary">b</div>
 				</div>
 			</div>
 		</Draggable>

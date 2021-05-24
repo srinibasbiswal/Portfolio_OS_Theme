@@ -1,15 +1,17 @@
 @import "../../theme/variables";
 
 .app-component {
-	display: inline-block !important;
-	min-height: 80% !important;
-	min-width: 80% !important;
-	background-color: white;
+	// display: inline-block !important;
+	height: 80% !important;
+	width: 80% !important;
 }
 
 .app-topbar {
 	height: 32px !important;
 	width: 100% !important;
+	color: var(--font-white) !important;
+	border-bottom-right-radius: unset !important;
+	border-bottom-left-radius: unset !important;
 }
 
 .close-button:hover {
@@ -21,4 +23,43 @@
 	margin-left: -10% !important;
 	width: 110% !important;
 	height: calc(100% - 40px) !important;
+}
+
+.app-content-container {
+	height: 100% !important;
+	width: 80% !important;
+}
+
+.app-sidebar {
+	height: 100% !important;
+	width: 20% !important;
+}
+
+.app-content {
+	height: calc(100% - 32px) !important;
+	width: 100% !important;
+}
+
+.app-top-functions {
+	background-color: rgba(51, 51, 51, 1) !important;
+}
+
+.sidebar-list {
+	color: var(--font-white) !important;
+}
+
+.sidebar-list-item {
+	cursor: pointer !important;
+	padding: 10px !important;
+}
+
+.sidebar-list-item-active,
+.sidebar-list :hover {
+	background-color: rgb(50, 49, 48) !important;
+}
+
+.sidebar-list-item-active {
+	border-left: 5px solid;
+	border-color: var(--color-blue) !important;
+	font-weight: bold;
 }

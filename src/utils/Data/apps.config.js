@@ -8,7 +8,7 @@ const appConfig = [
 	},
 	{
 		id: "documents",
-		name: "documents",
+		name: "Documents",
 		order: 2,
 		icon: "",
 		showInDesktop: true,
