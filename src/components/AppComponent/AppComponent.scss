@@ -53,15 +53,17 @@
 	padding: 10px !important;
 }
 
-.sidebar-list-item-active,
 .sidebar-list :hover {
 	background-color: rgb(50, 49, 48) !important;
 }
 
-.sidebar-list-item-active {
-	border-left: 5px solid;
-	border-color: var(--color-blue) !important;
-	font-weight: bold;
+.sidebar-list {
+	.uk-active {
+		background-color: rgb(50, 49, 48) !important;
+		border-left: 5px solid;
+		border-color: var(--color-blue) !important;
+		font-weight: bold;
+	}
 }
 
 .app-nav-bar {

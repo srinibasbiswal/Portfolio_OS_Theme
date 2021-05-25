@@ -26,6 +26,17 @@ const appConfig = [
 		order: 2,
 		icon: "",
 		showInDesktop: true,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "About Me",
+				component: AboutMe,
+			},
+			{
+				name: "Experience",
+				component: Experience,
+			},
+		],
 	},
 ];
 

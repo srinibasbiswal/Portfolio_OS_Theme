@@ -1,5 +1,5 @@
 import { IconButton, Nav, TextField } from "@fluentui/react";
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 import "./AppComponent.scss";
 import { useDispatch } from "react-redux";
@@ -12,32 +12,11 @@ function AppComponent(props) {
 		dispatch(handleAppFucntions(app, type));
 	};
 
-	const navLinkGroups = [
-		{
-			links: [
-				{
-					name: "About Me",
-					key: "aboutMe",
-				},
-				{
-					name: "Experience",
-					key: "experience",
-				},
-				{
-					name: "Education",
-					key: "education",
-				},
-				{
-					name: "Skills",
-					key: "skills",
-				},
-				{
-					name: "Resume",
-					key: "resume",
-				},
-			],
-		},
-	];
+	const [currentComponentName, setCurrentComponent] = useState("");
+
+	const setComponent = (componentName) => {
+		setCurrentComponent(componentName);
+	};
 
 	return (
 		<Draggable
@@ -56,25 +35,28 @@ function AppComponent(props) {
 					(props.appInfo.isMaximized ? "maximized" : "")
 				}
 			>
-				<div className="app-sidebar blur">
-					<ul class="uk-list sidebar-list uk-margin-large-top">
-						<li className="sidebar-list-item uk-margin-remove sidebar-list-item-active">
-							About Me
-						</li>
-						<li className="sidebar-list-item  uk-margin-remove">
-							Experience
-						</li>
-						<li className="sidebar-list-item  uk-margin-remove">
-							Education
-						</li>
-						<li className="sidebar-list-item uk-margin-remove">
-							Skills
-						</li>
-						<li className="sidebar-list-item  uk-margin-remove">
-							Resume
-						</li>
-					</ul>
-				</div>
+				{props.appInfo.showLinks && (
+					<div className="app-sidebar blur">
+						<ul
+							class="uk-list sidebar-list uk-margin-large-top"
+							uk-switcher={"connect: ." + props.appInfo.id}
+						>
+							{props.appInfo.subComponent.map(
+								(component, index) => {
+									return (
+										<li className="uk-margin-remove">
+											<a className="uk-link-reset">
+												<li className="sidebar-list-item uk-margin-remove">
+													{component.name}
+												</li>
+											</a>
+										</li>
+									);
+								}
+							)}
+						</ul>
+					</div>
+				)}
 				<div className="app-content-container">
 					<div className="app-topbar uk-background-secondary uk-border-rounded uk-grid uk-margin-remove">
 						<div className="uk-width-auto uk-background-secondary app-title uk-margin-medium-right">
@@ -146,6 +128,20 @@ function AppComponent(props) {
 								/>
 							</div>
 						)}
+
+						<ul className={"uk-switcher " + props.appInfo.id}>
+							{props.appInfo.subComponent.map(
+								(component, index) => {
+									return (
+										<li className="sidebar-list-item uk-margin-remove">
+											<React.Fragment>
+												<component.component></component.component>
+											</React.Fragment>
+										</li>
+									);
+								}
+							)}
+						</ul>
 					</div>
 				</div>
 			</div>
