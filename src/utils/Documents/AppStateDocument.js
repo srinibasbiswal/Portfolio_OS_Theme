@@ -11,6 +11,8 @@ class AppStateDocument {
 		this.showInDesktop = false;
 		this.showInStartMenu = false;
 		this.showInTaskBar = false;
+		this.showLinks = false;
+		this.subComponent = {};
 	}
 }
 
