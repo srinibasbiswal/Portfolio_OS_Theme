@@ -1,4 +1,4 @@
-import { IconButton, Nav } from "@fluentui/react";
+import { IconButton, Nav, TextField } from "@fluentui/react";
 import React from "react";
 import Draggable from "react-draggable";
 import "./AppComponent.scss";
@@ -119,7 +119,34 @@ function AppComponent(props) {
 							</div>
 						</div>
 					</div>
-					<div className="app-content uk-background-secondary">b</div>
+					<div className="app-content uk-background-secondary">
+						{true && (
+							<div className="app-nav-bar uk-padding-small uk-flex">
+								<IconButton
+									iconProps={{ iconName: "Back" }}
+									title="Back"
+									ariaLabel="Back"
+								/>
+								<IconButton
+									iconProps={{ iconName: "Forward" }}
+									title="Forward"
+									ariaLabel="Forward"
+								/>
+								<TextField
+									disabled
+									iconProps={{ iconName: "Refresh" }}
+									className="uk-margin-small-right disabled-text-field uk-width-3-5"
+									placeholder={`This PC > ${props.appInfo.name}`}
+								/>
+								<TextField
+									disabled
+									iconProps={{ iconName: "Search" }}
+									className="uk-margin-small-right disabled-text-field uk-width-1-5"
+									placeholder={`Search`}
+								/>
+							</div>
+						)}
+					</div>
 				</div>
 			</div>
 		</Draggable>

@@ -63,3 +63,22 @@
 	border-color: var(--color-blue) !important;
 	font-weight: bold;
 }
+
+.app-nav-bar {
+	width: 100%;
+	margin-left: 0px !important;
+	height: 25px !important;
+}
+
+.disabled-text-field {
+	.ms-TextField-wrapper {
+		.ms-TextField-fieldGroup {
+			.ms-TextField-field {
+				background: none rgb(50, 49, 48) !important;
+				color: rgb(121, 119, 117) !important;
+				border: none rgb(50, 49, 48) !important;
+			}
+			border: 0px !important;
+		}
+	}
+}
