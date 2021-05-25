@@ -106,7 +106,7 @@ function AppComponent(props) {
 							</div>
 						</div>
 					</div>
-					<div className="app-content uk-background-secondary">
+					<div className="app-content uk-background-secondary scrollbar">
 						{true && (
 							<div className="app-nav-bar uk-padding-small uk-flex">
 								<IconButton

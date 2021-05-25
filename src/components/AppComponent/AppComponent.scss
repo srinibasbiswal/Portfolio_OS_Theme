@@ -38,6 +38,21 @@
 .app-content {
 	height: calc(100% - 32px) !important;
 	width: 100% !important;
+	overflow-y: scroll !important;
+	overflow-x: hidden !important;
+}
+
+.scrollbar::-webkit-scrollbar {
+	width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background-color: #babac0;
+	border-radius: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-button {
+	display: none;
 }
 
 .app-top-functions {
