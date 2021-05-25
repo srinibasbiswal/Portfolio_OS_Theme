@@ -12,10 +12,10 @@ function AppComponent(props) {
 		dispatch(handleAppFucntions(app, type));
 	};
 
-	const [currentComponentName, setCurrentComponent] = useState("");
+	const [currentComponentName, setCurrentComponentName] = useState("");
 
 	const setComponent = (componentName) => {
-		setCurrentComponent(componentName);
+		setCurrentComponentName(componentName);
 	};
 
 	return (
@@ -36,7 +36,7 @@ function AppComponent(props) {
 				}
 			>
 				{props.appInfo.showLinks && (
-					<div className="app-sidebar blur">
+					<div className="app-sidebar blur uk-hidden@xs uk-visible@m">
 						<ul
 							class="uk-list sidebar-list uk-margin-large-top"
 							uk-switcher={"connect: ." + props.appInfo.id}
@@ -45,7 +45,12 @@ function AppComponent(props) {
 								(component, index) => {
 									return (
 										<li className="uk-margin-remove">
-											<a className="uk-link-reset">
+											<a
+												className="uk-link-reset"
+												onClick={() =>
+													setComponent(component.name)
+												}
+											>
 												<li className="sidebar-list-item uk-margin-remove">
 													{component.name}
 												</li>
@@ -118,7 +123,7 @@ function AppComponent(props) {
 									disabled
 									iconProps={{ iconName: "Refresh" }}
 									className="uk-margin-small-right disabled-text-field uk-width-3-5"
-									placeholder={`This PC > ${props.appInfo.name}`}
+									placeholder={`This PC > ${props.appInfo.name} > ${currentComponentName}`}
 								/>
 								<TextField
 									disabled
