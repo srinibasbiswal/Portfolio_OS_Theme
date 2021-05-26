@@ -43,26 +43,18 @@
 .timeline-content {
 	width: 95%;
 	padding: 0 15px;
-	color: #666;
-}
-
-.timeline-content h3 {
-	margin-top: 5px;
-	margin-bottom: 5px;
-	font-size: 25px;
-	font-weight: 500;
 }
 
 .timeline-content span {
 	font-size: 15px;
-	color: #a4a4a4;
+	color: var(--font-light-grey);
 }
 
-.timeline-content p {
+.positon-desc {
 	font-size: 14px;
 	line-height: 1.5em;
 	word-spacing: 1px;
-	color: #888;
+	color: var(--font-light-grey);
 }
 
 @media screen and (max-width: 768px) {

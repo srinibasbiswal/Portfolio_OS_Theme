@@ -15,31 +15,51 @@ const user = {
 	},
 	experiences: [
 		{
-			position: "Software Developer",
 			organization: "KloudGin",
-			startDate: "17 June, 2019",
-			endDate: "Present",
-			description:
-				"I am a part of the Product Development team at KloudGin, where I have developed multiple API and implementaion modules of EAM and FSM.",
 			organizationPicture: null,
+			isCurrent: true,
+			startDate: "Jun 2019",
+			endDate: null,
+			positions: [
+				{
+					positionName: "Software Engineer",
+					startDate: "Jun 2021",
+					endDate: " Present",
+					isPresent: true,
+					description: "",
+				},
+				{
+					positionName: "Associate Software Engineer",
+					startDate: "June 2021",
+					endDate: "April 2021",
+					isPresent: false,
+					description: "",
+				},
+				{
+					positionName: "Trainee Engineer",
+					startDate: "June 2019",
+					endDate: "April 2020",
+					isPresent: false,
+					description: "",
+				},
+			],
 		},
 		{
-			position: "Web Developer",
-			organization: "Talspo",
-			startDate: "5 April, 2019",
-			endDate: "",
-			description:
-				"I was a key member of the Frontend Development team where we developed the product from the initial phase.",
-			organizationPicture: null,
-		},
-		{
-			position: "Freelance Developer",
-			organization: "",
+			organization: "Freelance Developer",
 			startDate: "2017",
 			endDate: "2019",
-			description:
-				"I was a freelance developer during my Bachelor's degree where I worked with different established companies like Prelude, Ediolon and Youngster's Worldwide.",
 			organizationPicture: null,
+			isCurrent: false,
+			positions: [
+				{
+					positionName: "Fullstack Developer",
+					startDate: "2017",
+					endDate: "2019",
+					isPresent: false,
+					description:
+						"I was a freelance developer during my Bachelor's degree where I worked with different established companies like Prelude, Ediolon and Youngster's Worldwide.",
+				},
+			],
 		},
 	],
 	education: [
