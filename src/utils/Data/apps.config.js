@@ -1,4 +1,5 @@
 import AboutMe from "../../components/Applications/AboutMe/AboutMe";
+import Education from "../../components/Applications/AboutMe/Education";
 import Experience from "../../components/Applications/AboutMe/Experience";
 
 const appConfig = [
@@ -17,6 +18,10 @@ const appConfig = [
 			{
 				name: "Experience",
 				component: Experience,
+			},
+			{
+				name: "Education",
+				component: Education,
 			},
 		],
 	},
