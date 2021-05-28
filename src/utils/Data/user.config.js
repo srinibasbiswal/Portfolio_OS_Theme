@@ -1,8 +1,10 @@
+import ResumePDF from "./Srinibas_Biswal_Resume.pdf";
+
 const user = {
 	firstName: "Srinibas",
 	lastName: "Biswal",
 	userImage: null,
-	resume: null,
+	resume: ResumePDF,
 	email: "srinibasbiswal02@gmail.com",
 	linkedIn: "in/srinibasbiswal",
 	gitHub: "srinibasbiswal",
