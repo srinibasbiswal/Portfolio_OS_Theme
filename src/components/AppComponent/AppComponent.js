@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 import "./AppComponent.scss";
 import { useDispatch } from "react-redux";
-import { handleAppFucntions } from "../../utils/actions/appStateAction";
+import { handleAppFunctions } from "../../utils/actions/appStateAction";
 import { ACTION_TYPES } from "../../utils/Documents/enums";
 
 function AppComponent(props) {
 	const dispatch = useDispatch();
 	const handleAppFunctionClick = (app, type) => {
-		dispatch(handleAppFucntions(app, type));
+		dispatch(handleAppFunctions(app, type));
 	};
 
 	const [currentComponentName, setCurrentComponentName] = useState("");
@@ -36,7 +36,12 @@ function AppComponent(props) {
 				}
 			>
 				{props.appInfo.showLinks && (
-					<div className="app-sidebar blur uk-hidden@xs uk-visible@m">
+					<div
+						className={
+							"app-sidebar blur uk-hidden@xs uk-visible@m " +
+							(props.appInfo.isApplication ? "isApplication" : "")
+						}
+					>
 						<ul
 							class="uk-list sidebar-list uk-margin-large-top"
 							uk-switcher={"connect: ." + props.appInfo.id}
@@ -62,7 +67,13 @@ function AppComponent(props) {
 						</ul>
 					</div>
 				)}
-				<div className="app-content-container">
+				<div
+					className={
+						props.appInfo.isApplication && props.appInfo.isMaximized
+							? "maximized-application"
+							: "app-content-container"
+					}
+				>
 					<div className="app-topbar blur uk-border-rounded uk-grid uk-margin-remove">
 						<div className="uk-width-auto uk-background-secondary app-title uk-padding-medium uk-border-rounded">
 							<span className="uk-margin-medium-right">
@@ -109,7 +120,7 @@ function AppComponent(props) {
 						</div>
 					</div>
 					<div className="app-content uk-background-secondary scrollbar">
-						{true && (
+						{!props.appInfo.isApplication && (
 							<div className="app-nav-bar uk-padding-small uk-flex">
 								<IconButton
 									iconProps={{ iconName: "Back" }}
@@ -136,11 +147,26 @@ function AppComponent(props) {
 							</div>
 						)}
 
-						<ul className={"uk-switcher " + props.appInfo.id}>
+						<ul
+							className={
+								"uk-switcher " +
+								props.appInfo.id +
+								(props.appInfo.isApplication
+									? " isApplication-list"
+									: "")
+							}
+						>
 							{props.appInfo.subComponent.map(
 								(component, index) => {
 									return (
-										<li className="sidebar-list-item uk-margin-remove">
+										<li
+											className={
+												"sidebar-list-item uk-margin-remove " +
+												(props.appInfo.isApplication
+													? "height-100"
+													: "")
+											}
+										>
 											<React.Fragment>
 												<component.component></component.component>
 											</React.Fragment>

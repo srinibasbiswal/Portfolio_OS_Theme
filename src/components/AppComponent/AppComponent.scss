@@ -30,6 +30,11 @@
 	width: 80% !important;
 }
 
+.maximized-application {
+	height: 100% !important;
+	width: 100% !important;
+}
+
 .app-sidebar {
 	height: 100% !important;
 	width: 20% !important;
@@ -99,4 +104,12 @@
 			border: 0px !important;
 		}
 	}
+}
+
+.isApplication {
+	display: none !important;
+}
+
+.isApplication-list {
+	height: 96% !important;
 }

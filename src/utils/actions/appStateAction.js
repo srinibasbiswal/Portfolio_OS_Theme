@@ -13,7 +13,7 @@ export const handleApplicationClick = (app) => {
 	};
 };
 
-export const handleAppFucntions = (app, type) => {
+export const handleAppFunctions = (app, type) => {
 	return {
 		type: type,
 		app: app,

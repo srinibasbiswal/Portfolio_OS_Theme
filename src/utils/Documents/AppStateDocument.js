@@ -13,6 +13,7 @@ class AppStateDocument {
 		this.showInTaskBar = false;
 		this.showLinks = false;
 		this.subComponent = {};
+		this.isApplication = false;
 	}
 }
 
