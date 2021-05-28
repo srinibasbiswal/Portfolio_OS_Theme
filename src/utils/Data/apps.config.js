@@ -4,6 +4,7 @@ import Experience from "../../components/Applications/AboutMe/Experience";
 import Projects from "../../components/Applications/AboutMe/Projects";
 import Resume from "../../components/Applications/AboutMe/Resume";
 import Skills from "../../components/Applications/AboutMe/Skills";
+import JIOSaavn from "../../components/Applications/JIOSaavn";
 import VSCode from "../../components/Applications/VSCode";
 
 const appConfig = [
@@ -54,6 +55,21 @@ const appConfig = [
 			{
 				name: "VSCode",
 				component: VSCode,
+			},
+		],
+	},
+	{
+		id: "jioSaavn",
+		name: "JIO Saavn",
+		order: 3,
+		icon: "",
+		isApplication: true,
+		showInDesktop: true,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "jioSaavn",
+				component: JIOSaavn,
 			},
 		],
 	},
