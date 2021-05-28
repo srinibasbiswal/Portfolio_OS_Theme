@@ -63,11 +63,13 @@ function AppComponent(props) {
 					</div>
 				)}
 				<div className="app-content-container">
-					<div className="app-topbar uk-background-secondary uk-border-rounded uk-grid uk-margin-remove">
-						<div className="uk-width-auto uk-background-secondary app-title uk-margin-medium-right">
-							{props.appInfo.name}
+					<div className="app-topbar blur uk-border-rounded uk-grid uk-margin-remove">
+						<div className="uk-width-auto uk-background-secondary app-title uk-padding-medium uk-border-rounded">
+							<span className="uk-margin-medium-right">
+								{props.appInfo.name}
+							</span>
 						</div>
-						<div className="uk-width-expand app-top-functions">
+						<div className="uk-width-expand app-top-functions ">
 							<div className="uk-align-right">
 								<IconButton
 									iconProps={{ iconName: "ChromeMinimize" }}

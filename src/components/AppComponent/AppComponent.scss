@@ -55,8 +55,9 @@
 	display: none;
 }
 
-.app-top-functions {
-	background-color: rgba(51, 51, 51, 1) !important;
+.app-title {
+	border-bottom-right-radius: unset !important;
+	border-bottom-left-radius: unset !important;
 }
 
 .sidebar-list {
