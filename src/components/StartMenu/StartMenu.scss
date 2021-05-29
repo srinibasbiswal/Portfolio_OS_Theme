@@ -8,6 +8,7 @@
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
 	backdrop-filter: blur(20px) !important;
 	-webkit-backdrop-filter: blur(20px) !important;
+	border-radius: 10px !important;
 }
 
 .start-quick-actions {
@@ -15,15 +16,36 @@
 	height: 100% !important;
 }
 .start-app-list {
-	width: calc((100%-42px) - 60%);
-	height: 100% !important;
+	width: calc((100%-42px) - 70%);
 }
 .start-tiles {
-	width: calc((100%-42px) - 40%);
+	width: calc((100%-42px) - 30%);
 	height: 100% !important;
+	overflow: hidden;
 }
 
 .quick-action-button {
 	width: 40px !important;
 	height: 40px !important;
+}
+
+.start-menu-list {
+	color: var(--font-white) !important;
+}
+
+.start-menu-list-item {
+	cursor: pointer !important;
+	padding: 10px !important;
+}
+
+.start-menu-list :hover {
+	background-color: rgb(50, 49, 48) !important;
+}
+
+.profile-card {
+	background: rgb(50, 49, 48) !important;
+}
+
+.profile-card-img {
+	margin-top: calc(-10% - 40px) !important;
 }

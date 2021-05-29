@@ -22,3 +22,11 @@
 	backdrop-filter: blur(20px) !important;
 	-webkit-backdrop-filter: blur(20px) !important;
 }
+
+.power-button {
+	.ms-Button-flexContainer {
+		.ms-Icon {
+			font-size: 25px !important;
+		}
+	}
+}

@@ -1,9 +1,10 @@
 import ResumePDF from "./Srinibas_Biswal_Resume.pdf";
+import default_avatar from "../../assets/images/baseImages/default_avatar.svg";
 
 const user = {
 	firstName: "Srinibas",
 	lastName: "Biswal",
-	userImage: null,
+	userImage: default_avatar,
 	resume: ResumePDF,
 	email: "srinibasbiswal02@gmail.com",
 	linkedIn: "in/srinibasbiswal",
