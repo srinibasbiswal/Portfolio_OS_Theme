@@ -5,7 +5,9 @@ import Projects from "../../components/Applications/AboutMe/Projects";
 import Resume from "../../components/Applications/AboutMe/Resume";
 import Skills from "../../components/Applications/AboutMe/Skills";
 import JIOSaavn from "../../components/Applications/JIOSaavn";
+import Mail from "../../components/Applications/Mail";
 import VSCode from "../../components/Applications/VSCode";
+import Word from "../../components/Applications/Word";
 
 const appConfig = [
 	{
@@ -70,6 +72,21 @@ const appConfig = [
 			{
 				name: "jioSaavn",
 				component: JIOSaavn,
+			},
+		],
+	},
+	{
+		id: "mail",
+		name: "Contact Me",
+		order: 4,
+		icon: "",
+		isApplication: true,
+		showInDesktop: true,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "mail",
+				component: Mail,
 			},
 		],
 	},
