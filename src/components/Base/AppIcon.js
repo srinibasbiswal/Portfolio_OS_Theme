@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { handleApplicationClick } from "../../utils/actions/appStateAction";
-import folder from "../../assets/baseImages/default_folder.png";
+import folder from "../../assets/images/baseImages/default_folder.png";
 
 function AppIcon(props) {
 	const dispatch = useDispatch();

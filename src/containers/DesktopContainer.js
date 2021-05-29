@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { initApplications } from "../utils/actions/appStateAction";
-import wallpaper1 from "../assets/LockScreenImages/wallpaper1.jpg";
+import wallpaper1 from "../assets/images/LockScreenImages/wallpaper1.jpg";
 import Desktop from "../components/Desktop/Desktop";
 
 function DesktopContainer() {

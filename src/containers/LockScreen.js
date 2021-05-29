@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LockWallpaperScreen from "../components/LockScreen/LockWallpaperScreen";
-import wallpaper1 from "../assets/LockScreenImages/wallpaper1.jpg";
+import wallpaper1 from "../assets/images/LockScreenImages/wallpaper1.jpg";
 import SignInScreen from "../components/LockScreen/SignInScreen";
 
 function LockScreen(props) {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import avatar from "../../../assets/baseImages/default_avatar.svg";
+import avatar from "../../../assets/images/baseImages/default_avatar.svg";
 import user from "../../../utils/Data/user.config";
 
 function AboutMe() {

@@ -2,7 +2,7 @@ import React from "react";
 import "./LockScreen.scss";
 import { setSystemState } from "../../utils/actions/systemStateAction";
 import { useDispatch } from "react-redux";
-import avatar from "../../assets/baseImages/default_avatar.svg";
+import avatar from "../../assets/images/baseImages/default_avatar.svg";
 import { Icon, PrimaryButton, TextField } from "@fluentui/react";
 
 function SignInScreen() {
