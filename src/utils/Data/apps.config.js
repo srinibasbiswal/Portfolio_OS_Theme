@@ -5,6 +5,7 @@ import Experience from "../../components/Applications/AboutMe/Experience";
 import Projects from "../../components/Applications/AboutMe/Projects";
 import Resume from "../../components/Applications/AboutMe/Resume";
 import Skills from "../../components/Applications/AboutMe/Skills";
+import Chrome from "../../components/Applications/chrome";
 import JIOSaavn from "../../components/Applications/JIOSaavn";
 import Mail from "../../components/Applications/Mail";
 import VSCode from "../../components/Applications/VSCode";
@@ -92,6 +93,21 @@ const appConfig = [
 			{
 				name: "mail",
 				component: Mail,
+			},
+		],
+	},
+	{
+		id: "chrome",
+		name: "Chrome",
+		order: 5,
+		icon: "",
+		isApplication: true,
+		showInDesktop: true,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "chrome",
+				component: Chrome,
 			},
 		],
 	},
