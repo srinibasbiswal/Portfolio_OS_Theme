@@ -4,6 +4,7 @@ import { setSystemState } from "../../utils/actions/systemStateAction";
 import { useDispatch } from "react-redux";
 import avatar from "../../assets/images/baseImages/default_avatar.svg";
 import { Icon, PrimaryButton, TextField } from "@fluentui/react";
+import SocialBlock from "../Base/socialBlock";
 
 function SignInScreen() {
 	const dispatch = useDispatch();
@@ -50,6 +51,11 @@ function SignInScreen() {
 				<div className="font-color-white uk-text-lead">
 					<Icon iconName="WifiEthernet" />
 				</div>
+			</div>
+
+			{/* Social Links */}
+			<div className="uk-position-bottom-left uk-overlay uk-flex uk-flex-column">
+				<SocialBlock />
 			</div>
 		</div>
 	);

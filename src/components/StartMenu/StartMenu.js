@@ -3,12 +3,19 @@ import { useConst, useBoolean } from "@fluentui/react-hooks";
 import React from "react";
 import "./StartMenu.scss";
 import ContextMenu from "../ContextMenu/ContextMenu";
+import { useDispatch } from "react-redux";
+import { setSystemState } from "../../utils/actions/systemStateAction";
 
 function StartMenu() {
 	const [
 		showPowerMenu,
 		{ setTrue: onShowPowerMenu, setFalse: onHidePowerMenu },
 	] = useBoolean(false);
+
+	const dispatch = useDispatch();
+	const setNextSystemState = (systemState) => {
+		dispatch(setSystemState(systemState));
+	};
 
 	const menuProps = useConst({
 		shouldFocusOnMount: true,
@@ -17,17 +24,13 @@ function StartMenu() {
 				key: "lock",
 				iconProps: { iconName: "Lock" },
 				text: "Lock",
-				className: "test",
+				onClick: () => setNextSystemState("isLocked"),
 			},
 			{
 				key: "shutDown",
 				iconProps: { iconName: "PowerButton" },
 				text: "Shut Down",
-			},
-			{
-				key: "reStart",
-				iconProps: { iconName: "Refresh" },
-				text: "Restart",
+				onClick: () => setNextSystemState("isShutDown"),
 			},
 		],
 	});
