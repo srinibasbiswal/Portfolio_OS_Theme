@@ -74,8 +74,8 @@ function StartMenu() {
 										app.icon != "" && (
 											<img
 												src={app.icon}
-												width="40"
-												height="40"
+												width="30"
+												height="30"
 												alt={app.name}
 												className="uk-img uk-margin-small-right"
 											/>

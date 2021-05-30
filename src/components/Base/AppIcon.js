@@ -16,13 +16,20 @@ function AppIcon(props) {
 		>
 			<div>
 				<img
-					className="uk-border-circle"
-					src={folder}
-					width="40"
-					height="40"
+					src={
+						props.appInfo.icon != undefined &&
+						props.appInfo.icon != null &&
+						props.appInfo.icon != ""
+							? props.appInfo.icon
+							: folder
+					}
+					width="30"
+					height="30"
 				/>
 			</div>
-			<div className="font-color-white">{props.appInfo.name}</div>
+			<div className="font-color-white uk-text-small">
+				{props.appInfo.name}
+			</div>
 		</div>
 	);
 }

@@ -11,13 +11,20 @@ import Mail from "../../components/Applications/Mail";
 import SpreadsheetApp from "../../components/Applications/SpreadsheetApp";
 import VSCode from "../../components/Applications/VSCode";
 import Word from "../../components/Applications/Word";
+import aboutMe from "../../assets/images/apps/aboutMe.png";
+import chrome from "../../assets/images/apps/chrome.svg";
+import jioSaavn from "../../assets/images/apps/jioSaavn.png";
+import mail from "../../assets/images/apps/mail.png";
+import word from "../../assets/images/apps/word.svg";
+import spreadsheet from "../../assets/images/apps/spreadsheet.svg";
+import vsCode from "../../assets/images/apps/vsCode.png";
 
 const appConfig = [
 	{
 		id: "aboutMe",
 		name: "About Me",
 		order: 1,
-		icon: "",
+		icon: aboutMe,
 		showInDesktop: true,
 		isApplication: false,
 		showLinks: true,
@@ -56,7 +63,7 @@ const appConfig = [
 		id: "vscode",
 		name: "VSCode",
 		order: 2,
-		icon: "",
+		icon: vsCode,
 		isApplication: true,
 		showInDesktop: true,
 		showLinks: true,
@@ -71,7 +78,7 @@ const appConfig = [
 		id: "jioSaavn",
 		name: "JIO Saavn",
 		order: 3,
-		icon: "",
+		icon: jioSaavn,
 		isApplication: true,
 		showInDesktop: true,
 		showLinks: true,
@@ -86,7 +93,7 @@ const appConfig = [
 		id: "mail",
 		name: "Contact Me",
 		order: 4,
-		icon: "",
+		icon: mail,
 		isApplication: true,
 		showInDesktop: true,
 		showLinks: true,
@@ -101,7 +108,7 @@ const appConfig = [
 		id: "chrome",
 		name: "Chrome",
 		order: 5,
-		icon: "",
+		icon: chrome,
 		isApplication: true,
 		showInDesktop: true,
 		showLinks: true,
@@ -116,7 +123,7 @@ const appConfig = [
 		id: "word",
 		name: "Word",
 		order: 6,
-		icon: "",
+		icon: word,
 		isApplication: true,
 		showInDesktop: true,
 		showLinks: true,
@@ -131,7 +138,7 @@ const appConfig = [
 		id: "spreadsheet",
 		name: "Spreadsheet",
 		order: 7,
-		icon: "",
+		icon: spreadsheet,
 		isApplication: true,
 		showInDesktop: true,
 		showLinks: true,
