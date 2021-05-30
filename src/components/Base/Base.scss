@@ -10,3 +10,9 @@
 	font-size: 12px !important;
 	color: var(--font-white) !important;
 }
+
+.app-icon:hover {
+	background: rgba(74, 74, 74, 0.5) !important;
+	backdrop-filter: blur(20px) !important;
+	-webkit-backdrop-filter: blur(20px) !important;
+}

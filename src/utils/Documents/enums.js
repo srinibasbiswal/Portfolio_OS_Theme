@@ -8,4 +8,5 @@ export const ACTION_TYPES = {
 	TOGGLE_WIFI: "Toggle_Wifi",
 	TOGGLE_AIRPLANE_MODE: "Toggle_Airplane_Mode",
 	TOGGLE_MUTE: "Toggle_Mute",
+	CHANGE_WALLPAPER: "Change_Wallpaper",
 };

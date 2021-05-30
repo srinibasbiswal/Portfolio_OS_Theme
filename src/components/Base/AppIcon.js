@@ -11,7 +11,7 @@ function AppIcon(props) {
 
 	return (
 		<div
-			className="uk-text-center uk-margin-small uk-button"
+			className="uk-text-center uk-margin-small uk-button app-icon uk-border-rounded"
 			onClick={() => handleIconClick(props.appInfo)}
 		>
 			<div>

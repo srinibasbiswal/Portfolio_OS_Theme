@@ -5,6 +5,7 @@ import "./ActionCenter.scss";
 import { useDispatch } from "react-redux";
 import { toggleSettings } from "../../utils/actions/settingsStateAction";
 import { ACTION_TYPES } from "../../utils/Documents/enums";
+import JIOSaavn from "../Applications/JIOSaavn";
 
 function ActionCenter() {
 	const settings = useSelector((state) => state.settingsState);
@@ -16,6 +17,9 @@ function ActionCenter() {
 	return (
 		<div id="action-center" uk-offcanvas="overlay: false; flip:true">
 			<div class="uk-offcanvas-bar action-center">
+				<div>
+					<JIOSaavn />
+				</div>
 				<div className="uk-position-bottom uk-flex uk-margin-medium-bottom">
 					{/* Wifi Button */}
 					<div

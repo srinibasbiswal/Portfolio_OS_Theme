@@ -77,7 +77,21 @@ function AppComponent(props) {
 					<div className="app-topbar blur uk-border-rounded uk-grid uk-margin-remove">
 						<div className="uk-width-auto uk-background-secondary app-title uk-padding-medium uk-border-rounded">
 							<span className="uk-margin-medium-right">
-								{props.appInfo.name}
+								<img
+									src={
+										props.appInfo.icon != undefined &&
+										props.appInfo.icon != null &&
+										props.appInfo.icon != ""
+											? props.appInfo.icon
+											: ""
+									}
+									width="20"
+									height="20"
+									className="uk-margin-small-right"
+								/>
+								<span className="uk-margin-small-top">
+									{props.appInfo.name}
+								</span>
 							</span>
 						</div>
 						<div className="uk-width-expand app-top-functions ">

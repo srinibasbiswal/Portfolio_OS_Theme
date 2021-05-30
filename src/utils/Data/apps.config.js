@@ -18,6 +18,8 @@ import mail from "../../assets/images/apps/mail.png";
 import word from "../../assets/images/apps/word.svg";
 import spreadsheet from "../../assets/images/apps/spreadsheet.svg";
 import vsCode from "../../assets/images/apps/vsCode.png";
+import settings from "../../assets/images/apps/settings.svg";
+import BackgroundSettings from "../../components/Applications/Settings/background.settings";
 
 const appConfig = [
 	{
@@ -146,6 +148,21 @@ const appConfig = [
 			{
 				name: "spreedsheet",
 				component: SpreadsheetApp,
+			},
+		],
+	},
+	{
+		id: "settings",
+		name: "Settings",
+		order: 8,
+		icon: settings,
+		showInDesktop: true,
+		isApplication: false,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "Background",
+				component: BackgroundSettings,
 			},
 		],
 	},

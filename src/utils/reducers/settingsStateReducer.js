@@ -1,3 +1,4 @@
+import settings from "../Data/settings.config";
 import { ACTION_TYPES } from "../Documents/enums";
 import SettingDocument from "../Documents/SettingsDocument";
 
@@ -19,6 +20,17 @@ const settingsStateReducer = (state = initialSettings, action) => {
 			return {
 				...state,
 				airplaneMode: !state.airplaneMode,
+			};
+		case ACTION_TYPES.CHANGE_WALLPAPER:
+			var newWallpaper = settings.desktop_wallpapers.filter(
+				(wallpaper) => wallpaper.id === action.wallpaperId
+			);
+			return {
+				...state,
+				currentWallpaper:
+					newWallpaper != undefined && newWallpaper[0] != undefined
+						? newWallpaper[0].value
+						: settings.default_wallpaper,
 			};
 		default:
 			return state;
