@@ -1,9 +1,12 @@
 import { IconButton } from "@fluentui/react";
 import React from "react";
+import { useSelector } from "react-redux";
 import ClockComponent from "../Base/ClockComponent";
 import TaskBarIcon from "./TaskBarIcon";
 
 function Taskbar(props) {
+	const settings = useSelector((state) => state.settingsState);
+
 	return (
 		<div className="uk-position-bottom uk-width-expand taskbar-bottom">
 			<div className="uk-position-left uk-flex">
@@ -39,6 +42,42 @@ function Taskbar(props) {
 				</div>
 			</div>
 			<div className="uk-position-right uk-flex">
+				<div>
+					{settings.wifiEnabled && (
+						<IconButton
+							iconProps={{ iconName: "WifiEthernet" }}
+							title="Connected: PIED PIPER"
+							ariaLabel="Connected: PIED PIPER"
+							className="uk-height-1-1 taskbar-icon"
+						/>
+					)}
+					{!settings.wifiEnabled && (
+						<IconButton
+							iconProps={{ iconName: "WifiWarning4" }}
+							title="Wifi Disabled"
+							ariaLabel="Wifi Disabled"
+							className="uk-height-1-1 taskbar-icon"
+						/>
+					)}
+				</div>
+				<div>
+					{settings.isMute && (
+						<IconButton
+							iconProps={{ iconName: "VolumeDisabled" }}
+							title="Muted"
+							ariaLabel="Muted"
+							className="uk-height-1-1 taskbar-icon"
+						/>
+					)}
+					{!settings.isMute && (
+						<IconButton
+							iconProps={{ iconName: "Volume3" }}
+							title="Volume"
+							ariaLabel="Volume"
+							className="uk-height-1-1 taskbar-icon"
+						/>
+					)}
+				</div>
 				<div>
 					<ClockComponent />
 				</div>
