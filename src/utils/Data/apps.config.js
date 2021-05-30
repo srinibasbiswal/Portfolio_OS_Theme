@@ -8,6 +8,7 @@ import Skills from "../../components/Applications/AboutMe/Skills";
 import Chrome from "../../components/Applications/chrome";
 import JIOSaavn from "../../components/Applications/JIOSaavn";
 import Mail from "../../components/Applications/Mail";
+import SpreadsheetApp from "../../components/Applications/SpreadsheetApp";
 import VSCode from "../../components/Applications/VSCode";
 import Word from "../../components/Applications/Word";
 
@@ -123,6 +124,21 @@ const appConfig = [
 			{
 				name: "word",
 				component: Word,
+			},
+		],
+	},
+	{
+		id: "spreadsheet",
+		name: "Spreadsheet",
+		order: 7,
+		icon: "",
+		isApplication: true,
+		showInDesktop: true,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "spreedsheet",
+				component: SpreadsheetApp,
 			},
 		],
 	},
