@@ -5,7 +5,7 @@ class SettingDocument {
 		this.currentWallpaper = default_wallpaper;
 		this.isMute = false;
 		this.wifiEnabled = true;
-		this.batterySaverEnabled = true;
+		this.airplaneMode = true;
 	}
 }
 

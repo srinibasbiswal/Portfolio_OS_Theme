@@ -10,6 +10,16 @@ const settingsStateReducer = (state = initialSettings, action) => {
 				...state,
 				isMute: !state.isMute,
 			};
+		case ACTION_TYPES.TOGGLE_WIFI:
+			return {
+				...state,
+				wifiEnabled: !state.wifiEnabled,
+			};
+		case ACTION_TYPES.TOGGLE_AIRPLANE_MODE:
+			return {
+				...state,
+				airplaneMode: !state.airplaneMode,
+			};
 		default:
 			return state;
 	}
