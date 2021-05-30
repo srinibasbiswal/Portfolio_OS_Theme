@@ -31,7 +31,7 @@ function AppComponent(props) {
 		>
 			<div
 				className={
-					"app-component uk-border-rounded uk-box-shadow-medium uk-flex uk-flex-row " +
+					"app-component  uk-border-rounded uk-box-shadow-medium uk-flex uk-flex-row " +
 					(props.appInfo.isMaximized ? "maximized" : "")
 				}
 			>
@@ -69,7 +69,9 @@ function AppComponent(props) {
 				)}
 				<div
 					className={
-						props.appInfo.isApplication && props.appInfo.isMaximized
+						(props.appInfo.isApplication &&
+							props.appInfo.isMaximized) ||
+						props.appInfo.isApplication
 							? "maximized-application"
 							: "app-content-container"
 					}

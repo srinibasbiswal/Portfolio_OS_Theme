@@ -18,8 +18,13 @@ function TaskBarIcon(props) {
 			}
 		>
 			<img
-				className="uk-border-circle"
-				src={folder}
+				src={
+					props.appInfo.icon != undefined &&
+					props.appInfo.icon != null &&
+					props.appInfo.icon != ""
+						? props.appInfo.icon
+						: folder
+				}
 				width="30"
 				height="30"
 			/>
