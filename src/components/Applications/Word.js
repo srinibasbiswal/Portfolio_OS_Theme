@@ -1,14 +1,13 @@
 import React from "react";
+import { useQuill } from "react-quilljs";
+import "quill/dist/quill.snow.css";
 
 function Word() {
+	const { quill, quillRef } = useQuill();
+
 	return (
-		<div className="height-100">
-			<iframe
-				src="https://www.google.com/webhp?igu=1"
-				frameBorder="0"
-				height="100%"
-				width="100%"
-			></iframe>
+		<div className="height-100 uk-background-muted">
+			<div ref={quillRef} />
 		</div>
 	);
 }

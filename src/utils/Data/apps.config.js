@@ -111,6 +111,21 @@ const appConfig = [
 			},
 		],
 	},
+	{
+		id: "word",
+		name: "Word",
+		order: 6,
+		icon: "",
+		isApplication: true,
+		showInDesktop: true,
+		showLinks: true,
+		subComponent: [
+			{
+				name: "word",
+				component: Word,
+			},
+		],
+	},
 ];
 
 export default appConfig;
