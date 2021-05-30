@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import LockWallpaperScreen from "../components/LockScreen/LockWallpaperScreen";
 import wallpaper1 from "../assets/images/LockScreenImages/wallpaper1.jpg";
 import SignInScreen from "../components/LockScreen/SignInScreen";
+import { useContextMenu } from "react-contexify";
+import "react-contexify/dist/ReactContexify.css";
+import DesktopContextMenu from "../components/ContextMenu/desktop.contextMenu";
+import { SCREENS } from "../utils/Documents/enums";
+
+const MENU_ID = "context-menu";
 
 function LockScreen(props) {
 	const [showSignInPage, setLockScreenState] = useState(false);
@@ -10,6 +16,18 @@ function LockScreen(props) {
 		setLockScreenState(true);
 	};
 
+	const { show } = useContextMenu({
+		id: MENU_ID,
+	});
+	function handleContextMenu(event) {
+		event.preventDefault();
+		show(event, {
+			props: {
+				key: "value",
+			},
+		});
+	}
+
 	return (
 		<div
 			className="uk-background-cover uk-background-muted screenHeight"
@@ -17,6 +35,7 @@ function LockScreen(props) {
 				backgroundImage: `url(${currentWallpaper})`,
 			}}
 			onClick={changeScreenState}
+			onContextMenu={handleContextMenu}
 		>
 			{(() => {
 				if (showSignInPage) {
@@ -25,6 +44,7 @@ function LockScreen(props) {
 					return <LockWallpaperScreen />;
 				}
 			})()}
+			<DesktopContextMenu location={SCREENS.LOCK_SCREEN} />
 		</div>
 	);
 }

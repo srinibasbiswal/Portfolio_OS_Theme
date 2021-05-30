@@ -10,3 +10,9 @@ export const ACTION_TYPES = {
 	TOGGLE_MUTE: "Toggle_Mute",
 	CHANGE_WALLPAPER: "Change_Wallpaper",
 };
+
+export const SCREENS = {
+	DESKTOP: "Desktop",
+	LOCK_SCREEN: "Lock_Screen",
+	SHUT_DOWN: "Shut_Down",
+};

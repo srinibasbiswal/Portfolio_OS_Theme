@@ -1,10 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeDesktopBackground } from "../../../utils/actions/settingsStateAction";
 import settings from "../../../utils/Data/settings.config";
+import checked from "../../../assets/images/baseImages/checked.svg";
 import "./settings.scss";
 
 function BackgroundSettings() {
+	const current_settings = useSelector((state) => state.settingsState);
 	const dispatch = useDispatch();
 	const changeWallpaper = (wallpaperId) => {
 		dispatch(changeDesktopBackground(wallpaperId));
@@ -28,7 +30,18 @@ function BackgroundSettings() {
 								}}
 								className="wallpaper-thumbnail uk-card uk-card-body"
 								onClick={() => changeWallpaper(wallpaper.id)}
-							></div>
+							>
+								{current_settings.currentWallpaperId ===
+									wallpaper.id && (
+									<div className="uk-position-top-right uk-padding-small">
+										<img
+											src={checked}
+											width="40"
+											height="40"
+										/>
+									</div>
+								)}
+							</div>
 						</div>
 					);
 				})}

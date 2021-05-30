@@ -44,27 +44,21 @@ function StartMenu() {
 		<div id="start-menu" uk-offcanvas="overlay: false">
 			<div class="uk-offcanvas-bar start-menu uk-flex uk-padding-remove">
 				<div className="start-quick-actions">
-					<div className="uk-position-bottom">
-						<ul class="uk-list uk-margin-remove">
-							<li>
-								<IconButton
-									iconProps={{ iconName: "PowerButton" }}
-									title="Power"
-									ariaLabel="Power"
-									className=" quick-action-button"
-									menuProps={menuProps}
-								/>
-								{showPowerMenu && (
-									<ContextMenu
-										onShowPowerMenu={onShowPowerMenu}
-										onHidePowerMenu={onHidePowerMenu}
-									/>
-								)}
-							</li>
-						</ul>
-					</div>
+					<IconButton
+						iconProps={{ iconName: "PowerButton" }}
+						title="Power"
+						ariaLabel="Power"
+						className=" quick-action-button uk-position-bottom"
+						menuProps={menuProps}
+					/>
+					{showPowerMenu && (
+						<ContextMenu
+							onShowPowerMenu={onShowPowerMenu}
+							onHidePowerMenu={onHidePowerMenu}
+						/>
+					)}
 				</div>
-				<div className="start-app-list uk-margin-large-top uk-margin-small-right">
+				<div className="start-app-list uk-margin-medium-top uk-margin-small-right">
 					<ul className="uk-list start-menu-list">
 						{appState.apps.map((app, index) => {
 							return (
@@ -74,8 +68,8 @@ function StartMenu() {
 										app.icon != "" && (
 											<img
 												src={app.icon}
-												width="30"
-												height="30"
+												width="25"
+												height="25"
 												alt={app.name}
 												className="uk-img uk-margin-small-right"
 											/>
@@ -87,7 +81,7 @@ function StartMenu() {
 					</ul>
 				</div>
 				<div className="start-tiles uk-background-secondary">
-					<div className="profile-card uk-card uk-card-body uk-margin-large-top uk-margin-medium-left uk-margin-medium-right uk-border-rounded uk-text-center">
+					<div className="profile-card uk-card uk-card-body uk-margin-medium-top uk-margin-medium-left uk-margin-medium-right uk-border-rounded uk-text-center">
 						{user.userImage != undefined &&
 							user.userImage != null &&
 							user.userImage != "" && (
@@ -102,7 +96,7 @@ function StartMenu() {
 						<p className="uk-text-center">Hi, {user.firstName}</p>
 						<SocialBlock />
 					</div>
-					<div className="start-menu-tiles uk-card-body">
+					<div className="start-menu-tiles uk-child-width-1-3@m">
 						{appState.apps.map((app, index) => {
 							return <AppIcon appInfo={app} key={index} />;
 						})}

@@ -156,7 +156,7 @@ const appConfig = [
 		name: "Settings",
 		order: 8,
 		icon: settings,
-		showInDesktop: true,
+		showInDesktop: false,
 		isApplication: false,
 		showLinks: true,
 		subComponent: [

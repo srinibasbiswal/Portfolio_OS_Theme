@@ -69,11 +69,7 @@ function SocialBlock() {
 						alt="Mail Icom"
 						uk-tooltip="Mail Me"
 						className="uk-img uk-margin-small-right"
-						onClick={() =>
-							onSocialClick(
-								"mailto:srinibasbiswal02@gmail.com" + user.email
-							)
-						}
+						onClick={() => onSocialClick("mailto:" + user.email)}
 					/>
 				)}
 		</div>
