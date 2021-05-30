@@ -5,6 +5,7 @@ import "./StartMenu.scss";
 import ContextMenu from "../ContextMenu/ContextMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { setSystemState } from "../../utils/actions/systemStateAction";
+import { handleApplicationClick } from "../../utils/actions/appStateAction";
 import user from "../../utils/Data/user.config";
 import SocialBlock from "../Base/socialBlock";
 import AppIcon from "../Base/AppIcon";
@@ -16,6 +17,9 @@ function StartMenu() {
 	] = useBoolean(false);
 
 	const dispatch = useDispatch();
+	const handleIconClick = (app) => {
+		dispatch(handleApplicationClick(app));
+	};
 	const setNextSystemState = (systemState) => {
 		dispatch(setSystemState(systemState));
 	};
@@ -62,7 +66,10 @@ function StartMenu() {
 					<ul className="uk-list start-menu-list">
 						{appState.apps.map((app, index) => {
 							return (
-								<li className="start-menu-list-item uk-border-rounded">
+								<li
+									className="start-menu-list-item uk-border-rounded"
+									onClick={() => handleIconClick(app)}
+								>
 									{app.icon != undefined &&
 										app.icon != null &&
 										app.icon != "" && (
