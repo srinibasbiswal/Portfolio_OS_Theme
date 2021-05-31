@@ -69,8 +69,9 @@ function AppComponent(props) {
 				)}
 				<div
 					className={
-						(props.appInfo.isApplication &&
-							props.appInfo.isMaximized) ||
+						"uk-width-expand@s " +
+							(props.appInfo.isApplication &&
+								props.appInfo.isMaximized) ||
 						props.appInfo.isApplication
 							? "maximized-application"
 							: "app-content-container"

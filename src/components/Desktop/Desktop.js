@@ -55,12 +55,12 @@ function Desktop() {
 				<ActionCenter />
 				<StartMenu />
 				<CalendarOverlay />
-				<div className="uk-position-left uk-flex uk-flex-column">
-					{desktopApps.map((app, index) => {
-						return <AppIcon appInfo={app} key={index} />;
-					})}
-				</div>
 				<div className="app-playground uk-position-right">
+					<div className="uk-position-left uk-flex uk-flex-column">
+						{desktopApps.map((app, index) => {
+							return <AppIcon appInfo={app} key={index} />;
+						})}
+					</div>
 					{onDesktopApps.map((app, index) => {
 						return <AppComponent appInfo={app} key={index} />;
 					})}
