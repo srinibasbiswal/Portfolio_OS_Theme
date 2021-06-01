@@ -8,7 +8,7 @@ function Windows() {
 	const systemState = useSelector((state) => state.systemState);
 
 	return (
-		<div className="uk-width-expand" uk-height-viewport="expand: true">
+		<div className="uk-width-expand">
 			{(() => {
 				if (systemState.isLocked) {
 					return <LockScreen />;

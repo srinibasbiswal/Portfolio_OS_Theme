@@ -51,7 +51,7 @@ function Desktop() {
 		desktopApps.length > 0
 	) {
 		return (
-			<div className="height-100 uk-flex uk-flex-column">
+			<div className="screenHeight uk-flex uk-flex-column">
 				<div className="desktop-container">
 					<ActionCenter />
 					<StartMenu />
@@ -67,7 +67,7 @@ function Desktop() {
 						})}
 					</div>
 				</div>
-				<div className="taskbar">
+				<div className="taskbar uk-position-bottom">
 					<Taskbar onTaskbarApps={onTaskbarApps} />
 				</div>
 			</div>
