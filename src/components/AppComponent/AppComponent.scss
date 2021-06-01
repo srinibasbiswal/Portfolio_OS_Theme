@@ -6,6 +6,12 @@
 	width: 80% !important;
 }
 
+@media only screen and (max-width: 640px) {
+	.app-component {
+		width: 95% !important;
+	}
+}
+
 .app-topbar {
 	height: 32px !important;
 	width: 100% !important;
@@ -17,6 +23,14 @@
 .close-button:hover {
 	color: var(--color-white);
 	background-color: var(--color-red);
+}
+
+.title-bar {
+	width: calc(100% - 140px) !important;
+}
+
+.app-top-functions {
+	width: 100px !important;
 }
 
 .maximized {
@@ -63,6 +77,8 @@
 .app-title {
 	border-bottom-right-radius: unset !important;
 	border-bottom-left-radius: unset !important;
+	width: 200px !important;
+	height: 100% !important;
 }
 
 .sidebar-list {

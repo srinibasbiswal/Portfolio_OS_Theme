@@ -27,7 +27,7 @@ function AppComponent(props) {
 			grid={[1, 1]}
 			scale={1}
 			defaultPosition={{ x: 0, y: 0 }}
-			handle=".app-topbar"
+			handle=".title-bar"
 		>
 			<div
 				className={
@@ -78,62 +78,62 @@ function AppComponent(props) {
 					}
 				>
 					<div className="app-topbar blur uk-border-rounded uk-grid uk-margin-remove">
-						<div className="uk-width-auto uk-background-secondary app-title uk-padding-medium uk-border-rounded">
-							<span className="uk-margin-medium-right">
-								<img
-									src={
-										props.appInfo.icon != undefined &&
-										props.appInfo.icon != null &&
-										props.appInfo.icon != ""
-											? props.appInfo.icon
-											: ""
-									}
-									width="20"
-									height="20"
-									className="uk-margin-small-right"
-								/>
-								<span className="uk-margin-small-top">
-									{props.appInfo.name}
+						<div className="title-bar uk-margin-remove uk-padding-remove">
+							<div className="app-title  uk-background-secondary uk-border-rounded">
+								<span className="uk-margin-medium-right uk-margin-small-left">
+									<img
+										src={
+											props.appInfo.icon != undefined &&
+											props.appInfo.icon != null &&
+											props.appInfo.icon != ""
+												? props.appInfo.icon
+												: ""
+										}
+										width="20"
+										height="20"
+										className="uk-margin-small-right"
+									/>
+									<span className="uk-margin-small-top">
+										{props.appInfo.name}
+									</span>
 								</span>
-							</span>
-						</div>
-						<div className="uk-width-expand app-top-functions ">
-							<div className="uk-align-right">
-								<IconButton
-									iconProps={{ iconName: "ChromeMinimize" }}
-									title="Minimize"
-									ariaLabel="Minimize"
-									onClick={() =>
-										handleAppFunctionClick(
-											props.appInfo,
-											ACTION_TYPES.MINIMIZE
-										)
-									}
-								/>
-								<IconButton
-									iconProps={{ iconName: "ChromeRestore" }}
-									title="Restore"
-									ariaLabel="Restore"
-									onClick={() =>
-										handleAppFunctionClick(
-											props.appInfo,
-											ACTION_TYPES.MAXIMIZE
-										)
-									}
-								/>
-								<IconButton
-									iconProps={{ iconName: "ChromeClose" }}
-									title="Close"
-									ariaLabel="Close"
-									className="close-button"
-									onClick={() =>
-										handleAppFunctionClick(
-											props.appInfo,
-											ACTION_TYPES.CLOSE
-										)
-									}
-								/>
 							</div>
+						</div>
+						<div className="app-top-functions uk-flex">
+							<IconButton
+								iconProps={{ iconName: "ChromeMinimize" }}
+								title="Minimize"
+								ariaLabel="Minimize"
+								onClick={() =>
+									handleAppFunctionClick(
+										props.appInfo,
+										ACTION_TYPES.MINIMIZE
+									)
+								}
+							/>
+							<IconButton
+								iconProps={{ iconName: "ChromeRestore" }}
+								title="Restore"
+								ariaLabel="Restore"
+								onClick={() =>
+									handleAppFunctionClick(
+										props.appInfo,
+										ACTION_TYPES.MAXIMIZE
+									)
+								}
+							/>
+							<IconButton
+								iconProps={{ iconName: "ChromeClose" }}
+								title="Close"
+								ariaLabel="Close"
+								className="close-button"
+								onClick={() =>
+									handleAppFunctionClick(
+										props.appInfo,
+										ACTION_TYPES.CLOSE
+									)
+								}
+							/>
 						</div>
 					</div>
 					<div className="app-content uk-background-secondary scrollbar">
