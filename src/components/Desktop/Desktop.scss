@@ -33,3 +33,11 @@
 .onDesktop:hover {
 	background-color: rgba(255, 255, 255, 0.5) !important;
 }
+
+.desktop-container {
+	height: calc(100% - 40px) !important;
+}
+
+.taskbar {
+	height: 40px !important;
+}

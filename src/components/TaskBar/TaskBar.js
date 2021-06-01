@@ -8,7 +8,7 @@ function Taskbar(props) {
 	const settings = useSelector((state) => state.settingsState);
 
 	return (
-		<div className="uk-position-bottom uk-width-expand taskbar-bottom">
+		<div className="uk-width-expand taskbar-bottom">
 			<div className="uk-position-left uk-flex">
 				<div className="uk-flex">
 					<div
