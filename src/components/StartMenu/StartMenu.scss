@@ -26,6 +26,23 @@
 	overflow: hidden;
 }
 
+@media screen and (max-width: 640px) {
+	.start-menu {
+		width: 100vw !important;
+	}
+
+	.start-app-list {
+		width: 0 !important;
+		display: none;
+	}
+
+	.start-tiles {
+		width: calc(100% - 42px);
+		height: 100% !important;
+		overflow: hidden;
+	}
+}
+
 .quick-action-button {
 	width: 40px !important;
 	height: 40px !important;

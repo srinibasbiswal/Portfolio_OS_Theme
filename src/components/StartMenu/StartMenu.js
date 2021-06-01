@@ -62,7 +62,7 @@ function StartMenu() {
 						/>
 					)}
 				</div>
-				<div className="start-app-list uk-margin-medium-top uk-margin-small-right">
+				<div className="start-app-list uk-margin-medium-top uk-margin-small-right ">
 					<ul className="uk-list start-menu-list">
 						{appState.apps.map((app, index) => {
 							return (
@@ -103,7 +103,7 @@ function StartMenu() {
 						<p className="uk-text-center">Hi, {user.firstName}</p>
 						<SocialBlock />
 					</div>
-					<div className="start-menu-tiles uk-child-width-1-3@m">
+					<div className="start-menu-tiles uk-child-width-1-3">
 						{appState.apps.map((app, index) => {
 							return <AppIcon appInfo={app} key={index} />;
 						})}

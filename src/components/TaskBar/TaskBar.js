@@ -28,12 +28,12 @@ function Taskbar(props) {
 						ariaLabel="Search"
 						className="uk-height-1-1 taskbar-icon"
 					/>
-					<IconButton
+					{/* <IconButton
 						iconProps={{ iconName: "DelveAnalytics" }}
 						title="Cortana"
 						ariaLabel="Cortana"
 						className="uk-height-1-1 taskbar-icon"
-					/>
+					/> */}
 				</div>
 				<div className="uk-flex">
 					{props.onTaskbarApps.map((app, index) => {
@@ -48,7 +48,7 @@ function Taskbar(props) {
 							iconProps={{ iconName: "WifiEthernet" }}
 							title="Connected: PIED PIPER"
 							ariaLabel="Connected: PIED PIPER"
-							className="uk-height-1-1 taskbar-icon"
+							className="uk-height-1-1 taskbar-quick-icon"
 						/>
 					)}
 					{!settings.wifiEnabled && (
@@ -56,7 +56,7 @@ function Taskbar(props) {
 							iconProps={{ iconName: "WifiWarning4" }}
 							title="Wifi Disabled"
 							ariaLabel="Wifi Disabled"
-							className="uk-height-1-1 taskbar-icon"
+							className="uk-height-1-1 taskbar-quick-icon"
 						/>
 					)}
 				</div>
@@ -66,7 +66,7 @@ function Taskbar(props) {
 							iconProps={{ iconName: "VolumeDisabled" }}
 							title="Muted"
 							ariaLabel="Muted"
-							className="uk-height-1-1 taskbar-icon"
+							className="uk-height-1-1 taskbar-quick-icon"
 						/>
 					)}
 					{!settings.isMute && (
@@ -74,7 +74,7 @@ function Taskbar(props) {
 							iconProps={{ iconName: "Volume3" }}
 							title="Volume"
 							ariaLabel="Volume"
-							className="uk-height-1-1 taskbar-icon"
+							className="uk-height-1-1 taskbar-quick-icon"
 						/>
 					)}
 				</div>
