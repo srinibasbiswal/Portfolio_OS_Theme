@@ -129,3 +129,17 @@
 .isApplication-list {
 	height: 96% !important;
 }
+
+.dropdown-content {
+	position: absolute;
+	min-width: 160px;
+	z-index: 10000;
+}
+
+.show-element {
+	display: block !important;
+}
+
+.hide-element {
+	display: none !important;
+}

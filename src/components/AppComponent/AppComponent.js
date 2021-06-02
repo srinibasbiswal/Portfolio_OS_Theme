@@ -5,6 +5,7 @@ import "./AppComponent.scss";
 import { useDispatch } from "react-redux";
 import { handleAppFunctions } from "../../utils/actions/appStateAction";
 import { ACTION_TYPES } from "../../utils/Documents/enums";
+import { useBoolean } from "@fluentui/react-hooks";
 
 function AppComponent(props) {
 	const dispatch = useDispatch();
@@ -12,6 +13,7 @@ function AppComponent(props) {
 		dispatch(handleAppFunctions(app, type));
 	};
 
+	const [showAppMenu, setShowAppMenu] = useState(false);
 	const [currentComponentName, setCurrentComponentName] = useState("");
 
 	const setComponent = (componentName) => {
@@ -163,6 +165,60 @@ function AppComponent(props) {
 								/>
 							</div>
 						)}
+						<div className="dropdown">
+							<IconButton
+								iconProps={{
+									iconName: "GlobalNavButton",
+								}}
+								title="Menu"
+								ariaLabel="Menu"
+								className="uk-hidden@m"
+								onClick={() => setShowAppMenu(!showAppMenu)}
+							/>
+							<div
+								className={
+									"dropdown-content blur uk-box-shadow-large " +
+									(showAppMenu
+										? "show-element"
+										: "hide-element")
+								}
+							>
+								<ul
+									class="uk-list sidebar-list"
+									uk-switcher={
+										"connect: ." + props.appInfo.id
+									}
+								>
+									{props.appInfo.subComponent.map(
+										(component, index) => {
+											return (
+												<li
+													className="uk-margin-remove"
+													onClick={() =>
+														setShowAppMenu(
+															!showAppMenu
+														)
+													}
+												>
+													<a
+														className="uk-link-reset"
+														onClick={() =>
+															setComponent(
+																component.name
+															)
+														}
+													>
+														<li className="sidebar-list-item uk-margin-remove">
+															{component.name}
+														</li>
+													</a>
+												</li>
+											);
+										}
+									)}
+								</ul>
+							</div>
+						</div>
 
 						<ul
 							className={
