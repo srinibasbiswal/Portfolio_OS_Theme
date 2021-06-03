@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LockWallpaperScreen from "../components/lockScreen/landing.lockScreen";
-import wallpaper1 from "../assets/images/LockScreenImages/wallpaper1.jpg";
+import lockScreenWall from "../assets/images/wallpapers/lockScreenWall.jpg";
 import SignInScreen from "../components/lockScreen/signIn.lockScreen";
 import { useContextMenu } from "react-contexify";
 import "react-contexify/dist/ReactContexify.css";
@@ -11,7 +11,7 @@ const MENU_ID = "context-menu";
 
 function LockScreen(props) {
 	const [showSignInPage, setLockScreenState] = useState(false);
-	const currentWallpaper = wallpaper1;
+	const currentWallpaper = lockScreenWall;
 	let changeScreenState = () => {
 		setLockScreenState(true);
 	};
