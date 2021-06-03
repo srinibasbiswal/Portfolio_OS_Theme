@@ -13,10 +13,10 @@ function Credits(props) {
 			onDismiss={props.hideModal}
 			isBlocking={false}
 		>
-			<div class="uk-card uk-card-default uk-card-body uk-border-rounded">
-				<h3 class="uk-card-title">Credits</h3>
+			<div className="uk-card uk-card-default uk-card-body uk-border-rounded">
+				<h3 className="uk-card-title">Credits</h3>
 				<p>
-					<table class="uk-table">
+					<table className="uk-table">
 						<tbody>
 							<tr>
 								<td>Framework : </td>
@@ -137,7 +137,7 @@ function Credits(props) {
 					onClick={props.hideModal}
 					className="uk-position-top-right"
 				/>
-				<div class="uk-card-footer uk-text-center">
+				<div className="uk-card-footer uk-text-center">
 					<p>
 						Made with{" "}
 						<TooltipHost

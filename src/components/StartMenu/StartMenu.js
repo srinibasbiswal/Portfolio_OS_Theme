@@ -1,4 +1,4 @@
-import { Icon, IconButton } from "@fluentui/react";
+import { IconButton } from "@fluentui/react";
 import { useConst, useBoolean } from "@fluentui/react-hooks";
 import React from "react";
 import "./StartMenu.scss";
@@ -41,12 +41,23 @@ function StartMenu() {
 				text: "Shut Down",
 				onClick: () => setNextSystemState("isShutDown"),
 			},
+			{
+				key: "admin",
+				iconProps: { iconName: "Admin" },
+				text: "Admin",
+				onClick: () => {
+					window.open(
+						"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO",
+						"_blank"
+					);
+				},
+			},
 		],
 	});
 
 	return (
 		<div id="start-menu" uk-offcanvas="overlay: false">
-			<div class="uk-offcanvas-bar start-menu uk-flex uk-padding-remove">
+			<div className="uk-offcanvas-bar start-menu uk-flex uk-padding-remove">
 				<div className="start-quick-actions">
 					<IconButton
 						iconProps={{ iconName: "PowerButton" }}
@@ -70,9 +81,9 @@ function StartMenu() {
 									className="start-menu-list-item uk-border-rounded"
 									onClick={() => handleIconClick(app)}
 								>
-									{app.icon != undefined &&
-										app.icon != null &&
-										app.icon != "" && (
+									{app.icon !== undefined &&
+										app.icon !== null &&
+										app.icon !== "" && (
 											<img
 												src={app.icon}
 												width="25"
@@ -89,9 +100,9 @@ function StartMenu() {
 				</div>
 				<div className="start-tiles uk-background-secondary">
 					<div className="profile-card uk-card uk-card-body uk-margin-medium-top uk-margin-medium-left uk-margin-medium-right uk-border-rounded uk-text-center">
-						{user.userImage != undefined &&
-							user.userImage != null &&
-							user.userImage != "" && (
+						{user.userImage !== undefined &&
+							user.userImage !== null &&
+							user.userImage !== "" && (
 								<img
 									src={user.userImage}
 									width="80"

@@ -16,7 +16,7 @@ function ActionCenter() {
 
 	return (
 		<div id="action-center" uk-offcanvas="overlay: false; flip:true">
-			<div class="uk-offcanvas-bar action-center">
+			<div className="uk-offcanvas-bar action-center">
 				<div>
 					<JIOSaavn />
 				</div>

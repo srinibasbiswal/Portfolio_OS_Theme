@@ -17,12 +17,13 @@ function AppIcon(props) {
 			<div>
 				<img
 					src={
-						props.appInfo.icon != undefined &&
-						props.appInfo.icon != null &&
-						props.appInfo.icon != ""
+						props.appInfo.icon !== undefined &&
+						props.appInfo.icon !== null &&
+						props.appInfo.icon !== ""
 							? props.appInfo.icon
 							: folder
 					}
+					alt={props.appInfo.name}
 					width="30"
 					height="30"
 				/>

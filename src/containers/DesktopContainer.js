@@ -15,7 +15,7 @@ function DesktopContainer() {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(initApplications());
-	}, []);
+	});
 
 	const { show } = useContextMenu({
 		id: MENU_ID,

@@ -1,6 +1,6 @@
 import React from "react";
 
-function JIOSaavn() {
+function JIOSaavn(props) {
 	return (
 		<div className="height-100">
 			<iframe
@@ -8,6 +8,7 @@ function JIOSaavn() {
 				frameBorder="0"
 				height="100%"
 				width="100%"
+				title="Jio Saavn"
 			></iframe>
 		</div>
 	);

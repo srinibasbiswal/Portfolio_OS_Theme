@@ -5,12 +5,12 @@ function Education() {
 	return (
 		<div>
 			<div className="uk-width-1-1 uk-padding">
-				<div class="container uk-margin-medium-left">
+				<div className="container uk-margin-medium-left">
 					{user.education.map((education, index) => {
 						return (
-							<div class="timeline-block timeline-block-right">
-								<div class="marker"></div>
-								<div class="timeline-content">
+							<div className="timeline-block timeline-block-right">
+								<div className="marker"></div>
+								<div className="timeline-content">
 									<p className="uk-text-lead font-color-white">
 										{education.instituteName}
 									</p>

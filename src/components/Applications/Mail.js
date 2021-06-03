@@ -1,11 +1,4 @@
-import {
-	DefaultButton,
-	Icon,
-	MessageBar,
-	MessageBarType,
-	PrimaryButton,
-	TextField,
-} from "@fluentui/react";
+import { Icon, MessageBar, MessageBarType, TextField } from "@fluentui/react";
 import React, { useState } from "react";
 import "./application.scss";
 
@@ -27,14 +20,11 @@ function Mail() {
 		console.log(emailResponse);
 	};
 
-	const [validated, setValidated] = useState(false);
-
 	const handleSubmit = (event) => {
 		const form = event.currentTarget;
 		if (form.checkValidity() === false) {
 			event.preventDefault();
 			event.stopPropagation();
-			setValidated(true);
 		} else {
 			event.preventDefault();
 			event.stopPropagation();
@@ -94,11 +84,14 @@ function Mail() {
 		<div className="height-100">
 			<form onSubmit={handleSubmit}>
 				<div className="uk-margin form-input uk-flex  uk-flex-right">
-					<button class="discard-button uk-button uk-margin-small-right uk-background-secondary font-color-white">
+					<button className="discard-button uk-button uk-margin-small-right uk-background-secondary font-color-white">
 						<Icon iconName="Delete" />
 						Discard
 					</button>
-					<button class="uk-button uk-button-primary" type="submit">
+					<button
+						className="uk-button uk-button-primary"
+						type="submit"
+					>
 						<Icon iconName="Send" /> Send
 					</button>
 				</div>

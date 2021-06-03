@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import avatar from "../../../assets/images/baseImages/default_avatar.svg";
 import user from "../../../utils/Data/user.config";
 
 function AboutMe() {
 	return (
 		<div>
-			<div class="uk-card uk-text-center font-color-white">
-				<div class="uk-width-auto">
+			<div className="uk-card uk-text-center font-color-white">
+				<div className="uk-width-auto">
 					<img
-						class="uk-border-circle"
+						className="uk-border-circle"
 						width="120"
 						height="120"
 						src={avatar}
+						alt="user"
 					/>
 					<p className="uk-text-lead uk-margin-remove-bottom font-color-white">
 						Hey, I'm {user.firstName} {user.lastName}
@@ -23,13 +24,13 @@ function AboutMe() {
 					)}
 				</div>
 				{user.aboutMe.description && (
-					<div class="uk-margin-remove">
+					<div className="uk-margin-remove">
 						{user.aboutMe.description}
 					</div>
 				)}
 
 				{user.aboutMe.outro && (
-					<div class=" uk-margin-medium-top">
+					<div className=" uk-margin-medium-top">
 						{user.aboutMe.outro}
 					</div>
 				)}

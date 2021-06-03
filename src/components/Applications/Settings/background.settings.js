@@ -17,7 +17,7 @@ function BackgroundSettings() {
 			<p className="uk-text-lead font-color-white">
 				Change Desktop Background :
 			</p>
-			<div class="uk-child-width-1-2@m" uk-grid={"true"}>
+			<div className="uk-child-width-1-2@m" uk-grid={"true"}>
 				{settings.desktop_wallpapers.map((wallpaper, index) => {
 					return (
 						<div>
@@ -38,6 +38,7 @@ function BackgroundSettings() {
 											src={checked}
 											width="40"
 											height="40"
+											alt="Selected"
 										/>
 									</div>
 								)}

@@ -28,11 +28,11 @@ const settingsStateReducer = (state = initialSettings, action) => {
 			return {
 				...state,
 				currentWallpaper:
-					newWallpaper != undefined && newWallpaper[0] != undefined
+					newWallpaper !== undefined && newWallpaper[0] !== undefined
 						? newWallpaper[0].value
 						: settings.default_wallpaper,
 				currentWallpaperId:
-					newWallpaper != undefined && newWallpaper[0] != undefined
+					newWallpaper !== undefined && newWallpaper[0] !== undefined
 						? newWallpaper[0].id
 						: "default_wall",
 			};

@@ -11,7 +11,7 @@ function CalendarOverlay() {
 			uk-offcanvas="overlay: false; flip:true"
 			className="uk-padding-remove"
 		>
-			<div class="uk-offcanvas-bar action-center">
+			<div className="uk-offcanvas-bar action-center">
 				<h1 className="uk-padding-remove uk-margin-remove">
 					<Clock format="HH:mm:ss" ticking={true} />
 				</h1>

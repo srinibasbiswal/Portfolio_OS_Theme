@@ -9,10 +9,11 @@ import {
 const initialAppState = new AppStateDocument();
 
 const appStateReducer = (state = [initialAppState], action) => {
+	var apps = [];
+	var currentAppState = {};
 	switch (action.type) {
 		case ACTION_TYPES.APP_INIT:
 			let appsList = appConfig;
-			var apps = [];
 			if (
 				appsList !== undefined &&
 				appsList !== null &&
@@ -38,11 +39,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 			};
 
 		case ACTION_TYPES.APP_CLICK:
-			var currentAppState = filterObjectListById(
-				state.apps,
-				action.app.id
-			);
-			var apps = [];
+			currentAppState = filterObjectListById(state.apps, action.app.id);
 			if (currentAppState.isOpened) {
 				currentAppState.isMinimized = !currentAppState.isMinimized;
 			} else {
@@ -56,10 +53,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 			};
 
 		case ACTION_TYPES.MINIMIZE:
-			var currentAppState = filterObjectListById(
-				state.apps,
-				action.app.id
-			);
+			currentAppState = filterObjectListById(state.apps, action.app.id);
 			currentAppState.isMinimized = true;
 			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
 			return {
@@ -67,10 +61,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 			};
 
 		case ACTION_TYPES.MAXIMIZE:
-			var currentAppState = filterObjectListById(
-				state.apps,
-				action.app.id
-			);
+			currentAppState = filterObjectListById(state.apps, action.app.id);
 			currentAppState.isMaximized = !currentAppState.isMaximized;
 			apps = replaceObjectListByKey(state.apps, currentAppState, "id");
 			return {
@@ -78,10 +69,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 			};
 
 		case ACTION_TYPES.CLOSE:
-			var currentAppState = filterObjectListById(
-				state.apps,
-				action.app.id
-			);
+			currentAppState = filterObjectListById(state.apps, action.app.id);
 			currentAppState.isMinimized = false;
 			currentAppState.isMaximized = false;
 			currentAppState.isOpened = false;
@@ -89,6 +77,7 @@ const appStateReducer = (state = [initialAppState], action) => {
 			return {
 				apps,
 			};
+
 		default:
 			return state;
 	}

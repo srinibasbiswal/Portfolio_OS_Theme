@@ -11,22 +11,23 @@ function Experience() {
 					<div className="uk-width-1-1 uk-padding">
 						<div className="uk-flex">
 							<img
-								class="uk-border-circle"
+								className="uk-border-circle"
 								width="50"
 								height="50"
 								src={avatar}
+								alt="org"
 							/>
 							<h3 className="uk-text-large uk-margin-small-left font-color-white">
 								{experience.organization}
 							</h3>
 						</div>
 
-						<div class="container uk-margin-medium-left">
+						<div className="container uk-margin-medium-left">
 							{experience.positions.map((position, posIndex) => {
 								return (
-									<div class="timeline-block timeline-block-right">
-										<div class="marker"></div>
-										<div class="timeline-content">
+									<div className="timeline-block timeline-block-right">
+										<div className="marker"></div>
+										<div className="timeline-content">
 											<p className="uk-text-lead font-color-white">
 												{position.positionName}
 											</p>

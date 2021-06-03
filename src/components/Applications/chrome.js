@@ -46,6 +46,7 @@ function Chrome() {
 				frameBorder="0"
 				height="100%"
 				width="100%"
+				title="Chrome"
 			></iframe>
 		</div>
 	);

@@ -5,7 +5,6 @@ import "./AppComponent.scss";
 import { useDispatch } from "react-redux";
 import { handleAppFunctions } from "../../utils/actions/appStateAction";
 import { ACTION_TYPES } from "../../utils/Documents/enums";
-import { useBoolean } from "@fluentui/react-hooks";
 
 function AppComponent(props) {
 	const dispatch = useDispatch();
@@ -45,7 +44,7 @@ function AppComponent(props) {
 						}
 					>
 						<ul
-							class="uk-list sidebar-list uk-margin-large-top"
+							className="uk-list sidebar-list uk-margin-large-top"
 							uk-switcher={"connect: ." + props.appInfo.id}
 						>
 							{props.appInfo.subComponent.map(
@@ -57,6 +56,7 @@ function AppComponent(props) {
 												onClick={() =>
 													setComponent(component.name)
 												}
+												href={() => false}
 											>
 												<li className="sidebar-list-item uk-margin-remove">
 													{component.name}
@@ -85,12 +85,13 @@ function AppComponent(props) {
 								<span className="uk-margin-medium-right uk-margin-small-left">
 									<img
 										src={
-											props.appInfo.icon != undefined &&
-											props.appInfo.icon != null &&
-											props.appInfo.icon != ""
+											props.appInfo.icon !== undefined &&
+											props.appInfo.icon !== null &&
+											props.appInfo.icon !== ""
 												? props.appInfo.icon
 												: ""
 										}
+										alt={props.appInfo.name}
 										width="20"
 										height="20"
 										className="uk-margin-small-right"
@@ -184,7 +185,7 @@ function AppComponent(props) {
 								}
 							>
 								<ul
-									class="uk-list sidebar-list"
+									className="uk-list sidebar-list"
 									uk-switcher={
 										"connect: ." + props.appInfo.id
 									}
@@ -207,6 +208,7 @@ function AppComponent(props) {
 																component.name
 															)
 														}
+														href={() => false}
 													>
 														<li className="sidebar-list-item uk-margin-remove">
 															{component.name}

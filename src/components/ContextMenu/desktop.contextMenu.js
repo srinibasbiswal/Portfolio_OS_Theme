@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Item, Separator, Submenu } from "react-contexify";
+import { Menu, Item, Separator } from "react-contexify";
 import star from "../../assets/images/contextMenu/star.png";
 import contact_me from "../../assets/images/contextMenu/contact_me.png";
 import refresh from "../../assets/images/contextMenu/refresh.png";
@@ -36,6 +36,7 @@ function DesktopContextMenu(props) {
 						width="30"
 						height="30"
 						className="uk-margin-small-right"
+						alt="Star"
 					/>
 					Star This Project
 				</Item>
@@ -47,6 +48,7 @@ function DesktopContextMenu(props) {
 							width="30"
 							height="30"
 							className="uk-margin-small-right"
+							alt="Refresh"
 						/>
 						Refresh
 					</Item>
@@ -64,6 +66,7 @@ function DesktopContextMenu(props) {
 						width="30"
 						height="30"
 						className="uk-margin-small-right"
+						alt="Code"
 					/>
 					View Source Code
 				</Item>
@@ -78,6 +81,7 @@ function DesktopContextMenu(props) {
 						width="30"
 						height="30"
 						className="uk-margin-small-right"
+						alt="Github"
 					/>
 					Github Profile
 				</Item>
@@ -92,6 +96,7 @@ function DesktopContextMenu(props) {
 						width="30"
 						height="30"
 						className="uk-margin-small-right"
+						alt="mail"
 					/>
 					Contact Me
 				</Item>
@@ -102,6 +107,7 @@ function DesktopContextMenu(props) {
 						width="30"
 						height="30"
 						className="uk-margin-small-right"
+						alt="Credits"
 					/>
 					Credits
 				</Item>
