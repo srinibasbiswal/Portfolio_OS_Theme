@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { filterObjectList } from "../../utils/services/common-util-servies";
-import ActionCenter from "../ActionCenter/ActionCenter";
-import AppComponent from "../AppComponent/AppComponent";
-import AppIcon from "../Base/AppIcon";
-import CalendarOverlay from "../Base/CalendarOverlay";
-import StartMenu from "../StartMenu/StartMenu";
-import Taskbar from "../TaskBar/TaskBar";
-import "./Desktop.scss";
+import ActionCenter from "../actionCenter/actionCenter";
+import AppComponent from "../appComponent/appComponent";
+import AppIcon from "../base/appIcon";
+import CalendarOverlay from "../base/calendarOverlay";
+import StartMenu from "../startMenu/startMenu";
+import Taskbar from "../taskBar/taskBar";
+import "./desktop.scss";
 
 function Desktop() {
 	const appState = useSelector((state) => state.appState);

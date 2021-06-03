@@ -1,5 +1,5 @@
-import { ACTION_TYPES } from "../Documents/enums";
-import SystemStateDocument from "../Documents/SystemStateDocument";
+import { ACTION_TYPES } from "../documents/enums";
+import SystemStateDocument from "../documents/system.document";
 
 const initialSystemState = new SystemStateDocument();
 

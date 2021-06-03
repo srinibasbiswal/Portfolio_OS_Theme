@@ -1,5 +1,5 @@
 import React from "react";
-import user from "../../utils/Data/user.config";
+import user from "../../utils/data/user.config";
 import twitter from "../../assets/images/social/twitter.svg";
 import linkedin from "../../assets/images/social/linkedin.svg";
 import github from "../../assets/images/social/github.svg";

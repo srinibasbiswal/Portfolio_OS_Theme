@@ -1,6 +1,6 @@
 import React from "react";
 import Clock from "react-live-clock";
-import "./Base.scss";
+import "./base.scss";
 
 function ClockComponent() {
 	return (

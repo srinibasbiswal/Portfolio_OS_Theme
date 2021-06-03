@@ -1,4 +1,4 @@
-import { ACTION_TYPES } from "../Documents/enums";
+import { ACTION_TYPES } from "../documents/enums";
 
 export const setSystemState = (systemState) => {
 	return {

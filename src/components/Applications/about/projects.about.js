@@ -1,6 +1,6 @@
 import React from "react";
-import "./About.scss";
-import user from "../../../utils/Data/user.config";
+import "./about.scss";
+import user from "../../../utils/data/user.config";
 import {
 	DirectionalHint,
 	IconButton,

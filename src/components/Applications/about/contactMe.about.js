@@ -1,6 +1,6 @@
 import React from "react";
-import SocialBlock from "../../Base/socialBlock";
-import Mail from "../Mail";
+import SocialBlock from "../../base/socialBlock";
+import Mail from "../mail.application";
 
 function ContactMe() {
 	return (

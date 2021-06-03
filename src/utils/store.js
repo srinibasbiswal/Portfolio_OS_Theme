@@ -1,7 +1,7 @@
 import { combineReducers, createStore } from "redux";
-import systemStateReducer from "./reducers/systemStateReducer";
-import appStateReducer from "./reducers/appStateReducer";
-import settingsStateReducer from "./reducers/settingsStateReducer";
+import systemStateReducer from "./reducers/system.reducer";
+import appStateReducer from "./reducers/app.reducer";
+import settingsStateReducer from "./reducers/settings.reducer";
 
 const rootReducer = combineReducers({
 	systemState: systemStateReducer,

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { handleApplicationClick } from "../../utils/actions/appStateAction";
+import { handleApplicationClick } from "../../utils/actions/app.action";
 import folder from "../../assets/images/baseImages/default_folder.png";
 
 function TaskBarIcon(props) {

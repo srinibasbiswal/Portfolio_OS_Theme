@@ -1,10 +1,10 @@
 import { IconButton, TextField } from "@fluentui/react";
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import "./AppComponent.scss";
+import "./appComponent.scss";
 import { useDispatch } from "react-redux";
-import { handleAppFunctions } from "../../utils/actions/appStateAction";
-import { ACTION_TYPES } from "../../utils/Documents/enums";
+import { handleAppFunctions } from "../../utils/actions/app.action";
+import { ACTION_TYPES } from "../../utils/documents/enums";
 
 function AppComponent(props) {
 	const dispatch = useDispatch();
@@ -236,7 +236,7 @@ function AppComponent(props) {
 									return (
 										<li
 											className={
-												"sidebar-list-item uk-margin-remove " +
+												"uk-padding-small " +
 												(props.appInfo.isApplication
 													? "height-100"
 													: "")

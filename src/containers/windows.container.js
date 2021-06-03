@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import DesktopContainer from "./DesktopContainer";
-import LockScreen from "./LockScreen";
-import ShutDown from "./ShutDown";
+import DesktopContainer from "./desktop.container";
+import LockScreen from "./lockScreen.container";
+import ShutDown from "./shutDown.container";
 
 function Windows() {
 	const systemState = useSelector((state) => state.systemState);

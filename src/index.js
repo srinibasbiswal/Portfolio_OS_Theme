@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
+import "./theme/style.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "uikit/dist/css/uikit.min.css";

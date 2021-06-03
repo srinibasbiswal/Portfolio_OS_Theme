@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeDesktopBackground } from "../../../utils/actions/settingsStateAction";
-import settings from "../../../utils/Data/settings.config";
+import { changeDesktopBackground } from "../../../utils/actions/settingsaction";
+import settings from "../../../utils/data/settings.config";
 import checked from "../../../assets/images/baseImages/checked.svg";
 import "./settings.scss";
 

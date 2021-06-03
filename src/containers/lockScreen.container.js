@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import LockWallpaperScreen from "../components/LockScreen/LockWallpaperScreen";
+import LockWallpaperScreen from "../components/lockScreen/landing.lockScreen";
 import wallpaper1 from "../assets/images/LockScreenImages/wallpaper1.jpg";
-import SignInScreen from "../components/LockScreen/SignInScreen";
+import SignInScreen from "../components/lockScreen/signIn.lockScreen";
 import { useContextMenu } from "react-contexify";
 import "react-contexify/dist/ReactContexify.css";
-import DesktopContextMenu from "../components/ContextMenu/desktop.contextMenu";
-import { SCREENS } from "../utils/Documents/enums";
+import DesktopContextMenu from "../components/contextMenu/desktop.contextMenu";
+import { SCREENS } from "../utils/documents/enums";
 
 const MENU_ID = "context-menu";
 

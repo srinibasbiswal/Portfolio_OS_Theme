@@ -1,6 +1,6 @@
 import { PrimaryButton } from "@fluentui/react";
 import React from "react";
-import user from "../../../utils/Data/user.config";
+import user from "../../../utils/data/user.config";
 
 function Resume() {
 	const downloadIcon = { iconName: "DownloadDocument" };

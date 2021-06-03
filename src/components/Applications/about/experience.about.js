@@ -1,7 +1,7 @@
 import React from "react";
-import "./About.scss";
+import "./about.scss";
 import avatar from "../../../assets/images/baseImages/default_avatar.svg";
-import user from "../../../utils/Data/user.config";
+import user from "../../../utils/data/user.config";
 
 function Experience() {
 	return (

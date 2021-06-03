@@ -1,6 +1,6 @@
-import appConfig from "../Data/apps.config";
-import AppStateDocument from "../Documents/AppStateDocument";
-import { ACTION_TYPES } from "../Documents/enums";
+import appConfig from "../data/apps.config";
+import AppStateDocument from "../documents/app.document";
+import { ACTION_TYPES } from "../documents/enums";
 import {
 	filterObjectListById,
 	replaceObjectListByKey,

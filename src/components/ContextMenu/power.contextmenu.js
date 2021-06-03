@@ -1,7 +1,7 @@
 import React from "react";
 import { Callout } from "@fluentui/react/lib/Callout";
 import { DefaultButton } from "@fluentui/react";
-import "./ContextMenu.scss";
+import "./contextMenu.scss";
 
 function ContextMenu(props) {
 	return (

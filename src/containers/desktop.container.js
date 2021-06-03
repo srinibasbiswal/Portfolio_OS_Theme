@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { initApplications } from "../utils/actions/appStateAction";
-import Desktop from "../components/Desktop/Desktop";
+import { initApplications } from "../utils/actions/app.action";
+import Desktop from "../components/desktop/desktop";
 import { useContextMenu } from "react-contexify";
 import "react-contexify/dist/ReactContexify.css";
-import DesktopContextMenu from "../components/ContextMenu/desktop.contextMenu";
-import { SCREENS } from "../utils/Documents/enums";
+import DesktopContextMenu from "../components/contextMenu/desktop.contextMenu";
+import { SCREENS } from "../utils/documents/enums";
 
 const MENU_ID = "context-menu";
 

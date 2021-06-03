@@ -1,6 +1,6 @@
-import settings from "../Data/settings.config";
-import { ACTION_TYPES } from "../Documents/enums";
-import SettingDocument from "../Documents/SettingsDocument";
+import settings from "../data/settings.config";
+import { ACTION_TYPES } from "../documents/enums";
+import SettingDocument from "../documents/settings.document";
 
 const initialSettings = new SettingDocument();
 

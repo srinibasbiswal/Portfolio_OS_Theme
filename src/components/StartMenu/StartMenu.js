@@ -1,14 +1,14 @@
 import { IconButton } from "@fluentui/react";
 import { useConst, useBoolean } from "@fluentui/react-hooks";
 import React from "react";
-import "./StartMenu.scss";
-import ContextMenu from "../ContextMenu/ContextMenu";
+import "./startMenu.scss";
+import ContextMenu from "../contextMenu/power.contextmenu";
 import { useDispatch, useSelector } from "react-redux";
-import { setSystemState } from "../../utils/actions/systemStateAction";
-import { handleApplicationClick } from "../../utils/actions/appStateAction";
-import user from "../../utils/Data/user.config";
-import SocialBlock from "../Base/socialBlock";
-import AppIcon from "../Base/AppIcon";
+import { setSystemState } from "../../utils/actions/system.action";
+import { handleApplicationClick } from "../../utils/actions/app.action";
+import user from "../../utils/data/user.config";
+import SocialBlock from "../base/socialBlock";
+import AppIcon from "../base/appIcon";
 
 function StartMenu() {
 	const [

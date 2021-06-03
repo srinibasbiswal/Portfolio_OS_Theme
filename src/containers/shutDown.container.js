@@ -2,8 +2,8 @@ import { IconButton } from "@fluentui/react";
 import React from "react";
 import windows_10 from "../assets/images/baseImages/windows_10.svg";
 import { useDispatch } from "react-redux";
-import { setSystemState } from "../utils/actions/systemStateAction";
-import SocialBlock from "../components/Base/socialBlock";
+import { setSystemState } from "../utils/actions/system.action";
+import SocialBlock from "../components/base/socialBlock";
 
 function ShutDown() {
 	const dispatch = useDispatch();

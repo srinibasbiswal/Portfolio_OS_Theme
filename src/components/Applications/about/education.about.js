@@ -1,5 +1,5 @@
 import React from "react";
-import user from "../../../utils/Data/user.config";
+import user from "../../../utils/data/user.config";
 
 function Education() {
 	return (

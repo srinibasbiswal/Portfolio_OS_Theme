@@ -1,10 +1,10 @@
 import React from "react";
-import "./LockScreen.scss";
-import { setSystemState } from "../../utils/actions/systemStateAction";
+import "./lockScreen.scss";
+import { setSystemState } from "../../utils/actions/system.action";
 import { useDispatch } from "react-redux";
 import avatar from "../../assets/images/baseImages/default_avatar.svg";
 import { Icon, PrimaryButton, TextField } from "@fluentui/react";
-import SocialBlock from "../Base/socialBlock";
+import SocialBlock from "../base/socialBlock";
 
 function SignInScreen() {
 	const dispatch = useDispatch();

@@ -1,11 +1,11 @@
 import { Icon } from "@fluentui/react";
 import React from "react";
 import { useSelector } from "react-redux";
-import "./ActionCenter.scss";
+import "./actionCenter.scss";
 import { useDispatch } from "react-redux";
-import { toggleSettings } from "../../utils/actions/settingsStateAction";
-import { ACTION_TYPES } from "../../utils/Documents/enums";
-import JIOSaavn from "../Applications/JIOSaavn";
+import { toggleSettings } from "../../utils/actions/settingsaction";
+import { ACTION_TYPES } from "../../utils/documents/enums";
+import JIOSaavn from "../applications/jiosaavn.application";
 
 function ActionCenter() {
 	const settings = useSelector((state) => state.settingsState);

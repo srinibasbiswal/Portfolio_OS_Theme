@@ -6,8 +6,8 @@ import refresh from "../../assets/images/contextMenu/refresh.png";
 import source_code from "../../assets/images/contextMenu/source_code.png";
 import credits from "../../assets/images/contextMenu/credits.svg";
 import github from "../../assets/images/contextMenu/github.svg";
-import { SCREENS } from "../../utils/Documents/enums";
-import Credits from "../Base/credits";
+import { SCREENS } from "../../utils/documents/enums";
+import Credits from "../base/credits";
 import { useBoolean } from "@fluentui/react-hooks";
 
 const MENU_ID = "context-menu";

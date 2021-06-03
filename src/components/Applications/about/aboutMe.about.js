@@ -1,6 +1,6 @@
 import React from "react";
 import avatar from "../../../assets/images/baseImages/default_avatar.svg";
-import user from "../../../utils/Data/user.config";
+import user from "../../../utils/data/user.config";
 
 function AboutMe() {
 	return (

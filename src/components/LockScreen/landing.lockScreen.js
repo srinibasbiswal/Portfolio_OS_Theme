@@ -1,7 +1,7 @@
 import React from "react";
 import Clock from "react-live-clock";
 import { Icon } from "@fluentui/react";
-import "./LockScreen.scss";
+import "./lockScreen.scss";
 
 function LockWallpaperScreen() {
 	return (

@@ -1,8 +1,8 @@
 import { IconButton } from "@fluentui/react";
 import React from "react";
 import { useSelector } from "react-redux";
-import ClockComponent from "../Base/ClockComponent";
-import TaskBarIcon from "./TaskBarIcon";
+import ClockComponent from "../base/clockComponent";
+import TaskBarIcon from "./taskBar-Icon";
 
 function Taskbar(props) {
 	const settings = useSelector((state) => state.settingsState);
