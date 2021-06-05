@@ -228,7 +228,7 @@ function AppComponent(props) {
 
 						<ul
 							className={
-								"uk-switcher " +
+								"uk-switcher height-100 " +
 								props.appInfo.id +
 								(props.appInfo.isApplication
 									? " isApplication-list"

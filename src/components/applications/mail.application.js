@@ -8,7 +8,6 @@ import projectAnalytics from "../../utils/data/project.config";
 function Mail() {
 	useEffect(() => {
 		window.emailjs.init(process.env.REACT_APP_EMAILJS_KEY);
-		console.log("key " + process.env.REACT_APP_EMAILJS_KEY);
 	});
 	const [emailResponse, setEmailResponse] = useState({
 		template: {

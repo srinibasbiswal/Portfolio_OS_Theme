@@ -1,6 +1,6 @@
 {
   "name":"Srinibas Biswal | Full Stack Developer",
-  "short_name":"Srinibas Biswal | Full Stack Developer",
+  "short_name":"Srinibas Biswal",
   "icons":[
      {
         "src": "favicon.ico",
@@ -18,7 +18,9 @@
         "type":"image/png"
      }
   ],
+  "start_url": "/",
   "theme_color":"#ffffff",
   "background_color":"#ffffff",
-  "display":"standalone"
+  "display":"standalone",
+  "scope": "/"
 }
