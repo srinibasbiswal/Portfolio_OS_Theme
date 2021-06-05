@@ -9,6 +9,9 @@ import { handleApplicationClick } from "../../utils/actions/app.action";
 import user from "../../utils/data/user.config";
 import SocialBlock from "../base/socialBlock";
 import AppIcon from "../base/appIcon";
+import firebase from "../../utils/firebaseConfig";
+import { ANALYTICS_EVENTS } from "../../utils/documents/enums";
+import projectConfig from "../../utils/data/project.config";
 
 function StartMenu() {
 	const [
@@ -21,6 +24,11 @@ function StartMenu() {
 		dispatch(handleApplicationClick(app));
 	};
 	const setNextSystemState = (systemState) => {
+		if (projectConfig.enableAnalytics) {
+			firebase.analytics().logEvent(ANALYTICS_EVENTS.CHANGE_POWER_STATE, {
+				changedTo: systemState,
+			});
+		}
 		dispatch(setSystemState(systemState));
 	};
 
@@ -46,6 +54,9 @@ function StartMenu() {
 				iconProps: { iconName: "Admin" },
 				text: "Admin",
 				onClick: () => {
+					if (projectConfig.enableAnalytics) {
+						firebase.analytics().logEvent(ANALYTICS_EVENTS.ADMIN);
+					}
 					window.open(
 						"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO",
 						"_blank"

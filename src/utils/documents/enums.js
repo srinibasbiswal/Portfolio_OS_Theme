@@ -16,3 +16,12 @@ export const SCREENS = {
 	LOCK_SCREEN: "Lock_Screen",
 	SHUT_DOWN: "Shut_Down",
 };
+
+export const ANALYTICS_EVENTS = {
+	DOWNLOAD_RESUME: "Download_Resume",
+	SEND_MAIL: "Send_Mail",
+	CHANGE_POWER_STATE: "Chnage_Power_State",
+	ADMIN: "Admin",
+	BACKGROUND_CHANGE: "Background_Change",
+	SOCIAL_CLICK: "Social_Click",
+};

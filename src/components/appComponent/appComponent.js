@@ -50,7 +50,10 @@ function AppComponent(props) {
 							{props.appInfo.subComponent.map(
 								(component, index) => {
 									return (
-										<li className="uk-margin-remove">
+										<li
+											className="uk-margin-remove"
+											key={index}
+										>
 											<a
 												className="uk-link-reset"
 												onClick={() =>
@@ -200,6 +203,7 @@ function AppComponent(props) {
 															!showAppMenu
 														)
 													}
+													key={index}
 												>
 													<a
 														className="uk-link-reset"
@@ -241,6 +245,7 @@ function AppComponent(props) {
 													? "height-100"
 													: "")
 											}
+											key={index}
 										>
 											<React.Fragment>
 												<component.component></component.component>

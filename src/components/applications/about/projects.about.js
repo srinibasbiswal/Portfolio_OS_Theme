@@ -13,7 +13,10 @@ function Projects() {
 		<div>
 			{user.projects.map((project, index) => {
 				return (
-					<div className="uk-card uk-card-default uk-card-body uk-width-1-1 uk-border-rounded project-card uk-shadow-large uk-margin">
+					<div
+						className="uk-card uk-card-default uk-card-body uk-width-1-1 uk-border-rounded project-card uk-shadow-large uk-margin"
+						key={index}
+					>
 						<h3 className="uk-card-title font-color-white">
 							{project.projectName}
 							<TooltipHost
@@ -34,7 +37,10 @@ function Projects() {
 						<p>
 							{project.madeWith.map((stack, stackIndex) => {
 								return (
-									<span className="uk-badge uk-padding-small uk-background-secondary">
+									<span
+										className="uk-badge uk-padding-small uk-background-secondary"
+										key={stackIndex}
+									>
 										{stack}
 									</span>
 								);

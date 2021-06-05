@@ -1,13 +1,18 @@
 import { PrimaryButton } from "@fluentui/react";
 import React from "react";
+import projectConfig from "../../../utils/data/project.config";
 import user from "../../../utils/data/user.config";
+import { ANALYTICS_EVENTS } from "../../../utils/documents/enums";
+import firebase from "../../../utils/firebaseConfig";
 
 function Resume() {
 	const downloadIcon = { iconName: "DownloadDocument" };
 	const onDownloadClick = (resume) => {
+		if (projectConfig.enableAnalytics) {
+			firebase.analytics().logEvent(ANALYTICS_EVENTS.DOWNLOAD_RESUME);
+		}
 		window.open(resume, "_blank");
 	};
-
 	return (
 		<div>
 			<div className="uk-text-center">

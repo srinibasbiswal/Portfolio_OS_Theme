@@ -8,7 +8,7 @@ function Experience() {
 		<div>
 			{user.experiences.map((experience, index) => {
 				return (
-					<div className="uk-width-1-1 uk-padding">
+					<div className="uk-width-1-1 uk-padding" key={index}>
 						<div className="uk-flex">
 							<div>
 								<img
@@ -38,7 +38,10 @@ function Experience() {
 						<div className="container uk-margin-medium-left">
 							{experience.positions.map((position, posIndex) => {
 								return (
-									<div className="timeline-block ">
+									<div
+										className="timeline-block "
+										key={posIndex}
+									>
 										<div className="marker"></div>
 										<div className="timeline-content">
 											<p className="uk-text-lead font-color-white">
