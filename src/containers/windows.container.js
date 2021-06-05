@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import BlueScreen_404 from "./blueScreen404.container";
+import BlueScreen404 from "./blueScreen404.container";
 import DesktopContainer from "./desktop.container";
 import LockScreen from "./lockScreen.container";
 import ShutDown from "./shutDown.container";
@@ -18,7 +18,7 @@ function Windows() {
 				} else if (systemState.isDesktop) {
 					return <DesktopContainer />;
 				} else {
-					return <BlueScreen_404 />;
+					return <BlueScreen404 />;
 				}
 			})()}
 		</div>

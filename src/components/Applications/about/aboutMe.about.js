@@ -12,9 +12,9 @@ function AboutMe() {
 						width="120"
 						height="120"
 						src={
-							user.userImage != undefined &&
-							user.userImage != null &&
-							user.userImage != ""
+							user.userImage !== undefined &&
+							user.userImage !== null &&
+							user.userImage !== ""
 								? user.userImage
 								: avatar
 						}

@@ -15,10 +15,10 @@ function Experience() {
 								width="50"
 								height="50"
 								src={
-									experience.organizationPicture !=
+									experience.organizationPicture !==
 										undefined &&
-									experience.organizationPicture != null &&
-									experience.organizationPicture != ""
+									experience.organizationPicture !== null &&
+									experience.organizationPicture !== ""
 										? experience.organizationPicture
 										: avatar
 								}

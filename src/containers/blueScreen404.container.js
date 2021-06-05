@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import scanCode from "../assets/images/baseImages/scanCode.png";
 
-function BlueScreen_404() {
+function BlueScreen404() {
 	return (
 		<div className="blue-screen screenHeight">
 			<div className="uk-padding-large uk-margin-large-left uk-width-1-1 font-color-white">
@@ -43,4 +43,4 @@ function BlueScreen_404() {
 	);
 }
 
-export default BlueScreen_404;
+export default BlueScreen404;
