@@ -20,7 +20,7 @@ function SocialBlock() {
 						width="40"
 						height="40"
 						alt="Github Icon"
-						className="uk-img uk-margin-small-right"
+						className="uk-img uk-margin-small-right uk-link"
 						uk-tooltip="GitHub"
 						onClick={() =>
 							onSocialClick("https://github.com/" + user.gitHub)
@@ -36,7 +36,7 @@ function SocialBlock() {
 						height="40"
 						alt="Twitter Icon"
 						uk-tooltip="Twitter"
-						className="uk-img uk-margin-small-right"
+						className="uk-img uk-margin-small-right uk-link"
 						onClick={() =>
 							onSocialClick("https://twitter.com/" + user.twitter)
 						}
@@ -51,7 +51,7 @@ function SocialBlock() {
 						height="40"
 						alt="LinkedIn Icom"
 						uk-tooltip="LinkedIn"
-						className="uk-img uk-margin-small-right"
+						className="uk-img uk-margin-small-right uk-link"
 						onClick={() =>
 							onSocialClick(
 								"https://www.linkedin.com/" + user.linkedIn
@@ -68,7 +68,7 @@ function SocialBlock() {
 						height="40"
 						alt="Mail Icom"
 						uk-tooltip="Mail Me"
-						className="uk-img uk-margin-small-right"
+						className="uk-img uk-margin-small-right uk-link"
 						onClick={() => onSocialClick("mailto:" + user.email)}
 					/>
 				)}

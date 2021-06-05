@@ -1,5 +1,7 @@
 import ResumePDF from "./Srinibas_Biswal_Resume.pdf";
 import default_avatar from "../../assets/images/baseImages/default_avatar.svg";
+import KloudGin from ".././../assets/images/data/KloudGin.png";
+import Freelance from ".././../assets/images/data/Freelance.png";
 
 const user = {
 	firstName: "Srinibas",
@@ -11,39 +13,42 @@ const user = {
 	gitHub: "srinibasbiswal",
 	twitter: "srinibasbiswal",
 	aboutMe: {
-		intro: " I'm a techno-functional Software Development Engineer from India.",
+		intro: " I'm a Full Stack Software Development Engineer from India.",
 		description:
-			"I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development and Python Programming.",
-		outro: "When I'm not coding, you will find me watching an episode of The Office or exploring a new place.",
+			"I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development (React / Angular) and Software Development (Java / Python).",
+		outro: "When I'm not developing any stuff , you will find me re-watching an episode of The Office or exploring a new place.",
 	},
 	experiences: [
 		{
 			organization: "KloudGin",
-			organizationPicture: null,
+			organizationPicture: KloudGin,
 			isCurrent: true,
 			startDate: "Jun 2019",
 			endDate: null,
 			positions: [
 				{
 					positionName: "Software Engineer",
-					startDate: "Jun 2021",
+					startDate: "May 2021",
 					endDate: " Present",
 					isPresent: true,
-					description: "",
+					description:
+						"During this time, I worked on the redesigning and development of the new UI for the product using AngularJS.I also developed multiple APIs to support the GIS feature and also worked on the configuration of the GIS in the product.",
 				},
 				{
 					positionName: "Associate Software Engineer",
-					startDate: "June 2021",
+					startDate: "May 2020",
 					endDate: "April 2021",
 					isPresent: false,
-					description: "",
+					description:
+						"During this time, I designed and developed multiple APIs for the EAM Module and Inventory Management Module. For the EAM module, I also developed and implemented APIs for supporting new features in the product such as Asset Criticality, Purchase Order, and Material Order modules.",
 				},
 				{
 					positionName: "Trainee Engineer",
 					startDate: "June 2019",
 					endDate: "April 2020",
 					isPresent: false,
-					description: "",
+					description:
+						"During this time, I developed and implemented the User Management Module including the development of the supporting APIs and configuration of the UI for the dashboard using Java and KloudGin Platform. I also worked on the API documentation using Swagger API.",
 				},
 			],
 		},
@@ -51,7 +56,7 @@ const user = {
 			organization: "Freelance Developer",
 			startDate: "2017",
 			endDate: "2019",
-			organizationPicture: null,
+			organizationPicture: Freelance,
 			isCurrent: false,
 			positions: [
 				{

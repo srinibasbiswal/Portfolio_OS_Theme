@@ -10,23 +10,29 @@ function Experience() {
 				return (
 					<div className="uk-width-1-1 uk-padding">
 						<div className="uk-flex">
-							<img
-								className="uk-border-circle"
-								width="50"
-								height="50"
-								src={
-									experience.organizationPicture !==
-										undefined &&
-									experience.organizationPicture !== null &&
-									experience.organizationPicture !== ""
-										? experience.organizationPicture
-										: avatar
-								}
-								alt="org"
-							/>
-							<h3 className="uk-text-large uk-margin-small-left font-color-white">
-								{experience.organization}
-							</h3>
+							<div>
+								<img
+									className="uk-border-circle org-img"
+									src={
+										experience.organizationPicture !==
+											undefined &&
+										experience.organizationPicture !==
+											null &&
+										experience.organizationPicture !== ""
+											? experience.organizationPicture
+											: avatar
+									}
+									alt="org"
+								/>
+							</div>
+							<div>
+								<h3
+									className="uk-text-large uk-margin-small-left
+								uk-margin-small-top font-color-white"
+								>
+									{experience.organization}
+								</h3>
+							</div>
 						</div>
 
 						<div className="container uk-margin-medium-left">
