@@ -14,8 +14,8 @@ function Resume() {
 		window.open(resume, "_blank");
 	};
 	return (
-		<div>
-			<div className="uk-text-center">
+		<div className="height-100">
+			<div className="uk-text-center height-100">
 				<PrimaryButton
 					iconProps={downloadIcon}
 					onClick={() => onDownloadClick(user.resume)}
