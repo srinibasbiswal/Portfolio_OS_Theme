@@ -1,0 +1,15 @@
+@import "../../theme/variables";
+:root {
+	.ms-ContextualMenu {
+		background-color: rgb(37, 36, 35) !important;
+	}
+
+	.ms-ContextualMenu-link:hover {
+		background-color: rgb(50, 49, 48) !important;
+	}
+
+	.ms-ContextualMenu-itemText,
+	.ms-ContextualMenu-icon {
+		color: var(--font-white) !important;
+	}
+}

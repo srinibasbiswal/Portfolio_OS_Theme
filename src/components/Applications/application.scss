@@ -1,0 +1,21 @@
+@import "../../theme/variables";
+
+.form-input {
+	.ms-TextField {
+		.ms-TextField-wrapper {
+			.ms-Label {
+				color: var(--font-white) !important;
+			}
+			.ms-TextField-fieldGroup {
+				.ms-TextField-field {
+					background-color: var(--color-secondary) !important;
+					color: var(--font-white) !important;
+				}
+			}
+		}
+	}
+}
+
+.discard-button :hover {
+	background-color: #323130 !important;
+}
