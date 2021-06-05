@@ -9,6 +9,7 @@ function Routes() {
 			<Route path="/" exact component={Windows} />
 			<Route path="/home" exact component={Windows} />
 			<Route path="/windows" exact component={Windows} />
+			<Route path="/404" component={BlueScreen404} />
 			<Route component={BlueScreen404} />
 		</Switch>
 	);

@@ -80,6 +80,7 @@ function StartMenu() {
 								<li
 									className="start-menu-list-item uk-border-rounded"
 									onClick={() => handleIconClick(app)}
+									key={index}
 								>
 									{app.icon !== undefined &&
 										app.icon !== null &&

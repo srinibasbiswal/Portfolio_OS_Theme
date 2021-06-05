@@ -9,6 +9,7 @@ import "uikit/dist/css/uikit-core.min.css";
 import "uikit/dist/js/uikit.min.js";
 import "uikit/dist/js/uikit-icons.min";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
+import * as serviceWorker from "./serviceWorker";
 
 initializeIcons();
 ReactDOM.render(
@@ -18,7 +19,5 @@ ReactDOM.render(
 	document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+serviceWorker.register();
 reportWebVitals();
