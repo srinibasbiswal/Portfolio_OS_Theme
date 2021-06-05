@@ -9,7 +9,9 @@ function LockWallpaperScreen() {
 			{/* LockScreenIcons */}
 			<div className="uk-position-top-center uk-overlay uk-flex uk-flex-column">
 				<div className="font-color-white uk-text-meta">
-					<p>Click anywhere or swipe up to unlock.</p>
+					<p className="uk-text-lead font-color-white">
+						Click anywhere to unlock.
+					</p>
 				</div>
 			</div>
 

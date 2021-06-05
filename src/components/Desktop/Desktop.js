@@ -8,6 +8,7 @@ import CalendarOverlay from "../base/calendarOverlay";
 import StartMenu from "../startMenu/startMenu";
 import Taskbar from "../taskBar/taskBar";
 import "./desktop.scss";
+import Loading from "../loading/loading";
 
 function Desktop() {
 	const appState = useSelector((state) => state.appState);
@@ -73,7 +74,7 @@ function Desktop() {
 			</div>
 		);
 	} else {
-		return <div>Loading</div>;
+		return <Loading />;
 	}
 }
 

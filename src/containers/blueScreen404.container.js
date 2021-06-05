@@ -4,7 +4,7 @@ import scanCode from "../assets/images/baseImages/scanCode.png";
 
 function BlueScreen_404() {
 	return (
-		<div className="uk-background-primary screenHeight">
+		<div className="blue-screen screenHeight">
 			<div className="uk-padding-large uk-margin-large-left uk-width-1-1 font-color-white">
 				<h1 className="uk-heading-large font-color-white">:(</h1>
 				<p className="uk-text-lead uk-width-2-3@m font-color-white">

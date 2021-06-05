@@ -14,7 +14,14 @@ function Experience() {
 								className="uk-border-circle"
 								width="50"
 								height="50"
-								src={avatar}
+								src={
+									experience.organizationPicture !=
+										undefined &&
+									experience.organizationPicture != null &&
+									experience.organizationPicture != ""
+										? experience.organizationPicture
+										: avatar
+								}
 								alt="org"
 							/>
 							<h3 className="uk-text-large uk-margin-small-left font-color-white">
@@ -25,7 +32,7 @@ function Experience() {
 						<div className="container uk-margin-medium-left">
 							{experience.positions.map((position, posIndex) => {
 								return (
-									<div className="timeline-block timeline-block-right">
+									<div className="timeline-block ">
 										<div className="marker"></div>
 										<div className="timeline-content">
 											<p className="uk-text-lead font-color-white">
@@ -36,16 +43,7 @@ function Experience() {
 												{position.endDate}
 											</span>
 											<p className="positon-desc">
-												Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit,
-												sed do eiusmod tempor incididunt
-												ut labore et dolore magna
-												aliqua. Ut enim ad minim veniam,
-												quis nostrud exercitation
-												ullamco laboris nisi ut aliquip
-												ex ea commodo consequat. Duis
-												aute irure dolor in
-												reprehenderit in voluptate.
+												{position.description}
 											</p>
 										</div>
 									</div>

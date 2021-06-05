@@ -11,7 +11,13 @@ function AboutMe() {
 						className="uk-border-circle"
 						width="120"
 						height="120"
-						src={avatar}
+						src={
+							user.userImage != undefined &&
+							user.userImage != null &&
+							user.userImage != ""
+								? user.userImage
+								: avatar
+						}
 						alt="user"
 					/>
 					<p className="uk-text-lead uk-margin-remove-bottom font-color-white">
