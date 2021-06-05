@@ -1,14 +1,15 @@
 import "./App.css";
 import store from "./utils/store";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import Windows from "./containers/windows.container";
+import Routes from "./utils/routes";
 
 function App() {
 	return (
 		<Provider store={store}>
-			<div>
-				<Windows />
-			</div>
+			<Router>
+				<Routes />
+			</Router>
 		</Provider>
 	);
 }
