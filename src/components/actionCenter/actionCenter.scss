@@ -1,0 +1,25 @@
+@import "../../theme/variables";
+
+.action-center {
+	height: calc(100% - 40px) !important;
+}
+
+.action-center-wrapper {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	width: 100% !important;
+}
+
+.action-center-btn {
+	min-height: 60px !important;
+	color: var(--font-white) !important;
+	background-color: rgb(50, 49, 48) !important;
+}
+.action-center-btn:hover {
+	cursor: pointer !important;
+	border: 2px solid var(--color-secondary) !important;
+}
+
+.settings-active {
+	background-color: var(--color-blue) !important;
+}
