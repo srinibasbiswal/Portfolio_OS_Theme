@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <br>
+  Portfolio OS Theme - Windows
+  <br>
+</h1>
 
-## Available Scripts
+<h4 align="center">A customizable portfolio website based on Microsoft Windows 10 theme.</h4>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://badge.fury.io/js/electron-markdownify">
+    <img src="https://badge.fury.io/js/electron-markdownify.svg"
+         alt="Gitter">
+  </a>  
+</p>
 
-### `npm start`
+<p align="center">
+  <a href="#installation">Installation</a> •
+  <a href="#customization">Customization</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a> •
+  <a href="https://srinibasbiswal.com/">Live Demo</a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/18086651/120920034-63889e00-c6da-11eb-8dfa-1e97a9b0a829.gif" alt="srinibas-pwa-gif" />
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Clone this repository
+$ git clone https://github.com/srinibasbiswal/Portfolio_OS_Theme
 
-### `npm run build`
+# Go into the repository
+$ cd Portfolio_OS_Theme
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Install dependencies
+$ npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Run the app
+$ npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Build the app
+$ npm run build
+```
 
-### `npm run eject`
+Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Configuring User Data<br/>
+Replace the configuration with your details by changing in [user.config.js](src/utils/data/user.config.js) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Configuring App Settings<br/>
+Configure the App settings like enable/disable or showing the sidebar by changing in  [apps.config.js](src/utils/data/apps.config.js)
 
-## Learn More
+3. Configuring Wallpaper Settings<br/>
+Configure the wallpapers in [apps.config.js](src/utils/data/apps.config.js)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Configuring Firebase Analytics<br/>
+Enable/disable the analytics by configuring in [project.config.js](src/utils/data/project.config.js)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Configuring Firebase Account<br/>
+`Note: This step can be skipped if analytics is disabled in step 4.`<br/>
+Add `.env` file with the following firebase config
 
-### Code Splitting
+```sh
+REACT_APP_APIKEY = firebase_apikey
+REACT_APP_AUTH_DOMAIN = firebase_auth_domain
+REACT_APP_DATABASE_URL = firebase_database_url
+REACT_APP_PROJECT_ID = firebase_project_id
+REACT_APP_STORAGE_BUCKET = firebase_storage_bucket
+REACT_APP_MESSSAGING_SENDER_ID = firebase_messaging_sender_id
+REACT_APP_APP_ID = firebase_app_id
+REACT_APP_MEASUREMENT_ID = firebase_measurement_id
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. Configuring EmailJS account
+In the `.env` file add the emailJS account template id as below.
+```sh
+REACT_APP_EMAILJS_KEY = email_js_key
+```
 
-### Analyzing the Bundle Size
+## Contributing
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+MIT
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> [srinibasbiswal.com](https://srinibasbiswal.com) &nbsp;&middot;&nbsp;
+> GitHub [@srinibasbiswal](https://github.com/srinibasbiswal) &nbsp;&middot;&nbsp;
+> LinkedIn [@/in/srinibasbiswal](https://www.linkedin.com/in/srinibasbiswal/)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
