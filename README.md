@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
 
@@ -20,7 +19,12 @@
   <a href="#installation">Installation</a> •
   <a href="#customization">Customization</a> •
   <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
+  <a href="#license">License</a> •
+  <a href="https://srinibasbiswal.com/">Live Demo</a>
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/18086651/120920034-63889e00-c6da-11eb-8dfa-1e97a9b0a829.gif" alt="srinibas-pwa-gif" />
 </p>
 
 ## Installation
