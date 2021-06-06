@@ -16,17 +16,18 @@ function Resume() {
 	return (
 		<div className="height-100">
 			<div className="uk-text-center height-100">
-				<PrimaryButton
-					iconProps={downloadIcon}
-					onClick={() => onDownloadClick(user.resume)}
-				>
-					Download Resume
-				</PrimaryButton>
+				<div>
+					<PrimaryButton
+						iconProps={downloadIcon}
+						onClick={() => onDownloadClick(user.resume)}
+					>
+						Download Resume
+					</PrimaryButton>
+				</div>
 				<object
 					data={user.resume}
 					type="application/pdf"
-					width="100%"
-					height="100%"
+					className="height-100 uk-width-1-1 uk-margin-small-top"
 				>
 					<p className="font-color-white">
 						Sorry Couldn't load the file.

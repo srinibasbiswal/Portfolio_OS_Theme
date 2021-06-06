@@ -239,12 +239,7 @@ function AppComponent(props) {
 								(component, index) => {
 									return (
 										<li
-											className={
-												"uk-padding-small " +
-												(props.appInfo.isApplication
-													? "height-100"
-													: "")
-											}
+											className="uk-padding-small height-100"
 											key={index}
 										>
 											<React.Fragment>
