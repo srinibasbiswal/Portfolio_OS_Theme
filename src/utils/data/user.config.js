@@ -2,6 +2,7 @@ import ResumePDF from "./Srinibas_Biswal_Resume.pdf";
 import default_avatar from "../../assets/images/baseImages/default_avatar.svg";
 import KloudGin from ".././../assets/images/data/KloudGin.png";
 import Freelance from ".././../assets/images/data/Freelance.png";
+import PayPal from ".././../assets/images/data/PayPal.jpeg";
 
 const user = {
 	firstName: "Srinibas",
@@ -15,16 +16,33 @@ const user = {
 	aboutMe: {
 		intro: " I'm a Full Stack Software Development Engineer from India.",
 		description:
-			"I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development (React / Angular) and Software Development (Java / Python).",
+			"I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development (React / Angular / Node) and Software Development (Java / Python).",
 		outro: "When I'm not developing any stuff , you will find me re-watching an episode of The Office or exploring a new place.",
 	},
 	experiences: [
 		{
+			organization: "PayPal",
+			organizationPicture: PayPal,
+			isCurrent: true,
+			startDate: "Oct 2021",
+			endDate: null,
+			positions: [
+				{
+					positionName: "Software Engineer 2",
+					startDate: "Oct 2021",
+					endDate: " Present",
+					isPresent: true,
+					description:
+						"Working as part of the Identity Engineering Team, responsible for the development and maintaining login scenarios in Web and Native experiences. Implemented a long-term architecture for platform convergence in existing node modules, automating tenant onboarding and reducing onboarding time significantly. Migrated legacy C++ components to Node modules with updated UI, improving performance and design aesthetics. Developed an internal tool tailored for efficient upgrades and verification of internal framework versions across multiple micro-services, saving manual effort and reducing the risk of errors. Technologies: ReactJS, JavaScript, Node, GraphQL, Java, RESTful web services, Swift, MySQL",
+				},
+			],
+		},
+		{
 			organization: "KloudGin",
 			organizationPicture: KloudGin,
-			isCurrent: true,
+			isCurrent: false,
 			startDate: "Jun 2019",
-			endDate: null,
+			endDate: "Oct 2021",
 			positions: [
 				{
 					positionName: "Software Engineer",
@@ -93,10 +111,17 @@ const user = {
 	],
 	projects: [
 		{
+			projectName: "MyShop",
+			description:
+				"A customizable eCommerce website where the user can customize different components of the application.",
+			madeWith: ["React", "Node", "Firebase", "Firestore"],
+			link: "hhttps://github.com/srinibasbiswal/My-Shop",
+		},
+		{
 			projectName: "NoteStack",
 			description:
 				"A notes management platform/application where students can share their course notes easily with each other.",
-			madeWith: ["Android", "Java", "Firebase", "Firestore"],
+			madeWith: ["React", "Java", "Firebase", "Firestore"],
 			link: "https://github.com/srinibasbiswal/NoteStack",
 		},
 		{
@@ -132,18 +157,19 @@ const user = {
 		{
 			name: "Language Proficiency",
 			values: [
+				"ReactJS",
+				"JavaScript",
+				"Node",
 				"Python",
 				"Java",
-				"JavaScript",
-				"ReactJS",
 				"Firebase",
 				"HTML",
 				"CSS",
 			],
 		},
 		{
-			name: "Tools Proficiency",
-			values: ["Git", "PyCharm", "Eclipse", "IntelliJ IDEA", "Postman"],
+			name: "Tools/IDE Proficiency",
+			values: ["VSCode","XCode","Git", "PyCharm", "Eclipse", "IntelliJ IDEA", "Postman"],
 		},
 		{
 			name: "Database Proficiency",
