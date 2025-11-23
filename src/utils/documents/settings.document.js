@@ -6,7 +6,11 @@ class SettingDocument {
 		this.currentWallpaperId = "default_wall";
 		this.isMute = false;
 		this.wifiEnabled = true;
-		this.airplaneMode = true;
+		this.bluetoothEnabled = true;
+		this.airplaneMode = false;
+		this.doNotDisturb = false;
+		this.brightness = 75;
+		this.volume = 50;
 	}
 }
 

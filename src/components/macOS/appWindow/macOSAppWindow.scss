@@ -1,0 +1,390 @@
+@import "../../../theme/variables";
+
+.macos-window {
+    position: absolute;
+    width: 800px;
+    max-width: 90vw;
+    height: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35),
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    // Enhanced liquid glass effect
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(80px) saturate(200%) brightness(1.15);
+    -webkit-backdrop-filter: blur(80px) saturate(200%) brightness(1.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    animation: windowFadeIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    // Subtle inner glow
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.8),
+                transparent);
+        pointer-events: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(25, 25, 25, 0.4);
+        backdrop-filter: blur(80px) saturate(200%) brightness(0.85);
+        -webkit-backdrop-filter: blur(80px) saturate(200%) brightness(0.85);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6),
+            0 15px 40px rgba(0, 0, 0, 0.4);
+
+        &::before {
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.15),
+                    transparent);
+        }
+    }
+}
+
+.macos-window-titlebar {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    cursor: move;
+    user-select: none;
+
+    // Subtle gradient
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0.2) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    @media (prefers-color-scheme: dark) {
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 100%);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.macos-traffic-lights {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.traffic-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+
+    svg {
+        width: 8px;
+        height: 8px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    &:hover svg {
+        opacity: 1;
+    }
+}
+
+.traffic-light-close {
+    background: #ff5f57;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background: #ff4d45;
+    }
+
+    &:active {
+        background: #e04a42;
+    }
+}
+
+.traffic-light-minimize {
+    background: #ffbd2e;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background: #ffb01c;
+    }
+
+    &:active {
+        background: #e6a01a;
+    }
+}
+
+.traffic-light-maximize {
+    background: #28ca42;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background: #20b838;
+    }
+
+    &:active {
+        background: #1da632;
+    }
+}
+
+.macos-window-title {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.85);
+
+    @media (prefers-color-scheme: dark) {
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+.macos-window-titlebar-spacer {
+    width: 68px; // Same width as traffic lights to center title
+}
+
+.macos-window-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 8px 12px 0;
+    background: rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(255, 255, 255, 0.02);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.macos-tab {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.85);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: rgba(255, 255, 255, 0.6);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+.macos-tab-active {
+    background: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(60, 60, 60, 0.9);
+        color: rgba(255, 255, 255, 0.95);
+
+        &:hover {
+            background: rgba(70, 70, 70, 0.95);
+        }
+    }
+}
+
+.macos-window-content {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(30, 30, 30, 0.6);
+    }
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}
+
+@keyframes windowFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+// Maximized state
+.macos-window-maximized {
+    border-radius: 0 !important;
+    max-width: 100vw !important;
+    max-height: calc(100vh - 28px) !important;
+}
+
+// Resize handles styling
+.react-resizable-handle {
+    z-index: 1000;
+}
+
+// Responsive
+@media screen and (max-width: 1024px) {
+    .macos-window {
+        width: 90vw !important;
+        max-width: 90vw;
+    }
+
+    .traffic-light {
+        width: 11px;
+        height: 11px;
+
+        svg {
+            width: 7px;
+            height: 7px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .macos-window {
+        width: 95vw !important;
+        height: 80vh !important;
+        top: 50px !important;
+        left: 2.5vw !important;
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .macos-window-titlebar {
+        height: 36px;
+        padding: 0 10px;
+    }
+
+    .traffic-light {
+        width: 10px;
+        height: 10px;
+
+        svg {
+            width: 6px;
+            height: 6px;
+            opacity: 1 !important; // Always show on mobile
+        }
+    }
+
+    .macos-traffic-lights {
+        gap: 6px;
+    }
+
+    .macos-window-title {
+        font-size: 12px;
+    }
+
+    .macos-window-content {
+        padding: 15px;
+    }
+
+    // Disable resize on mobile
+    .react-resizable-handle {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .macos-window {
+        width: 98vw !important;
+        height: 85vh !important;
+        top: 40px !important;
+        left: 1vw !important;
+        border-radius: 8px;
+    }
+
+    .macos-window-titlebar {
+        height: 32px;
+        padding: 0 8px;
+    }
+
+    .traffic-light {
+        width: 9px;
+        height: 9px;
+
+        svg {
+            width: 5px;
+            height: 5px;
+        }
+    }
+
+    .macos-traffic-lights {
+        gap: 5px;
+    }
+
+    .macos-window-title {
+        font-size: 11px;
+    }
+
+    .macos-window-content {
+        padding: 12px;
+    }
+
+    .macos-tab {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

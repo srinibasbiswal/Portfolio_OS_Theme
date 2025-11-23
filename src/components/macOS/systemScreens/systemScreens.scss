@@ -1,0 +1,293 @@
+@import "../../../theme/variables";
+
+.system-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Sleep Screen
+.sleep-screen {
+    background: #000;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease;
+}
+
+.sleep-content {
+    text-align: center;
+}
+
+.sleep-hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+// Shutdown Screen
+.shutdown-screen {
+    background: #000;
+    animation: fadeIn 0.8s ease;
+}
+
+.shutdown-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.shutdown-logo {
+    opacity: 0.8;
+    animation: logoFade 2s ease-in-out infinite;
+}
+
+.shutdown-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+// Startup Screen
+.startup-screen {
+    background: #000;
+    animation: fadeIn 0.8s ease;
+}
+
+.startup-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.startup-logo {
+    opacity: 0.9;
+    animation: logoFadeIn 1.5s ease-out;
+}
+
+.startup-progress-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.startup-progress-fill {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    animation: progressFill 2s ease-out forwards;
+}
+
+// Lock Screen
+.lock-screen {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(60px) saturate(120%);
+    -webkit-backdrop-filter: blur(60px) saturate(120%);
+    animation: fadeIn 0.4s ease;
+}
+
+.lock-content {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.lock-time {
+    font-size: 96px;
+    font-weight: 200;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lock-date {
+    font-size: 24px;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lock-user {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.lock-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.lock-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.lock-password-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.lock-password-input {
+    width: 300px;
+    padding: 12px 20px;
+    border-radius: 24px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.5);
+    }
+}
+
+.lock-unlock-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 122, 255, 0.9);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 122, 255, 1);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.lock-hint {
+    font-size: 13px;
+    opacity: 0.6;
+    margin-top: 8px;
+}
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes logoFade {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+    .lock-time {
+        font-size: 64px;
+    }
+
+    .lock-date {
+        font-size: 18px;
+    }
+
+    .lock-password-input {
+        width: 250px;
+    }
+}

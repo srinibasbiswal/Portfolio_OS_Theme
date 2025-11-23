@@ -6,8 +6,10 @@ export const ACTION_TYPES = {
 	MAXIMIZE: "Maximize",
 	CLOSE: "Close",
 	TOGGLE_WIFI: "Toggle_Wifi",
+	TOGGLE_BLUETOOTH: "Toggle_Bluetooth",
 	TOGGLE_AIRPLANE_MODE: "Toggle_Airplane_Mode",
 	TOGGLE_MUTE: "Toggle_Mute",
+	TOGGLE_DND: "Toggle_DND",
 	CHANGE_WALLPAPER: "Change_Wallpaper",
 };
 

@@ -1,7 +1,81 @@
 @import "../../theme/variables";
 
-.action-center {
-	height: calc(100% - 40px) !important;
+// UIKit offcanvas bar with liquid glass
+.uk-offcanvas-bar.action-center {
+	padding: 20px;
+	overflow-y: auto;
+
+	// Authentic liquid glass effect (liquid-glass.io prominent mode)
+	background: rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+	-webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+	border-left: 0.5px solid rgba(255, 255, 255, 0.18);
+	box-shadow:
+		-8px 0 32px rgba(31, 38, 135, 0.15),
+		-4px 0 16px rgba(31, 38, 135, 0.1),
+		inset 2px 0 4px rgba(255, 255, 255, 0.4),
+		inset -2px 0 4px rgba(0, 0, 0, 0.05);
+
+	// Refraction edge effect (liquid glass signature)
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		padding: 1px;
+		background: linear-gradient(135deg,
+				rgba(255, 255, 255, 0.6) 0%,
+				rgba(255, 255, 255, 0.2) 50%,
+				rgba(255, 255, 255, 0.4) 100%);
+		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+		pointer-events: none;
+	}
+
+	// Inner glow
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg,
+				rgba(255, 255, 255, 0.3) 0%,
+				transparent 50%,
+				rgba(255, 255, 255, 0.1) 100%);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	>* {
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		background: rgba(0, 0, 0, 0.08) !important;
+		backdrop-filter: blur(40px) saturate(180%) brightness(90%);
+		-webkit-backdrop-filter: blur(40px) saturate(180%) brightness(90%);
+		border-left-color: rgba(255, 255, 255, 0.08);
+		box-shadow:
+			-8px 0 32px rgba(0, 0, 0, 0.4),
+			-4px 0 16px rgba(0, 0, 0, 0.2),
+			inset 2px 0 4px rgba(255, 255, 255, 0.1),
+			inset -2px 0 4px rgba(0, 0, 0, 0.2);
+
+		&::before {
+			background: linear-gradient(135deg,
+					rgba(255, 255, 255, 0.2) 0%,
+					rgba(255, 255, 255, 0.05) 50%,
+					rgba(255, 255, 255, 0.15) 100%);
+		}
+
+		&::after {
+			background: linear-gradient(90deg,
+					rgba(255, 255, 255, 0.1) 0%,
+					transparent 50%,
+					rgba(255, 255, 255, 0.05) 100%);
+		}
+	}
 }
 
 .action-center-wrapper {
@@ -11,15 +85,87 @@
 }
 
 .action-center-btn {
-	min-height: 60px !important;
-	color: var(--font-white) !important;
-	background-color: rgb(50, 49, 48) !important;
-}
-.action-center-btn:hover {
-	cursor: pointer !important;
-	border: 2px solid var(--color-secondary) !important;
+	padding: 16px;
+	margin-bottom: 12px;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	position: relative;
+
+	// Liquid glass button effect
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(20px) saturate(150%);
+	-webkit-backdrop-filter: blur(20px) saturate(150%);
+	border: 0.5px solid rgba(255, 255, 255, 0.15);
+	box-shadow:
+		0 4px 16px rgba(0, 0, 0, 0.1),
+		inset 0 1px 2px rgba(255, 255, 255, 0.3);
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.15);
+		transform: translateY(-2px);
+		box-shadow:
+			0 6px 20px rgba(0, 0, 0, 0.15),
+			inset 0 1px 2px rgba(255, 255, 255, 0.4);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&.settings-active {
+		background: rgba(0, 122, 255, 0.2);
+		border-color: rgba(0, 122, 255, 0.4);
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: 12px;
+			background: linear-gradient(135deg,
+					rgba(0, 122, 255, 0.3),
+					rgba(0, 122, 255, 0.1));
+			pointer-events: none;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		background: rgba(255, 255, 255, 0.05);
+		border-color: rgba(255, 255, 255, 0.08);
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.1);
+		}
+
+		&.settings-active {
+			background: rgba(0, 122, 255, 0.25);
+			border-color: rgba(0, 122, 255, 0.5);
+		}
+	}
 }
 
-.settings-active {
-	background-color: var(--color-blue) !important;
+// Scrollbar styling
+.uk-offcanvas-bar.action-center::-webkit-scrollbar {
+	width: 8px;
+}
+
+.uk-offcanvas-bar.action-center::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.uk-offcanvas-bar.action-center::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+
+	&:hover {
+		background: rgba(0, 0, 0, 0.3);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		background: rgba(255, 255, 255, 0.2);
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.3);
+		}
+	}
 }

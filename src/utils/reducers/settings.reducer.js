@@ -21,6 +21,16 @@ const settingsStateReducer = (state = initialSettings, action) => {
 				...state,
 				airplaneMode: !state.airplaneMode,
 			};
+		case ACTION_TYPES.TOGGLE_BLUETOOTH:
+			return {
+				...state,
+				bluetoothEnabled: !state.bluetoothEnabled,
+			};
+		case ACTION_TYPES.TOGGLE_DND:
+			return {
+				...state,
+				doNotDisturb: !state.doNotDisturb,
+			};
 		case ACTION_TYPES.CHANGE_WALLPAPER:
 			var newWallpaper = settings.desktop_wallpapers.filter(
 				(wallpaper) => wallpaper.id === action.wallpaperId

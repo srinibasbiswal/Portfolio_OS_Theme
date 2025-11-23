@@ -1,0 +1,453 @@
+@import "../../../theme/variables";
+
+.control-center-trigger {
+    background: none;
+    border: none;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.85);
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+.control-center-panel {
+    position: fixed;
+    top: 36px;
+    right: 8px;
+    width: 320px;
+    max-height: calc(100vh - 50px);
+    padding: 12px;
+    border-radius: 20px;
+    z-index: 10000;
+    overflow-y: auto;
+
+    // Transparent panel - no background
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// Row layout
+.cc-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+// Large pill-shaped tiles with individual liquid glass
+.cc-tile-large {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    position: relative;
+
+    // Individual liquid glass effect
+    background: rgba(60, 60, 67, 0.4);
+    backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+
+    // Refraction edge
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50px;
+        padding: 0.5px;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.3));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    svg {
+        flex-shrink: 0;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        background: rgba(70, 70, 77, 0.5);
+        transform: scale(1.02);
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.25),
+            0 5px 15px rgba(0, 0, 0, 0.18),
+            inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    &.active {
+        background: rgba(0, 122, 255, 0.6);
+        backdrop-filter: blur(40px) saturate(200%);
+        -webkit-backdrop-filter: blur(40px) saturate(200%);
+        border-color: rgba(0, 122, 255, 0.5);
+        box-shadow:
+            0 8px 24px rgba(0, 122, 255, 0.4),
+            0 4px 12px rgba(0, 122, 255, 0.3),
+            inset 0 1px 2px rgba(255, 255, 255, 0.5);
+
+        svg {
+            opacity: 1;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(60, 60, 67, 0.5);
+
+        &:hover {
+            background: rgba(70, 70, 77, 0.6);
+        }
+
+        &.active {
+            background: rgba(0, 122, 255, 0.7);
+        }
+    }
+}
+
+.cc-tile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.cc-tile-label {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.cc-tile-status {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.cc-tile-sublabel {
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+// Small circular buttons container
+.cc-small-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+// Circular buttons with liquid glass
+.cc-btn-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.2s ease;
+    position: relative;
+
+    // Individual liquid glass effect
+    background: rgba(60, 60, 67, 0.4);
+    backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+
+    // Refraction edge
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        padding: 0.5px;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.3));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    svg {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        background: rgba(70, 70, 77, 0.5);
+        transform: scale(1.05);
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.25),
+            0 5px 15px rgba(0, 0, 0, 0.18),
+            inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(60, 60, 67, 0.5);
+
+        &:hover {
+            background: rgba(70, 70, 77, 0.6);
+        }
+    }
+}
+
+// Slider containers with liquid glass
+.cc-slider-container {
+    padding: 12px 16px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    color: white;
+    position: relative;
+
+    // Individual liquid glass effect
+    background: rgba(60, 60, 67, 0.4);
+    backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+
+    // Refraction edge
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 0.5px;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.3));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(60, 60, 67, 0.5);
+    }
+}
+
+.cc-slider-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+
+    svg {
+        opacity: 0.9;
+        flex-shrink: 0;
+    }
+
+    span:first-of-type {
+        flex: 1;
+    }
+}
+
+.cc-slider-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.cc-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Edit Controls button with liquid glass
+.cc-edit-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+
+    // Individual liquid glass effect
+    background: rgba(60, 60, 67, 0.4);
+    backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+
+    // Refraction edge
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50px;
+        padding: 0.5px;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.3));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        background: rgba(70, 70, 77, 0.5);
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.25),
+            0 5px 15px rgba(0, 0, 0, 0.18),
+            inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(60, 60, 67, 0.5);
+
+        &:hover {
+            background: rgba(70, 70, 77, 0.6);
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+// Scrollbar
+.control-center-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.control-center-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.control-center-panel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+    .control-center-panel {
+        right: 8px;
+        width: calc(100vw - 16px);
+        max-width: 320px;
+    }
+}

@@ -1,0 +1,143 @@
+@import "../../../theme/variables";
+
+.macos-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1000;
+
+    // Authentic liquid glass effect (liquid-glass.io specs)
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    // Refraction edge effect
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.4),
+                rgba(255, 255, 255, 0.1));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    // Dark mode support
+    @media (prefers-color-scheme: dark) {
+        background: rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(40px) saturate(180%) brightness(90%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(90%);
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+        box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+
+.menubar-left,
+.menubar-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.menubar-item {
+    padding: 2px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.08);
+    }
+
+    &:active {
+        background: rgba(0, 0, 0, 0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        &:active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+}
+
+.apple-menu {
+    padding: 2px 8px;
+
+    svg {
+        display: block;
+    }
+}
+
+.menubar-app-name {
+    font-weight: 600;
+}
+
+.menubar-icon {
+    padding: 2px 8px;
+
+    svg {
+        display: block;
+    }
+}
+
+.menubar-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2px 8px;
+    line-height: 1.2;
+    gap: 0;
+}
+
+.menubar-date {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.menubar-clock {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+    .menubar-item {
+        font-size: 12px;
+        padding: 2px 6px;
+
+        &:not(.apple-menu):not(.menubar-app-name):not(.menubar-time):not(.menubar-icon) {
+            display: none;
+        }
+    }
+}

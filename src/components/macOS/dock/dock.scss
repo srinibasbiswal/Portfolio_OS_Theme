@@ -1,0 +1,301 @@
+@import "../../../theme/variables";
+
+.macos-dock-container {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: 8px;
+}
+
+.macos-dock {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 24px;
+    position: relative;
+
+    // Authentic liquid glass effect (liquid-glass.io prominent mode)
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(110%);
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        0 8px 32px rgba(31, 38, 135, 0.15),
+        0 4px 16px rgba(31, 38, 135, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+
+    // Refraction edge effect (liquid glass signature)
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        padding: 1px;
+        background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.4) 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    // Subtle inner glow
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.3) 0%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.1) 100%);
+        pointer-events: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(40px) saturate(180%) brightness(90%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(90%);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.4),
+            0 4px 16px rgba(0, 0, 0, 0.2),
+            inset 0 2px 4px rgba(255, 255, 255, 0.1),
+            inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+
+        &::before {
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.05) 50%,
+                    rgba(255, 255, 255, 0.15) 100%);
+        }
+
+        &::after {
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    transparent 50%,
+                    rgba(255, 255, 255, 0.05) 100%);
+        }
+    }
+}
+
+.dock-item {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+        transform: translateY(-12px) scale(1.2);
+
+        .dock-item-label {
+            opacity: 1;
+            transform: translateY(-8px);
+        }
+
+        .dock-item-inner {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:active {
+        transform: translateY(-10px) scale(1.15);
+    }
+}
+
+.dock-item-inner {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    // Hover glow effect
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 16px;
+        background: radial-gradient(circle,
+                rgba(255, 255, 255, 0.3) 0%,
+                transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+}
+
+.dock-item-icon {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+
+    .dock-item:hover & {
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
+}
+
+.dock-item-indicator {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.dock-item-active {
+    .dock-item-indicator {
+        background: rgba(0, 122, 255, 0.9);
+        box-shadow: 0 0 8px rgba(0, 122, 255, 0.6);
+    }
+}
+
+.dock-item-label {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    padding: 4px 12px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(255, 255, 255, 0.9);
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+.dock-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 0 4px;
+    align-self: center;
+
+    @media (prefers-color-scheme: dark) {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+    .macos-dock {
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 16px;
+    }
+
+    .dock-item-inner {
+        width: 48px;
+        height: 48px;
+    }
+
+    .dock-item-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .dock-item:hover {
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+// Animation on mount
+@keyframes dockSlideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.macos-dock-container {
+    animation: dockSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+
+// Additional responsive styles
+@media screen and (max-width: 1024px) {
+    .macos-dock {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .dock-item-inner {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dock-item-icon {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .macos-dock {
+        padding: 5px 8px;
+        gap: 4px;
+        max-width: 95%;
+    }
+
+    .dock-item-inner {
+        width: 42px;
+        height: 42px;
+    }
+
+    .dock-item-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .dock-divider {
+        width: 1px;
+        margin: 0 2px;
+        height: 40px;
+    }
+
+    .dock-item:hover {
+        transform: translateY(-6px) scale(1.05);
+    }
+
+    .dock-item-label {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+}

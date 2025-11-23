@@ -20,6 +20,7 @@ import spreadsheet from "../../assets/images/apps/spreadsheet.svg";
 import vsCode from "../../assets/images/apps/vsCode.png";
 import settings from "../../assets/images/apps/settings.svg";
 import BackgroundSettings from "../../components/applications/settings/background.settings";
+import MacOSSettings from "../../components/macOS/settings/macOSSettings";
 
 const appConfig = [
 	{
@@ -163,6 +164,10 @@ const appConfig = [
 			{
 				name: "Background",
 				component: BackgroundSettings,
+			},
+			{
+				name: "System Settings",
+				component: MacOSSettings,
 			},
 		],
 	},
