@@ -4,7 +4,8 @@ import { changeDesktopBackground } from "../../../utils/actions/settingsaction";
 import settings from "../../../utils/data/settings.config";
 import checked from "../../../assets/images/baseImages/checked.svg";
 import "./settings.scss";
-import firebase from "../../../utils/firebaseConfig";
+import { analytics } from "../../../utils/firebaseConfig";
+import { logEvent } from "firebase/analytics";
 import { ANALYTICS_EVENTS } from "../../../utils/documents/enums";
 import projectConfig from "../../../utils/data/project.config";
 
@@ -12,8 +13,8 @@ function BackgroundSettings() {
 	const current_settings = useSelector((state) => state.settingsState);
 	const dispatch = useDispatch();
 	const changeWallpaper = (wallpaperId) => {
-		if (projectConfig.enableAnalytics) {
-			firebase.analytics().logEvent(ANALYTICS_EVENTS.BACKGROUND_CHANGE, {
+		if (projectConfig.enableAnalytics && analytics) {
+			logEvent(analytics, ANALYTICS_EVENTS.BACKGROUND_CHANGE, {
 				wallpaper_Id: wallpaperId,
 			});
 		}
@@ -41,15 +42,15 @@ function BackgroundSettings() {
 							>
 								{current_settings.currentWallpaperId ===
 									wallpaper.id && (
-									<div className="uk-position-top-right uk-padding-small">
-										<img
-											src={checked}
-											width="40"
-											height="40"
-											alt="Selected"
-										/>
-									</div>
-								)}
+										<div className="uk-position-top-right uk-padding-small">
+											<img
+												src={checked}
+												width="40"
+												height="40"
+												alt="Selected"
+											/>
+										</div>
+									)}
 							</div>
 						</div>
 					);

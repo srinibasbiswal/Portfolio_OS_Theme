@@ -1,5 +1,5 @@
-import firebase from "firebase/app";
-import "firebase/analytics";
+import { initializeApp, getApps } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import projectConfig from "../utils/data/project.config";
 
 const firebaseConfig = {
@@ -12,8 +12,13 @@ const firebaseConfig = {
 	appId: process.env.REACT_APP_APP_ID,
 };
 
-if (!firebase.apps.length && projectConfig.enableAnalytics) {
-	firebase.initializeApp(firebaseConfig);
+let app;
+let analytics;
+
+if (!getApps().length && projectConfig.enableAnalytics) {
+	app = initializeApp(firebaseConfig);
+	analytics = getAnalytics(app);
 }
 
-export default firebase;
+export { analytics };
+export default app;

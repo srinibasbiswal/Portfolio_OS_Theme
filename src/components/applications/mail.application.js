@@ -1,7 +1,8 @@
 import { Icon, MessageBar, MessageBarType, TextField } from "@fluentui/react";
 import React, { useEffect, useState } from "react";
 import "./application.scss";
-import firebase from "../../utils/firebaseConfig";
+import { analytics } from "../../utils/firebaseConfig";
+import { logEvent } from "firebase/analytics";
 import { ANALYTICS_EVENTS } from "../../utils/documents/enums";
 import projectAnalytics from "../../utils/data/project.config";
 
@@ -41,8 +42,8 @@ function Mail() {
 				from: emailResponse.template.from,
 			};
 			console.log(templateParams);
-			if (projectAnalytics.enableAnalytics) {
-				firebase.analytics().logEvent(ANALYTICS_EVENTS.SEND_MAIL, {
+			if (projectAnalytics.enableAnalytics && analytics) {
+				logEvent(analytics, ANALYTICS_EVENTS.SEND_MAIL, {
 					template: templateParams,
 				});
 			}

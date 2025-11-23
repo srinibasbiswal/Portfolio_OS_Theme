@@ -3,13 +3,14 @@ import React from "react";
 import projectConfig from "../../../utils/data/project.config";
 import user from "../../../utils/data/user.config";
 import { ANALYTICS_EVENTS } from "../../../utils/documents/enums";
-import firebase from "../../../utils/firebaseConfig";
+import { analytics } from "../../../utils/firebaseConfig";
+import { logEvent } from "firebase/analytics";
 
 function Resume() {
 	const downloadIcon = { iconName: "DownloadDocument" };
 	const onDownloadClick = (resume) => {
-		if (projectConfig.enableAnalytics) {
-			firebase.analytics().logEvent(ANALYTICS_EVENTS.DOWNLOAD_RESUME);
+		if (projectConfig.enableAnalytics && analytics) {
+			logEvent(analytics, ANALYTICS_EVENTS.DOWNLOAD_RESUME);
 		}
 		window.open(resume, "_blank");
 	};

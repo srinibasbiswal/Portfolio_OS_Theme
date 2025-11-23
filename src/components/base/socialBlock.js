@@ -4,14 +4,15 @@ import twitter from "../../assets/images/social/twitter.svg";
 import linkedin from "../../assets/images/social/linkedin.svg";
 import github from "../../assets/images/social/github.svg";
 import email from "../../assets/images/social/email.png";
-import firebase from "../../utils/firebaseConfig";
+import { analytics } from "../../utils/firebaseConfig";
+import { logEvent } from "firebase/analytics";
 import { ANALYTICS_EVENTS } from "../../utils/documents/enums";
 import projectConfig from "../../utils/data/project.config";
 
 function SocialBlock() {
 	const onSocialClick = (social) => {
-		if (projectConfig.enableAnalytics) {
-			firebase.analytics().logEvent(ANALYTICS_EVENTS.SOCIAL_CLICK, {
+		if (projectConfig.enableAnalytics && analytics) {
+			logEvent(analytics, ANALYTICS_EVENTS.SOCIAL_CLICK, {
 				link: social,
 			});
 		}

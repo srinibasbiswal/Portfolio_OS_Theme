@@ -1,18 +1,18 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BlueScreen404 from "../containers/blueScreen404.container";
 import Windows from "../containers/windows.container";
 
-function Routes() {
+function AppRoutes() {
 	return (
-		<Switch>
-			<Route path="/" exact component={Windows} />
-			<Route path="/home" exact component={Windows} />
-			<Route path="/windows" exact component={Windows} />
-			<Route path="/404" component={BlueScreen404} />
-			<Route component={BlueScreen404} />
-		</Switch>
+		<Routes>
+			<Route path="/" element={<Windows />} />
+			<Route path="/home" element={<Windows />} />
+			<Route path="/windows" element={<Windows />} />
+			<Route path="/404" element={<BlueScreen404 />} />
+			<Route path="*" element={<BlueScreen404 />} />
+		</Routes>
 	);
 }
 
-export default Routes;
+export default AppRoutes;
