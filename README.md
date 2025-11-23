@@ -31,7 +31,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/srinibasbiswal/Portfolio_OS_Theme
+$ git clone https://github.com/srinibasbiswal/Portfolio_OS_Theme.git
 
 # Go into the repository
 $ cd Portfolio_OS_Theme
