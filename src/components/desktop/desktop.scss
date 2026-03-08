@@ -2,33 +2,30 @@
 
 .taskbar-bottom {
 	height: 40px !important;
-	background: rgba(0, 0, 0, 0.55);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	background: var(--glass-bg-strong);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
+	border-top: 1px solid var(--glass-border);
 }
 
 .taskbar-icon {
-	color: var(--color-white);
+	color: var(--text-primary);
 	width: 45px;
 	margin-right: 5px;
 }
 
 .taskbar-quick-icon {
-	color: var(--color-white);
+	color: var(--text-primary);
 	width: 30px;
 	margin-right: 5px;
 }
 
-.taskbar-quick-icon:hover {
-	color: var(--color-white);
-	cursor: pointer !important;
-	background-color: rgba(255, 255, 255, 0.1) !important;
-}
+.taskbar-quick-icon:hover,
 .taskbar-icon:hover {
-	color: var(--color-white);
+	color: var(--text-primary);
 	cursor: pointer !important;
-	background-color: rgba(255, 255, 255, 0.1) !important;
+	background-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .taskbar-icon-active {
@@ -38,11 +35,11 @@
 }
 
 .onDesktop {
-	background-color: rgba(255, 255, 255, 0.3) !important;
+	background-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .onDesktop:hover {
-	background-color: rgba(255, 255, 255, 0.5) !important;
+	background-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .desktop-container {
@@ -51,4 +48,41 @@
 
 .taskbar {
 	height: 40px !important;
+}
+
+.taskbar-left,
+.taskbar-right {
+	align-items: center;
+	height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.taskbar-bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 6px;
+	}
+
+	.taskbar-bottom .uk-position-left,
+	.taskbar-bottom .uk-position-right {
+		position: static !important;
+	}
+
+	.taskbar-fixed-icons .taskbar-icon:nth-child(2),
+	.taskbar-right > div:nth-child(4) {
+		display: none;
+	}
+
+	.taskbar-icon,
+	.taskbar-quick-icon {
+		margin-right: 0;
+		width: 38px;
+	}
+
+	.taskbar-left .uk-flex:nth-child(2) {
+		max-width: 45vw;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
 }

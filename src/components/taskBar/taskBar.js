@@ -1,16 +1,18 @@
 import { IconButton } from "@fluentui/react";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ClockComponent from "../base/clockComponent";
 import TaskBarIcon from "./taskBar-Icon";
+import { changeThemeMode } from "../../utils/actions/settingsaction";
 
 function Taskbar(props) {
 	const settings = useSelector((state) => state.settingsState);
+	const dispatch = useDispatch();
 
 	return (
 		<div className="uk-width-expand taskbar-bottom">
-			<div className="uk-position-left uk-flex">
-				<div className="uk-flex">
+			<div className="uk-position-left uk-flex taskbar-left">
+				<div className="uk-flex taskbar-fixed-icons">
 					<div
 						className="uk-height-1-1 taskbar-icon"
 						uk-toggle="target: #start-menu"
@@ -41,7 +43,29 @@ function Taskbar(props) {
 					})}
 				</div>
 			</div>
-			<div className="uk-position-right uk-flex">
+			<div className="uk-position-right uk-flex taskbar-right">
+				<div>
+					<IconButton
+						iconProps={{
+							iconName:
+								settings.themeMode === "light"
+									? "ClearNight"
+									: "Light",
+						}}
+						title="Toggle Theme"
+						ariaLabel="Toggle Theme"
+						className="uk-height-1-1 taskbar-quick-icon"
+						onClick={() =>
+							dispatch(
+								changeThemeMode(
+									settings.themeMode === "light"
+										? "dark"
+										: "light"
+								)
+							)
+						}
+					/>
+				</div>
 				<div>
 					{settings.wifiEnabled && (
 						<IconButton

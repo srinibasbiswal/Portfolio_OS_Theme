@@ -3,28 +3,19 @@
 .macos-settings {
     display: flex;
     height: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass-bg-strong);
     border-radius: 12px;
     overflow: hidden;
-
-    @media (prefers-color-scheme: dark) {
-        background: rgba(30, 30, 30, 0.95);
-    }
+    color: var(--text-primary);
 }
 
-// Sidebar
 .settings-sidebar {
-    width: 220px;
-    background: rgba(0, 0, 0, 0.03);
-    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    width: 240px;
+    background: var(--glass-bg);
+    border-right: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
     padding: 16px 0;
-
-    @media (prefers-color-scheme: dark) {
-        background: rgba(255, 255, 255, 0.03);
-        border-right-color: rgba(255, 255, 255, 0.08);
-    }
 }
 
 .settings-search {
@@ -33,9 +24,9 @@
     align-items: center;
     gap: 8px;
     padding: 6px 12px;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--glass-bg-strong);
     border-radius: 8px;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-secondary);
 
     input {
         flex: 1;
@@ -43,23 +34,10 @@
         background: none;
         outline: none;
         font-size: 13px;
-        color: rgba(0, 0, 0, 0.85);
+        color: var(--text-primary);
 
         &::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-        }
-    }
-
-    @media (prefers-color-scheme: dark) {
-        background: rgba(255, 255, 255, 0.08);
-        color: rgba(255, 255, 255, 0.6);
-
-        input {
-            color: rgba(255, 255, 255, 0.9);
-
-            &::placeholder {
-                color: rgba(255, 255, 255, 0.4);
-            }
+            color: var(--text-secondary);
         }
     }
 }
@@ -81,22 +59,12 @@
     user-select: none;
 
     &:hover {
-        background: rgba(0, 0, 0, 0.05);
+        background: var(--glass-bg-strong);
     }
 
     &.active {
-        background: rgba(0, 122, 255, 0.15);
-        color: rgba(0, 122, 255, 1);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        &:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        &.active {
-            background: rgba(0, 122, 255, 0.25);
-        }
+        background: rgba(0, 122, 255, 0.2);
+        color: #007aff;
     }
 }
 
@@ -109,32 +77,23 @@
     font-weight: 500;
 }
 
-// Content
 .settings-content {
     flex: 1;
-    padding: 32px;
+    padding: 24px;
     overflow-y: auto;
 
     h2 {
         font-size: 28px;
         font-weight: 600;
         margin-bottom: 8px;
-        color: rgba(0, 0, 0, 0.9);
-
-        @media (prefers-color-scheme: dark) {
-            color: rgba(255, 255, 255, 0.95);
-        }
+        color: var(--text-primary);
     }
 }
 
 .section-description {
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-secondary);
     margin-bottom: 24px;
-
-    @media (prefers-color-scheme: dark) {
-        color: rgba(255, 255, 255, 0.6);
-    }
 }
 
 .settings-section {
@@ -149,32 +108,24 @@
         font-size: 13px;
         font-weight: 500;
         margin-bottom: 8px;
-        color: rgba(0, 0, 0, 0.85);
-
-        @media (prefers-color-scheme: dark) {
-            color: rgba(255, 255, 255, 0.9);
-        }
+        color: var(--text-primary);
     }
 }
 
-.setting-select {
+.setting-select,
+.settings-section input[type="text"] {
     padding: 6px 12px;
     border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    background: white;
+    border: 1px solid var(--glass-border-strong);
+    background: var(--glass-bg-strong);
     font-size: 13px;
     outline: none;
+    color: var(--text-primary);
     cursor: pointer;
 
     &:focus {
         border-color: rgba(0, 122, 255, 0.5);
         box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.15);
-        color: rgba(255, 255, 255, 0.9);
     }
 }
 
@@ -229,10 +180,9 @@
     }
 }
 
-// Wallpaper Grid
 .wallpaper-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 16px;
     margin-top: 16px;
 }
@@ -245,7 +195,7 @@
     border: 3px solid transparent;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
 
     &.selected {
@@ -256,7 +206,7 @@
 
 .wallpaper-preview {
     width: 100%;
-    padding-top: 56.25%; // 16:9 aspect ratio
+    padding-top: 56.25%;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -280,7 +230,6 @@
     }
 }
 
-// Animations
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -293,36 +242,6 @@
     }
 }
 
-// Scrollbar
-.settings-content::-webkit-scrollbar,
-.settings-categories::-webkit-scrollbar {
-    width: 8px;
-}
-
-.settings-content::-webkit-scrollbar-track,
-.settings-categories::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.settings-content::-webkit-scrollbar-thumb,
-.settings-categories::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-
-    &:hover {
-        background: rgba(0, 0, 0, 0.3);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        background: rgba(255, 255, 255, 0.2);
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-    }
-}
-
-// Responsive
 @media screen and (max-width: 768px) {
     .macos-settings {
         flex-direction: column;
@@ -331,20 +250,10 @@
     .settings-sidebar {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid var(--glass-border);
     }
 
-    .settings-categories {
-        display: flex;
-        overflow-x: auto;
-        padding: 0 8px;
-    }
-
-    .settings-category {
-        flex-shrink: 0;
-    }
-
-    .wallpaper-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .settings-content {
+        padding: 16px;
     }
 }

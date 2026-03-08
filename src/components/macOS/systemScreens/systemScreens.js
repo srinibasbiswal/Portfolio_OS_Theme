@@ -1,5 +1,7 @@
 import React from "react";
 import "./systemScreens.scss";
+import user from "../../../utils/data/user.config";
+import lockWallpaper from "../../../assets/images/wallpapers/lockScreenWall.jpg";
 
 export function SleepScreen({ onWake }) {
     return (
@@ -41,6 +43,7 @@ export function StartupScreen() {
 
 export function LockScreen({ onUnlock }) {
     const [password, setPassword] = React.useState("");
+    const [showLogin, setShowLogin] = React.useState(false);
 
     const getCurrentTime = () => {
         const now = new Date();
@@ -73,45 +76,60 @@ export function LockScreen({ onUnlock }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Any input unlocks (cosmetic only)
         if (password.length > 0) {
             onUnlock();
         }
     };
 
     return (
-        <div className="system-screen lock-screen">
-            <div className="lock-content">
-                <div className="lock-time">{time}</div>
-                <div className="lock-date">{date}</div>
-
-                <div className="lock-user">
-                    <div className="lock-avatar">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                        </svg>
-                    </div>
-                    <div className="lock-name">User</div>
-                </div>
-
-                <form onSubmit={handleSubmit} className="lock-password-form">
-                    <input
-                        type="password"
-                        className="lock-password-input"
-                        placeholder="Enter password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        autoFocus
-                    />
-                    <button type="submit" className="lock-unlock-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                        </svg>
-                    </button>
-                </form>
-
-                <div className="lock-hint">Press Enter or click to unlock</div>
+        <div
+            className="system-screen lock-screen"
+            style={{ backgroundImage: `url(${lockWallpaper})` }}
+            onClick={() => !showLogin && setShowLogin(true)}
+        >
+            <div className="lock-backdrop" />
+            <div className="lock-top-strip">
+                <span>Wifi</span>
+                <span>100%</span>
             </div>
+            {!showLogin && (
+                <div className="lock-stage">
+                    <div className="lock-time">{time}</div>
+                    <div className="lock-date">{date}</div>
+                    <div className="lock-hint">Click to open login</div>
+                </div>
+            )}
+
+            {showLogin && (
+                <div className="lock-content" onClick={(event) => event.stopPropagation()}>
+                    <div className="lock-user">
+                        <img
+                            className="lock-avatar-image"
+                            src={user.userImage}
+                            alt={user.firstName}
+                        />
+                        <div className="lock-name">{`${user.firstName} ${user.lastName}`}</div>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="lock-password-form">
+                        <input
+                            type="password"
+                            className="lock-password-input"
+                            placeholder="Enter password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            autoFocus
+                        />
+                        <button type="submit" className="lock-unlock-button" aria-label="Unlock">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div className="lock-hint">Type any password and press Enter</div>
+                </div>
+            )}
         </div>
     );
 }

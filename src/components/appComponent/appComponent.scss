@@ -1,21 +1,14 @@
 @import "../../theme/variables";
 
 .app-component {
-	// display: inline-block !important;
 	height: 80% !important;
 	width: 80% !important;
-}
-
-@media only screen and (max-width: 640px) {
-	.app-component {
-		width: 95% !important;
-	}
 }
 
 .app-topbar {
 	height: 32px !important;
 	width: 100% !important;
-	color: var(--font-white) !important;
+	color: var(--text-primary) !important;
 	border-bottom-right-radius: unset !important;
 	border-bottom-left-radius: unset !important;
 }
@@ -34,7 +27,6 @@
 }
 
 .maximized {
-	// margin-left: -10% !important;
 	width: 100% !important;
 	height: calc(100% - 40px) !important;
 }
@@ -59,6 +51,7 @@
 	width: 100% !important;
 	overflow-y: scroll !important;
 	overflow-x: hidden !important;
+	color: var(--text-primary);
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -82,7 +75,14 @@
 }
 
 .sidebar-list {
-	color: var(--font-white) !important;
+	color: var(--text-primary) !important;
+
+	.uk-active {
+		background-color: var(--glass-bg-strong) !important;
+		border-left: 5px solid;
+		border-color: var(--color-blue) !important;
+		font-weight: bold;
+	}
 }
 
 .sidebar-list-item {
@@ -91,16 +91,7 @@
 }
 
 .sidebar-list :hover {
-	background-color: rgb(50, 49, 48) !important;
-}
-
-.sidebar-list {
-	.uk-active {
-		background-color: rgb(50, 49, 48) !important;
-		border-left: 5px solid;
-		border-color: var(--color-blue) !important;
-		font-weight: bold;
-	}
+	background-color: var(--glass-bg-strong) !important;
 }
 
 .app-nav-bar {
@@ -113,9 +104,9 @@
 	.ms-TextField-wrapper {
 		.ms-TextField-fieldGroup {
 			.ms-TextField-field {
-				background: none rgb(50, 49, 48) !important;
-				color: rgb(121, 119, 117) !important;
-				border: none rgb(50, 49, 48) !important;
+				background: none var(--glass-bg-strong) !important;
+				color: var(--text-secondary) !important;
+				border: none var(--glass-bg-strong) !important;
 			}
 			border: 0px !important;
 		}
@@ -142,4 +133,20 @@
 
 .hide-element {
 	display: none !important;
+}
+
+@media only screen and (max-width: 640px) {
+	.app-component {
+		width: 100% !important;
+		height: calc(100% - 40px) !important;
+		border-radius: 0 !important;
+	}
+
+	.app-top-functions {
+		width: 120px !important;
+	}
+
+	.app-content {
+		height: calc(100% - 40px) !important;
+	}
 }

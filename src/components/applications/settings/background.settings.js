@@ -1,6 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeDesktopBackground } from "../../../utils/actions/settingsaction";
+import {
+	changeDesktopBackground,
+	changeThemeMode,
+} from "../../../utils/actions/settingsaction";
 import settings from "../../../utils/data/settings.config";
 import checked from "../../../assets/images/baseImages/checked.svg";
 import "./settings.scss";
@@ -21,8 +24,23 @@ function BackgroundSettings() {
 		dispatch(changeDesktopBackground(wallpaperId));
 	};
 
+	const handleThemeChange = (event) => {
+		dispatch(changeThemeMode(event.target.value));
+	};
+
 	return (
 		<div>
+			<div className="uk-margin-medium-bottom">
+				<p className="uk-text-lead font-color-white">Appearance :</p>
+				<select
+					className="theme-select"
+					value={current_settings.themeMode}
+					onChange={handleThemeChange}
+				>
+					<option value="dark">Dark</option>
+					<option value="light">Light</option>
+				</select>
+			</div>
 			<p className="uk-text-lead font-color-white">
 				Change Desktop Background :
 			</p>

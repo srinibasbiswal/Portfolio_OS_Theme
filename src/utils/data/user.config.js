@@ -14,10 +14,10 @@ const user = {
 	gitHub: "srinibasbiswal",
 	twitter: "srinibasbiswal",
 	aboutMe: {
-		intro: " I'm a Full Stack Software Development Engineer from India.",
+		intro: " I'm a Full Stack Software Development Engineer from India, passionate about building digital products with a strong focus on mobile development in the Apple ecosystem (iOS).",
 		description:
-			"I enjoy taking up complex problems and converting to an usable format. My major domains are Web Development (React / Angular / Node) and Software Development (Java / Python).",
-		outro: "When I'm not developing any stuff , you will find me re-watching an episode of The Office or exploring a new place.",
+			"I specialize in iOS development using Swift, building smooth and reliable mobile applications. I also work with web development and backend systems, allowing me to build products end-to-end. I'm also an AI enthusiast, exploring how AI can enhance modern applications.",
+		outro: "When I'm not building something new, you'll probably find me re-watching an episode of The Office, going for long bike rides, or exploring a new place. 🚴‍♂️",
 	},
 	experiences: [
 		{
@@ -28,12 +28,20 @@ const user = {
 			endDate: null,
 			positions: [
 				{
-					positionName: "Software Engineer 2",
-					startDate: "Oct 2021",
+					positionName: "Senior Software Engineer 2",
+					startDate: "April 2025",
 					endDate: " Present",
 					isPresent: true,
 					description:
-						"Working as part of the Identity Engineering Team, responsible for the development and maintaining login scenarios in Web and Native experiences. Implemented a long-term architecture for platform convergence in existing node modules, automating tenant onboarding and reducing onboarding time significantly. Migrated legacy C++ components to Node modules with updated UI, improving performance and design aesthetics. Developed an internal tool tailored for efficient upgrades and verification of internal framework versions across multiple micro-services, saving manual effort and reducing the risk of errors. Technologies: ReactJS, JavaScript, Node, GraphQL, Java, RESTful web services, Swift, MySQL",
+						"Part of the Identity Engineering team, building and maintaining core authentication systems for PayPal’s web and native applications. Develop iOS features using Swift and SwiftUI for secure and seamless login experiences Implement and maintain multiple authentication methods including biometric login, passkeys, and OTP-based authentication. Work on secure session management and identity flows to ensure reliability and security across platforms. Contributed to third-party app switching, enabling smooth authentication transitions between integrated applications.",
+				},
+				{
+					positionName: "Software Engineer 2",
+					startDate: "Oct 2021",
+					endDate: " April 2025",
+					isPresent: false,
+					description:
+						"Worked in the Identity Engineering team, developing and maintaining login experiences for web and native platforms. Designed a long-term architecture for platform convergence, automating tenant onboarding and significantly reducing onboarding time. Migrated legacy C++ components to Node.js modules with improved UI and performance. Built an internal tool to upgrade and verify framework versions across multiple microservices, reducing manual effort and deployment risks. as part of the Identity Engineering Team, responsible for the development and maintaining login scenarios in Web and Native experiences. Implemented a long-term architecture for platform convergence in existing node modules, automating tenant onboarding and reducing onboarding time significantly. Migrated legacy C++ components to Node modules with updated UI, improving performance and design aesthetics. Developed an internal tool tailored for efficient upgrades and verification of internal framework versions across multiple micro-services, saving manual effort and reducing the risk of errors. Technologies: ReactJS, JavaScript, Node, GraphQL, Java, RESTful web services, Swift, MySQL",
 				},
 			],
 		},
@@ -48,7 +56,7 @@ const user = {
 					positionName: "Software Engineer",
 					startDate: "May 2021",
 					endDate: " Present",
-					isPresent: true,
+					isPresent: false,
 					description:
 						"During this time, I worked on the redesigning and development of the new UI for the product using AngularJS.I also developed multiple APIs to support the GIS feature and also worked on the configuration of the GIS in the product.",
 				},
@@ -111,6 +119,13 @@ const user = {
 	],
 	projects: [
 		{
+			projectName: "Chromind",
+			description:
+				"A customizable eCommerce website where the user can customize different components of the application.",
+			madeWith: ["React", "Node", "Firebase", "Firestore"],
+			link: "hhttps://github.com/srinibasbiswal/My-Shop",
+		},
+		{
 			projectName: "MyShop",
 			description:
 				"A customizable eCommerce website where the user can customize different components of the application.",
@@ -157,6 +172,9 @@ const user = {
 		{
 			name: "Language Proficiency",
 			values: [
+				"Swift",
+				"SwiftUI",
+				"Bazel",
 				"ReactJS",
 				"JavaScript",
 				"Node",
@@ -169,7 +187,7 @@ const user = {
 		},
 		{
 			name: "Tools/IDE Proficiency",
-			values: ["VSCode","XCode","Git", "PyCharm", "Eclipse", "IntelliJ IDEA", "Postman"],
+			values: ["Xcode","VSCode","Git", "PyCharm", "Eclipse", "IntelliJ IDEA", "Postman"],
 		},
 		{
 			name: "Database Proficiency",

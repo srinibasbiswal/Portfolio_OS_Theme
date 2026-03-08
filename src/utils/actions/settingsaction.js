@@ -12,3 +12,10 @@ export const changeDesktopBackground = (wallpaperId) => {
 		wallpaperId: wallpaperId,
 	};
 };
+
+export const changeThemeMode = (themeMode) => {
+	return {
+		type: ACTION_TYPES.CHANGE_THEME_MODE,
+		themeMode: themeMode,
+	};
+};

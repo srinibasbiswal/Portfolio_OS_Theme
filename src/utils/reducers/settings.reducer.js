@@ -46,6 +46,12 @@ const settingsStateReducer = (state = initialSettings, action) => {
 						? newWallpaper[0].id
 						: "default_wall",
 			};
+		case ACTION_TYPES.CHANGE_THEME_MODE:
+			localStorage.setItem("portfolio-theme-mode", action.themeMode);
+			return {
+				...state,
+				themeMode: action.themeMode,
+			};
 		default:
 			return state;
 	}

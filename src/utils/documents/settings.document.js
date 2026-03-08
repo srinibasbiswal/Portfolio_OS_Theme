@@ -2,8 +2,13 @@ import default_wallpaper from "../../assets/images/wallpapers/default_wallpaper.
 
 class SettingDocument {
 	constructor() {
+		const savedThemeMode = localStorage.getItem("portfolio-theme-mode");
 		this.currentWallpaper = default_wallpaper;
 		this.currentWallpaperId = "default_wall";
+		this.themeMode =
+			savedThemeMode === "light" || savedThemeMode === "dark"
+				? savedThemeMode
+				: "dark";
 		this.isMute = false;
 		this.wifiEnabled = true;
 		this.bluetoothEnabled = true;

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeDesktopBackground } from "../../../utils/actions/settingsaction";
+import {
+    changeDesktopBackground,
+    changeThemeMode,
+} from "../../../utils/actions/settingsaction";
 import settings from "../../../utils/data/settings.config";
 import checked from "../../../assets/images/baseImages/checked.svg";
 import "./macOSSettings.scss";
@@ -12,6 +15,10 @@ function MacOSSettings() {
 
     const changeWallpaper = (wallpaperId) => {
         dispatch(changeDesktopBackground(wallpaperId));
+    };
+
+    const onThemeModeChange = (event) => {
+        dispatch(changeThemeMode(event.target.value));
     };
 
     const categories = [
@@ -56,10 +63,13 @@ function MacOSSettings() {
                         <h2>General</h2>
                         <div className="setting-item">
                             <label>Appearance</label>
-                            <select className="setting-select">
-                                <option>Auto</option>
-                                <option>Light</option>
-                                <option>Dark</option>
+                            <select
+                                className="setting-select"
+                                value={current_settings.themeMode}
+                                onChange={onThemeModeChange}
+                            >
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
                             </select>
                         </div>
                         <div className="setting-item">

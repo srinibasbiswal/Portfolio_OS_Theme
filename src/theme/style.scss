@@ -1,5 +1,17 @@
 @import "./variables";
 
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body {
+	background: var(--color-surface);
+	color: var(--text-primary);
+	transition: background-color 0.25s ease, color 0.25s ease;
+}
+
 .screenHeight {
 	position: fixed;
 	padding: 0;
@@ -32,9 +44,10 @@
 }
 
 .blur {
-	background: rgba(74, 74, 74, 0.5) !important;
+	background: var(--glass-bg) !important;
 	backdrop-filter: blur(20px) !important;
 	-webkit-backdrop-filter: blur(20px) !important;
+	border: 1px solid var(--glass-border);
 }
 
 .power-button {
@@ -47,4 +60,20 @@
 
 .blue-screen {
 	background-color: var(--color-blue) !important;
+}
+
+.uk-background-secondary {
+	background-color: var(--color-secondary) !important;
+	color: var(--text-primary) !important;
+}
+
+.uk-background-muted {
+	background-color: var(--color-surface-soft) !important;
+	color: var(--text-primary) !important;
+}
+
+.uk-card-default,
+.uk-card-body,
+.uk-modal-dialog {
+	color: var(--text-primary);
 }

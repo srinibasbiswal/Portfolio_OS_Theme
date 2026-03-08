@@ -1,5 +1,5 @@
 import { IconButton, TextField } from "@fluentui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import "./appComponent.scss";
 import { useDispatch } from "react-redux";
@@ -14,10 +14,21 @@ function AppComponent(props) {
 
 	const [showAppMenu, setShowAppMenu] = useState(false);
 	const [currentComponentName, setCurrentComponentName] = useState("");
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+	useEffect(() => {
+		const onResize = () => setIsMobile(window.innerWidth <= 768);
+		window.addEventListener("resize", onResize);
+		return () => window.removeEventListener("resize", onResize);
+	}, []);
 
 	const setComponent = (componentName) => {
 		setCurrentComponentName(componentName);
 	};
+
+	const appContainerClass = props.appInfo.isApplication
+		? "maximized-application"
+		: "app-content-container";
 
 	return (
 		<Draggable
@@ -29,6 +40,7 @@ function AppComponent(props) {
 			scale={1}
 			defaultPosition={{ x: 0, y: 0 }}
 			handle=".title-bar"
+			disabled={isMobile}
 		>
 			<div
 				className={
@@ -73,14 +85,7 @@ function AppComponent(props) {
 					</div>
 				)}
 				<div
-					className={
-						"uk-width-expand@s " +
-							(props.appInfo.isApplication &&
-								props.appInfo.isMaximized) ||
-						props.appInfo.isApplication
-							? "maximized-application"
-							: "app-content-container"
-					}
+					className={"uk-width-expand@s " + appContainerClass}
 				>
 					<div className="app-topbar blur uk-border-rounded uk-grid uk-margin-remove">
 						<div className="title-bar uk-margin-remove uk-padding-remove">

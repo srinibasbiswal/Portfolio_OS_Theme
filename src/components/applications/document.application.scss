@@ -1,0 +1,38 @@
+@import "../../theme/variables";
+
+.word-editor-wrapper {
+	min-height: 100%;
+	padding: 12px;
+	position: relative;
+}
+
+.word-editor {
+	height: 100%;
+	background: var(--color-primary);
+	color: var(--text-primary);
+}
+
+.word-editor .ql-toolbar {
+	background: var(--color-secondary);
+	border-color: var(--glass-border-strong);
+}
+
+.word-editor .ql-container {
+	min-height: calc(100% - 42px);
+	background: var(--color-primary);
+	color: var(--text-primary);
+	border-color: var(--glass-border-strong);
+}
+
+.word-editor .ql-editor {
+	min-height: 260px;
+	color: var(--text-primary);
+}
+
+.word-loading {
+	position: absolute;
+	right: 20px;
+	bottom: 16px;
+	color: var(--text-secondary);
+	font-size: 12px;
+}

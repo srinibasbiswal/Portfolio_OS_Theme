@@ -12,8 +12,15 @@ function MacOSAppWindow({ appInfo }) {
     const [activeTab, setActiveTab] = useState(0);
     const [windowSize, setWindowSize] = useState({ width: 800, height: 600 });
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     // Calculate centered position with cascade offset
+    useEffect(() => {
+        const onResizeWindow = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener("resize", onResizeWindow);
+        return () => window.removeEventListener("resize", onResizeWindow);
+    }, []);
+
     useEffect(() => {
         const openWindows = appState.apps?.filter(app => app.isOpened && !app.isMinimized) || [];
         const windowIndex = openWindows.findIndex(app => app.id === appInfo.id);
@@ -57,25 +64,25 @@ function MacOSAppWindow({ appInfo }) {
         <Draggable
             handle=".macos-window-titlebar"
             bounds="parent"
-            disabled={isMaximized}
+            disabled={isMaximized || isMobile}
             position={isMaximized ? { x: 0, y: 0 } : undefined}
             defaultPosition={position}
         >
             <Resizable
-                width={isMaximized ? window.innerWidth : windowSize.width}
-                height={isMaximized ? window.innerHeight - 28 : windowSize.height}
+                width={isMaximized || isMobile ? window.innerWidth : windowSize.width}
+                height={isMaximized || isMobile ? window.innerHeight - 28 : windowSize.height}
                 onResize={onResize}
                 minConstraints={[400, 300]}
                 maxConstraints={[window.innerWidth, window.innerHeight - 28]}
-                resizeHandles={isMaximized ? [] : ['se', 'e', 's', 'sw', 'w', 'ne', 'nw', 'n']}
+                resizeHandles={isMaximized || isMobile ? [] : ['se', 'e', 's', 'sw', 'w', 'ne', 'nw', 'n']}
             >
                 <div
-                    className={`macos-window ${isMaximized ? 'macos-window-maximized' : ''}`}
+                    className={`macos-window ${(isMaximized || isMobile) ? 'macos-window-maximized' : ''}`}
                     style={{
-                        width: isMaximized ? '100vw' : `${windowSize.width}px`,
-                        height: isMaximized ? 'calc(100vh - 28px)' : `${windowSize.height}px`,
-                        top: isMaximized ? '28px' : undefined,
-                        left: isMaximized ? '0' : undefined,
+                        width: (isMaximized || isMobile) ? '100vw' : `${windowSize.width}px`,
+                        height: (isMaximized || isMobile) ? 'calc(100vh - 28px)' : `${windowSize.height}px`,
+                        top: (isMaximized || isMobile) ? '28px' : undefined,
+                        left: (isMaximized || isMobile) ? '0' : undefined,
                     }}
                 >
                     {/* Title Bar with traffic lights */}

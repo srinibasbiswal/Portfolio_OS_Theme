@@ -1,11 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./osSelection.scss";
 import windowsLogo from "../assets/images/baseImages/windows-logo.svg";
 import appleLogo from "../assets/images/baseImages/apple-logo.svg";
+import user from "../utils/data/user.config";
+import { changeThemeMode } from "../utils/actions/settingsaction";
 
 function OSSelection() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const themeMode = useSelector((state) => state.settingsState.themeMode);
 
     const handleOSSelection = (os) => {
         if (os === "windows") {
@@ -15,10 +20,28 @@ function OSSelection() {
         }
     };
 
+    const toggleTheme = () => {
+        const nextTheme = themeMode === "light" ? "dark" : "light";
+        dispatch(changeThemeMode(nextTheme));
+    };
+
     return (
         <div className="os-selection-container">
             <div className="os-selection-content">
-                <h1 className="os-selection-title">Choose Your Experience</h1>
+                <button
+                    className={`theme-toggle-button ${themeMode === "light" ? "is-light" : "is-dark"}`}
+                    onClick={toggleTheme}
+                    aria-label="Toggle theme mode"
+                    aria-pressed={themeMode === "light"}
+                >
+                    <span className="toggle-label">Theme</span>
+                    <span className="toggle-track">
+                        <span className="toggle-knob" />
+                    </span>
+                </button>
+                <p className="os-selection-badge">Portfolio OS</p>
+                <h1 className="os-selection-name">{`${user.firstName} ${user.lastName}`}</h1>
+                <h2 className="os-selection-title">Choose Your Experience</h2>
                 <p className="os-selection-subtitle">
                     Select your preferred operating system theme
                 </p>

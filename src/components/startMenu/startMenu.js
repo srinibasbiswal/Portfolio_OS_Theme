@@ -6,6 +6,7 @@ import ContextMenu from "../contextMenu/power.contextmenu";
 import { useDispatch, useSelector } from "react-redux";
 import { setSystemState } from "../../utils/actions/system.action";
 import { handleApplicationClick } from "../../utils/actions/app.action";
+import { useNavigate } from "react-router-dom";
 import user from "../../utils/data/user.config";
 import SocialBlock from "../base/socialBlock";
 import AppIcon from "../base/appIcon";
@@ -21,6 +22,7 @@ function StartMenu() {
 	] = useBoolean(false);
 
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const handleIconClick = (app) => {
 		dispatch(handleApplicationClick(app));
 	};
@@ -49,6 +51,12 @@ function StartMenu() {
 				iconProps: { iconName: "PowerButton" },
 				text: "Shut Down",
 				onClick: () => setNextSystemState("isShutDown"),
+			},
+			{
+				key: "switchOS",
+				iconProps: { iconName: "Switch" },
+				text: "Switch OS",
+				onClick: () => navigate("/"),
 			},
 			{
 				key: "admin",

@@ -3,3 +3,11 @@
 .wallpaper-thumbnail {
 	height: 250px !important;
 }
+
+.theme-select {
+	padding: 8px 12px;
+	border: 1px solid var(--glass-border-strong);
+	background: var(--glass-bg-strong);
+	color: var(--text-primary);
+	border-radius: 8px;
+}

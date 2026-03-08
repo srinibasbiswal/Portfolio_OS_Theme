@@ -11,6 +11,7 @@ export const ACTION_TYPES = {
 	TOGGLE_MUTE: "Toggle_Mute",
 	TOGGLE_DND: "Toggle_DND",
 	CHANGE_WALLPAPER: "Change_Wallpaper",
+	CHANGE_THEME_MODE: "Change_Theme_Mode",
 };
 
 export const SCREENS = {

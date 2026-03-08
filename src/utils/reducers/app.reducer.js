@@ -28,6 +28,8 @@ const appStateReducer = (state = [initialAppState], action) => {
 					newApp.showInDesktop = appsList[i].showInDesktop;
 					newApp.showLinks = appsList[i].showLinks;
 					newApp.isApplication = appsList[i].isApplication;
+					newApp.isOpened = appsList[i].id === "aboutMe";
+					newApp.isMinimized = false;
 					if (newApp.showLinks) {
 						newApp.subComponent = appsList[i].subComponent;
 					}
